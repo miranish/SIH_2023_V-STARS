@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #toggle {
+    display: none;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #d1d9e7;
+    transition: all 300ms ease;
+  }
+  
+  #toggle-label {
+    cursor: pointer;
+    outline: transparent;
+  }
+  
+  #toggle-div {
+    height: 120px;
+    width: 240px;
+    background-color: #357bb3;
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+    transition: all 300ms ease;
+    box-shadow: inset 2px 5px 5px rgba(0, 0, 0, 0.8),
+      inset -2px -5px 5px rgba(0, 0, 0, 0.2), 4px 4px 4px rgba(255, 255, 255, 1);
+  }
+  
+  .backdrops {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 100px;
+    width: 100px;
+    transition: all 300ms ease;
+  }
+  
+  .backdrop {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+  
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 300ms ease;
+  }
+  
+  .backdrop::after,
+  .backdrop::before {
+    content: "";
+    height: 200px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    position: absolute;
+    transition: all 300ms ease;
+  }
+  
+  .backdrop::before {
+    left: 15%;
+  }
+  
+  .backdrop::after {
+    left: 30%;
+  }
+  
+  .clouds {
+    /* display: none; */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translate(0, 50%);
+    transition: all 300ms ease;
+  }
+  
+  .cloud {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    background-color: #fbfbfb;
+    height: 20px;
+    width: 100px;
+    border-radius: 0 100px 100px 100px;
+    transform: scale(-0.8, 0.8);
+  }
+  
+  .cloud::before {
+    content: "";
+    position: absolute;
+    background-color: #fbfbfb;
+    height: 20px;
+    width: 80px;
+    bottom: 18px;
+    left: 0;
+    border-radius: 100px 100px 0 0px;
+  }
+  
+  .cloud::after {
+    content: "";
+    position: absolute;
+    background-color: #fbfbfb;
+    height: 40px;
+    width: 40px;
+    bottom: 18px;
+    left: 10px;
+    border-radius: 100%;
+  }
+  
+  .cloud-1 {
+    top: 45%;
+    right: 22%;
+    transform: scale(-0.6, 0.6);
+    opacity: 0.5;
+  }
+  
+  .cloud-2 {
+    top: 20%;
+    right: 0%;
+    transform: scale(-0.6, 0.6);
+    opacity: 0.5;
+  }
+  
+  .cloud-3 {
+    top: 92%;
+    right: 35%;
+  }
+  
+  .cloud-4 {
+    top: 85%;
+    right: 10%;
+    transform: scale(-1, 1);
+  }
+  
+  .cloud-5 {
+    top: 60%;
+    right: -18%;
+    transform: rotateZ(-50deg) scale(-1, 1);
+  }
+  
+  .sun-moon {
+    height: 100px;
+    width: 100px;
+    /* background-image: url("https://cdn.discordapp.com/attachments/1149573938469404693/1155110921040035880/image.png"); */
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    box-shadow: inset 2px 5px 3px rgba(255, 255, 255, 0.5),
+      inset -2px -5px 3px rgba(0, 0, 0, 0.5), 5px 5px 10px rgba(0, 0, 0, 0.5);
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: 300ms ease;
+  }
+
+  .sun-image{
+    width: 60%;
+  }
+
+  .shadowed {
+    -webkit-filter: drop-shadow(5px 5px 5px #222222);
+    filter: drop-shadow(5px 5px 5px #222222);
+  }
+  
+  .sun-moon:hover {
+    left: 15px;
+  }
+  
+  /* NIGHT */
+  
+  .stars {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 35%;
+    transform: translate(0, -50%);
+    transition: all 300ms ease;
+  }
+  
+  .star {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    height: 6px;
+    width: 6px;
+    border-radius: 100%;
+    background-color: #c4c9d2;
+    box-shadow: 0 0 4px #fff;
+    animation: twinkle 1s infinite alternate;
+  }
+  
+  .star::before {
+    content: "";
+    position: absolute;
+    left: 300%;
+    top: 300%;
+    height: 4px;
+    width: 4px;
+    border-radius: 100%;
+    background-color: #c4c9d2;
+    box-shadow: 0 0 4px #fff;
+  }
+  
+  .star::after {
+    content: "";
+    position: absolute;
+    left: 400%;
+    bottom: 400%;
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    background-color: #c4c9d2;
+    box-shadow: 0 0 4px #fff;
+  }
+  
+  .star-2 {
+    left: 40%;
+    top: 10%;
+    transform: rotateZ(75deg) scale(1.1);
+    animation-delay: 300ms;
+  }
+  
+  .star-3 {
+    left: 40%;
+    top: 60%;
+    transform: rotateZ(150deg) scale(0.8);
+    animation-delay: 600ms;
+  }
+  
+  .crater {
+    display: none;
+    position: absolute;
+    left: 30%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+
+  }
+  
+
+  
+  #toggle-div.night {
+    background-color: #1d1f2b;
+  }
+  
+  input:checked ~ .clouds {
+    display: block;
+    top: 10%;
+    left: 0%;
+    transform: rotateY(180deg);
+  }
+  
+  input:checked ~ .sun-moon {
+    left: calc(100% - 110px);
+    background-color: #c4c9d2;
+    /* transform: rotateZ(360deg); */
+
+    background-image: url("https://cdn.discordapp.com/attachments/1149573938469404693/1155111020591841330/image.png");
+    
+  }
+  
+  /* input:checked ~ .sun-moon:hover {
+    left: calc(100% - 115px);
+  }
+   */
+  input:checked ~ .backdrops {
+    left: calc(100% - 130px);
+  }
+  
+  /* input:checked ~ .sun-moon .crater {
+    display: block;
+  } */
+  
+  input:checked ~ .stars {
+    top: 100%;
+    left: 100%;
+  }
+  
+  /* ANIMATIONS */
+  
+  @keyframes twinkle {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0.5;
+    }
+  }
+  
