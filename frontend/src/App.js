@@ -1,15 +1,42 @@
-import React from 'react';
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import IndiaMap from './components/IndiaMap';
-import StatePage from './components/StatePage';
-import Home from './pages/Home';
+import Home from "./pages/Home";
+import IndiaMap from "./pages/IndiaMap";
+
+// STATES
+
+import UttarPradeshPage from "./pages/UttarPradesh";
+import TamilNaduPage from "./pages/TamilNadu";
+import RajasthanPage from "./pages/Rajasthan";
 
 const App = () => {
+  const StatesUrlData = [
+    {
+      stateName: "tamilnadu",
+      element: <TamilNaduPage />,
+    },
+    { stateName: "rajasthan", element: <RajasthanPage /> },
+    {
+      stateName: "uttarpradesh",
+      element: <UttarPradeshPage />,
+    },
+  ];
+
   return (
     <Routes>
-        <Route exact path="/" index element={<Home/>} />
-        <Route path="/india" element={<IndiaMap/>} />
-        <Route path="/state-link/:stateName" element={<StatePage/>} />
+      <Route exact path="/" index element={<Home />} />
+      <Route path="/india" element={<IndiaMap />} />
+
+      {/* Mapping states for code clarity */}
+      {StatesUrlData.map((state, index) => {
+        return (
+          <Route
+            key={index}
+            path={"/state-link/" + state.stateName}
+            element={state.element}
+          />
+        );
+      })}
     </Routes>
   );
 };
