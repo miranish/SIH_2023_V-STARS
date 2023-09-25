@@ -4,6 +4,6 @@
 - Vishvara Gandharv 
 - Swayam Sharma
 - Tsuhar Gupta
-- Mir Anish [@miranish]
+- Mir Anish @miranish
 - Rahul Sahani
 - Shyam Singh Negi
