@@ -1,9 +1,9 @@
 # SIH_2023_V-STARS
 
 ## Meet The Team
-- Vishvara Gandharv 
+- Vishvara Gandharv **Team Leader**
 - Swayam Sharma
-- Tsuhar Gupta
-- Mir Anish @miranish
+- Tushar Gupta
+- Mir Anish
 - Rahul Sahani
 - Shyam Singh Negi
