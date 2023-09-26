@@ -2,6 +2,7 @@
 import React from "react";
 import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
+import Navbar from "../components/Navbar";
 const RajasthanPage = () => {
   const images = [
     "https://c4.wallpaperflare.com/wallpaper/892/692/922/howl-s-moving-castle-studio-ghibli-fantasy-art-clouds-daylight-hd-wallpaper-preview.jpg",
@@ -10,6 +11,7 @@ const RajasthanPage = () => {
 
   return (
     <div>
+      <Navbar />
       <h2 className="text-center">Rajasthan</h2>
       <div
       style={{
