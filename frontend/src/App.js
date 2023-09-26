@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import IndiaMap from "./pages/IndiaMap";
 
+
 // STATES
 
 import UttarPradeshPage from "./pages/UttarPradesh";

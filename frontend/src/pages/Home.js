@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/Home.css";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import image from "../assets/Parallax/Firefly.png";
 
 const Home = () => {
   const navbarStyle = {
@@ -53,7 +55,10 @@ const Home = () => {
 
   return (
     <div>
-      <nav style={navbarStyle} className="navbar navbar-toggleable-md fixed-top">
+      <nav
+        style={navbarStyle}
+        className="navbar navbar-toggleable-md fixed-top"
+      >
         <div className="container" style={containerStyle}>
           <div className="navbar-translate">
             <button
@@ -69,7 +74,11 @@ const Home = () => {
               <span className="navbar-toggler-bar"></span>
               <span className="navbar-toggler-bar"></span>
             </button>
-            <a href="https://www.example.com" className="navbar-brand" style={brandStyle}>
+            <a
+              href="https://www.example.com"
+              className="navbar-brand"
+              style={brandStyle}
+            >
               LOGO
             </a>
           </div>
@@ -99,13 +108,19 @@ const Home = () => {
           </div>
         </div>
       </nav>
-      <div className="wrapper" >
+      <Parallax pages={4} style={{ top: "0", left: "0",}}>
+      <ParallaxLayer>
+
+      <div className="wrapper">
         <div className="page-header section-dark" style={wrapperStyle}>
           <div className="filter"></div>
           <div className="content-center">
             <div className="container">
               <div className="title-brand" style={titleBrandStyle}>
-                <h1 className="presentation-title " style={presentationTitleStyle}>
+                <h1
+                  className="presentation-title "
+                  style={presentationTitleStyle}
+                >
                   INDIAN HERITAGE
                 </h1>
                 <div className="fog-low">
@@ -121,7 +136,10 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <h2 className="presentation-subtitle" style={presentationSubtitleStyle}>
+              <h2
+                className="presentation-subtitle"
+                style={presentationSubtitleStyle}
+              >
                 Headline
               </h2>
             </div>
@@ -129,11 +147,43 @@ const Home = () => {
           <div
             className="moving-clouds"
             style={{
-              backgroundImage: "url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png')",
+              backgroundImage:
+                "url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png')",
             }}
           ></div>
         </div>
       </div>
+
+      </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={2.5}>
+          <p
+            style={{
+              background: `url${image}`,
+              height: "100vh"
+            }}
+          >
+            Parallax
+          </p>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={2.5}>
+          <p
+            style={{
+              height: "100vh",
+            }}
+          >
+            Parallax
+          </p>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} speed={2.5}>
+          <p
+            style={{
+              height: "100vh",
+            }}
+          >
+            Parallax
+          </p>
+        </ParallaxLayer>
+      </Parallax>
     </div>
   );
 };
