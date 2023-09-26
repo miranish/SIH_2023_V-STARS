@@ -9,6 +9,8 @@ import IndiaMap from "./pages/IndiaMap";
 import UttarPradeshPage from "./pages/UttarPradesh";
 import TamilNaduPage from "./pages/TamilNadu";
 import RajasthanPage from "./pages/Rajasthan";
+import Trial from "./pages/Trial";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const StatesUrlData = [
@@ -27,6 +29,8 @@ const App = () => {
     <Routes>
       <Route exact path="/" index element={<Home />} />
       <Route path="/india" element={<IndiaMap />} />
+      <Route path="/trial" element={<Trial />} />
+      <Route path="/navbar" element={<Navbar />} />
 
       {/* Mapping states for code clarity */}
       {StatesUrlData.map((state, index) => {

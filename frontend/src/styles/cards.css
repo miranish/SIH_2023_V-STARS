@@ -14,12 +14,11 @@
     /* margin-left:50px; */
     
 /* } */
+
 .box{
-    margin-top:250px;
+    margin-top:50%;
     width: 80%;
     display: flex;
     justify-content: space-around;
-    align-items:center;
-    
-  
+    align-items:center;  
 }

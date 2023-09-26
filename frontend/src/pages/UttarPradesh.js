@@ -19,11 +19,13 @@ const UttarPradeshPage = () => {
       <h2 className='text-center'>Uttar Pradesh</h2>
       <div
       style={{
+        height: "100%",
         width: "80%",
         display: "flex",
         justifyContent: "space-around",
-        alignItems: "flex-end",
+        alignItems: "center",
         margin: "auto"
+        
 
       }}
       >

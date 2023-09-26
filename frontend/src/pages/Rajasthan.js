@@ -16,8 +16,9 @@ const RajasthanPage = () => {
         width: "80%",
         display: "flex",
         justifyContent: "space-around",
-        alignItems: "flex-end",
-        margin: "auto"
+        alignItems: "center",
+        margin: "auto",
+        // margin-top: "25px",
 
       }}
       >
