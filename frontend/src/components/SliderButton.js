@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./SliderButton.css";
+import "../styles/SliderButton.css";
 
 const SliderButton = () => {
   useEffect(() => {

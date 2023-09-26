@@ -1,0 +1,44 @@
+.parallax-card {
+  position: relative;
+  width: 30%;
+  height: 30%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.parallax-card .img1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  /* transform: translate(-50%, -50%); */
+}
+.parallax-card .img2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  /* transform: translate(-50%, -50%); */
+}
+
+.card-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  z-index: 3;
+}
+
+.card-content h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 16px;
+  margin: 0;
+}
