@@ -2,6 +2,9 @@ import React from "react";
 import "../styles/Home.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import image from "../assets/Parallax/Firefly.png";
+import image2 from "../assets/Parallax/Layer_2-removebg.png";
+import bgimage from "../assets/himalayas-mountain-bg.jpg";
+import SliderButton from "../components/SliderButton";
 
 const Home = () => {
   const navbarStyle = {
@@ -33,7 +36,7 @@ const Home = () => {
 
   const wrapperStyle = {
     // background: `url('http://demos.creative-tim.com/paper-kit-2/assets/img/antoine-barres.jpg')`,
-    background: `url('https://cdn.discordapp.com/attachments/1149360574153621544/1155847538373562368/himalayas-mountain-bg.jpg')`,
+    background: `url('${image}  ')`,
     backgroundSize: "cover",
     backgroundPosition: "center center",
     position: "relative",
@@ -104,80 +107,78 @@ const Home = () => {
                   Login
                 </a>
               </li> */}
+              <li>
+                <SliderButton />
+              </li>
             </ul>
           </div>
         </div>
       </nav>
-      <Parallax pages={4} style={{ top: "0", left: "0",}}>
-      <ParallaxLayer>
-
-      <div className="wrapper">
-        <div className="page-header section-dark" style={wrapperStyle}>
-          <div className="filter"></div>
-          <div className="content-center">
-            <div className="container">
-              <div className="title-brand" style={titleBrandStyle}>
-                <h1
-                  className="presentation-title "
-                  style={presentationTitleStyle}
-                >
-                  INDIAN HERITAGE
-                </h1>
-                <div className="fog-low">
-                  <img
-                    src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png"
-                    alt=""
-                  />
-                </div>
-                <div className="fog-low right">
-                  <img
-                    src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png"
-                    alt=""
-                  />
+      <Parallax pages={2} style={{ top: "0", left: "0" }}>
+        <ParallaxLayer offset={0}>
+          <div className="wrapper">
+            <div className="page-header section-dark" style={wrapperStyle}>
+              <div className="filter"></div>
+              <div className="content-center">
+                <div className="container">
+                  <div className="title-brand" style={titleBrandStyle}>
+                    <h1
+                      className="presentation-title "
+                      style={presentationTitleStyle}
+                    >
+                      INDIAN HERITAGE
+                    </h1>
+                    <div className="fog-low">
+                      <img
+                        src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="fog-low right">
+                      <img
+                        src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <h2
+                    className="presentation-subtitle"
+                    style={presentationSubtitleStyle}
+                  >
+                    Headline
+                  </h2>
                 </div>
               </div>
-              <h2
-                className="presentation-subtitle"
-                style={presentationSubtitleStyle}
-              >
-                Headline
-              </h2>
+              <div
+                className="moving-clouds"
+                style={{
+                  backgroundImage:
+                    "url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png')",
+                }}
+              ></div>
             </div>
           </div>
-          <div
-            className="moving-clouds"
-            style={{
-              backgroundImage:
-                "url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png')",
-            }}
-          ></div>
-        </div>
-      </div>
+        </ParallaxLayer>
 
-      </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={2.5}>
+        <ParallaxLayer offset={0} speed={1}>
+            <p
+              style={{
+                background: `url('${image2}')`,
+                height: "100vh",
+                backgroundSize: "cover",
+                
+
+              }}
+            >
+              Parallax
+            </p>
+          </ParallaxLayer>
+        <ParallaxLayer offset={2} speed={2}>
           <p
             style={{
-              background: `url${image}`,
-              height: "100vh"
-            }}
-          >
-            Parallax
-          </p>
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={2.5}>
-          <p
-            style={{
-              height: "100vh",
-            }}
-          >
-            Parallax
-          </p>
-        </ParallaxLayer>
-        <ParallaxLayer offset={2} speed={2.5}>
-          <p
-            style={{
-              height: "100vh",
+              background: `url('${image}')`,
+              height: "120vh",
+              backgroundSize: "cover",
             }}
           >
             Parallax

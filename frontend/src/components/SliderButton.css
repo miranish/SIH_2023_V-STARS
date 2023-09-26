@@ -9,12 +9,12 @@
   }
   
   body {
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     min-height: 100vh;
-    background-color: #d1d9e7;
+    background-color: #d1d9e7; */
     transition: all 300ms ease;
   }
   
@@ -24,8 +24,8 @@
   }
   
   #toggle-div {
-    height: 120px;
-    width: 240px;
+    height: 60px;
+    width: 120px;
     background-color: #357bb3;
     border-radius: 100px;
     position: relative;
@@ -39,14 +39,14 @@
     position: absolute;
     left: 10px;
     top: 10px;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     transition: all 300ms ease;
   }
   
   .backdrop {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 100%;
   
@@ -60,8 +60,8 @@
   .backdrop::after,
   .backdrop::before {
     content: "";
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 100%;
     position: absolute;
@@ -79,11 +79,11 @@
   .clouds {
     /* display: none; */
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 25%;
+    width: 25%;
     top: 50%;
     left: 0;
-    transform: translate(0, 50%);
+    transform: translate(-100%, 0);
     transition: all 300ms ease;
   }
   
@@ -102,8 +102,8 @@
     content: "";
     position: absolute;
     background-color: #fbfbfb;
-    height: 20px;
-    width: 80px;
+    height: 10px;
+    width: 40px;
     bottom: 18px;
     left: 0;
     border-radius: 100px 100px 0 0px;
@@ -113,8 +113,8 @@
     content: "";
     position: absolute;
     background-color: #fbfbfb;
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
     bottom: 18px;
     left: 10px;
     border-radius: 100%;
@@ -152,8 +152,8 @@
   }
   
   .sun-moon {
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     /* background-image: url("https://cdn.discordapp.com/attachments/1149573938469404693/1155110921040035880/image.png"); */
     background-size: 60%;
     background-position: center;
@@ -168,8 +168,8 @@
 
 
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 5px;
+    top: 5px;
     transition: 300ms ease;
   }
 
@@ -190,10 +190,10 @@
   
   .stars {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 35%;
+    height: 50%;
+    width: 50%;
+    top: 30%;
+    left: 20%;
     transform: translate(0, -50%);
     transition: all 300ms ease;
   }
@@ -254,8 +254,8 @@
     left: 30%;
     top: 60%;
     transform: translate(-50%, -50%);
-    height: 30px;
-    width: 30px;
+    height: 15px;
+    width: 15px;
 
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
 
@@ -269,13 +269,13 @@
   
   input:checked ~ .clouds {
     display: block;
-    top: 10%;
+    top: 5%;
     left: 0%;
     transform: rotateY(180deg);
   }
   
   input:checked ~ .sun-moon {
-    left: calc(100% - 110px);
+    left: calc(100% - 55px);
     background-color: #c4c9d2;
     /* transform: rotateZ(360deg); */
 
