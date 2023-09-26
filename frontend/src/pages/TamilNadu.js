@@ -1,4 +1,4 @@
-// StatePage.js (for Uttar Pradesh)
+// StatePage.js (for Tamil Nadu)
 import React from "react";
 
 const TamilNaduPage = () => {

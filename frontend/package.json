@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@react-spring/parallax": "^9.7.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "atropos": "^2.0.2",
     "fs-extra": "^11.1.1",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
