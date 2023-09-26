@@ -1,7 +1,7 @@
 // StatePage.js (for Rajasthan)
 import React from "react";
-import "../styles/cards.css";
 import ParallaxCard from "../components/ActionCard";
+import "../styles/cards.css";
 const RajasthanPage = () => {
   const images = [
     "https://c4.wallpaperflare.com/wallpaper/892/692/922/howl-s-moving-castle-studio-ghibli-fantasy-art-clouds-daylight-hd-wallpaper-preview.jpg",
@@ -10,8 +10,8 @@ const RajasthanPage = () => {
 
   return (
     <div>
-      <div className="text-center">RAJASTHAN</div>
-      <div>
+      <h2 className="text-center">Rajasthan</h2>
+      <div
       style={{
         width: "80%",
         display: "flex",
@@ -20,23 +20,24 @@ const RajasthanPage = () => {
         margin: "auto"
 
       }}
-          <ParallaxCard
-            images={images}
-            title="Culture"
-            subheading="Subheading"
-          />
-          <ParallaxCard
-            images={images}
-            title="Monuments"
-            subheading="Subheading"
-          />
-          <ParallaxCard
-            images={images}
-            title="Cuisines"
-            subheading="Subheading"
-          />
+      >
+      <ParallaxCard
+        images={images}
+        title="Culture"
+        subheading="Subheading"
+      />
+      <ParallaxCard
+        images={images}
+        title="Monuments"
+        subheading="Subheading"
+      />
+      <ParallaxCard
+        images={images}
+        title="Festivals"
+        subheading="Subheading"
+      />
         </div>
-      </div>
+    </div>
   );
 };
 
