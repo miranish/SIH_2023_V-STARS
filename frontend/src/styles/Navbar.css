@@ -21,11 +21,12 @@
 
 /* Navbar CSS */
 .navbar {
+  margin-top: 10px;
   background-color: #ffffff;
-  height: 80px;
+  height: 55px;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: left;
 }
 
 .menu-bars {
