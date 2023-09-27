@@ -9,21 +9,33 @@ import CultureFG from "../assets/UP/Culture_FG.png";
 import MonumentsBG from "../assets/UP/Monuments_BG.png";
 import MonumentsFG from "../assets/UP/Monuments_FG.png";
 
-import FestivalBG from "../assets/UP/Festival_BG.png"
-import FestivalFG from "../assets/UP/Festival_FG.png"
+import FestivalBG from "../assets/UP/Festival_BG.png";
+import FestivalFG from "../assets/UP/Festival_FG.png";
+import Navbar from "../components/Navbar";
 const UttarPradeshPage = () => {
   const Culture_images = [CultureBG, CultureFG];
-  
+
   const Monuments_images = [MonumentsBG, MonumentsFG];
-  
-  const Fest_images = [
-    FestivalBG,
-    FestivalFG
-  ];
+
+  const Fest_images = [FestivalBG, FestivalFG];
 
   return (
-    <div>
-      <h2 className="text-center">Uttar Pradesh</h2>
+    <div
+      style={{
+        backgroundColor: "#2F2A52",
+        height: "100vh",
+      }}
+    >
+      <Navbar />
+      <h2
+        style={{
+          color: "white",
+          padding: "10px",
+        }}
+        className="text-center"
+      >
+        Uttar Pradesh
+      </h2>
       <div
         style={{
           height: "100%",

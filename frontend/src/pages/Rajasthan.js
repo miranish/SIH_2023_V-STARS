@@ -11,9 +11,19 @@ const RajasthanPage = () => {
   ]
 
   return (
-    <div className="bg-slate-700">
+    <div 
+    style={{
+      backgroundColor: "#2F2A52",
+      height: "100vh"
+    }}
+    >
       <Navbar />
-      <h2 className="text-center">Rajasthan</h2>
+      <h2
+      style={{
+        color: "white",
+        padding: "10px"
+      }}
+      className="text-center ">Rajasthan</h2>
       <div
       style={{
         width: "80%",
