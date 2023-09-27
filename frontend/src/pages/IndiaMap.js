@@ -21,22 +21,22 @@ const IndiaMap = () => {
       <MapContainer
         center={[22.5, 80]}
         zoom={4.5}
-        style={{ height: "100vh", width: "100vw", color: "black" }}
+        style={{ height: "100vh", width: "100vw" }}
       >
         <GeoJSON
           data={data}
-          onEachFeature={(feature, layer) => {
-            layer.on("click", () => {
-              const stateName = feature.properties.NAME_1;
-              console.log(stateName);
-              // window.location.href = `/state-link/${stateName}`;
-            });
+          // onEachFeature={(feature, layer) => {
+          //   layer.on("click", () => {
+          //     const stateName = feature.properties.NAME_1;
+          //     console.log(stateName);
+          //     // window.location.href = `/state-link/${stateName}`;
+          //   });
             // Add mouseover and mouseout event handlers
             // layer.on({
             //   mouseover: () => setHoveredState(feature.properties.NAME_1),
             //   mouseout: () => setHoveredState(null),
             // });
-          }}
+          // }}
         />
 
         {data.features.map((state, index) => {

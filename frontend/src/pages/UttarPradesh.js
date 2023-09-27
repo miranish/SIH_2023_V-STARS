@@ -1,50 +1,55 @@
 // StatePage.js (for Uttar Pradesh)
-import React from 'react';
-import ParallaxCard from '../components/ActionCard'
+import React from "react";
+import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
-const images = [
-  "https://c4.wallpaperflare.com/wallpaper/892/692/922/howl-s-moving-castle-studio-ghibli-fantasy-art-clouds-daylight-hd-wallpaper-preview.jpg",
-  "https://64.media.tumblr.com/5d6814b4bac11eab83e9e049b8226adb/tumblr_mnjfmwVtzZ1r49apoo1_500.png"
-]
 
+import CultureBG from "../assets/UP/Culture_BG.png";
+import CultureFG from "../assets/UP/Culture_FG.png";
+
+import MonumentsBG from "../assets/UP/Monuments_BG.png";
+import MonumentsFG from "../assets/UP/Monuments_FG.png";
+
+import FestivalBG from "../assets/UP/Festival_BG.png"
+import FestivalFG from "../assets/UP/Festival_FG.png"
 const UttarPradeshPage = () => {
-
-  const imagesUP = [
-    "https://media.discordapp.net/attachments/1149360574153621547/1156257922343510047/UP1_BG.png?ex=6514509a&is=6512ff1a&hm=de1a0519f90042314d58a1cbd9e3104f1be39887e0a004e8d8c434685559ce7d&=&width=1660&height=1008",
-    "https://cdn.discordapp.com/attachments/1149360574153621547/1156259185995030620/UP1_FG_Large.png?ex=651451c8&is=65130048&hm=e47fa98f6b6d0801c3acffda99b6ec9475d5abb4b3d7a57286317897634fa605&"
-  ]
+  const Culture_images = [CultureBG, CultureFG];
+  
+  const Monuments_images = [MonumentsBG, MonumentsFG];
+  
+  const Fest_images = [
+    FestivalBG,
+    FestivalFG
+  ];
 
   return (
     <div>
-      <h2 className='text-center'>Uttar Pradesh</h2>
+      <h2 className="text-center">Uttar Pradesh</h2>
       <div
-      style={{
-        height: "100%",
-        width: "80%",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        margin: "auto"
-        
-
-      }}
+        style={{
+          height: "100%",
+          width: "80%",
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          margin: "auto",
+        }}
       >
-      <ParallaxCard
-        images={imagesUP}
-        title="Culture"
-        subheading="Subheading"
-      />
-      <ParallaxCard
-        images={images}
-        title="Monuments"
-        subheading="Subheading"
-      />
-      <ParallaxCard
-        images={images}
-        title="Festivals"
-        subheading="Subheading"
-      />
-        </div>
+        <ParallaxCard
+          images={Culture_images}
+          title="Culture"
+          subheading="Subheading"
+        />
+        <ParallaxCard
+          images={Monuments_images}
+          title="Monuments"
+          subheading="Subheading"
+        />
+        <ParallaxCard
+          images={Fest_images}
+          title="Festivals"
+          subheading="Subheading"
+        />
+      </div>
     </div>
   );
 };
