@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, Polygon, GeoJSON, Tooltip } from "react-leaflet";
+import data from "../IndianData/Indian_States.json";
 import "leaflet/dist/leaflet.css";
-import data from "../components/IndianData/india_state_geo.json";
 
 const IndiaMap = () => {
-  const [jsonData, setJsonData] = useState({});
+  // const [jsonData, setJsonData] = useState({});
   const currentStates = ["Rajasthan", "Tamil Nadu", "Uttar Pradesh"];
-  const [hoveredState, setHoveredState] = useState(null);
+  // const [hoveredState, setHoveredState] = useState(null);
 
   useEffect(() => {
     // Set jsonData when the component mounts
-    const jsonData = data;
-    setJsonData(jsonData);
-    console.log("JSOND: ", jsonData);
+    // const jsonData = data;
+    // setJsonData(jsonData);
+    // console.log("JSOND: ", jsonData);
     console.log("JSON: ", data);
   }, []);
 
@@ -20,8 +20,8 @@ const IndiaMap = () => {
     <div>
       <MapContainer
         center={[22.5, 80]}
-        zoom={4.5} // Set the initial zoom level
-        style={{ height: "100vh", width: "100vw" }}
+        zoom={4.5}
+        style={{ height: "100vh", width: "100vw", color: "black" }}
       >
         <GeoJSON
           data={data}
@@ -32,10 +32,10 @@ const IndiaMap = () => {
               // window.location.href = `/state-link/${stateName}`;
             });
             // Add mouseover and mouseout event handlers
-            layer.on({
-              mouseover: () => setHoveredState(feature.properties.NAME_1),
-              mouseout: () => setHoveredState(null),
-            });
+            // layer.on({
+            //   mouseover: () => setHoveredState(feature.properties.NAME_1),
+            //   mouseout: () => setHoveredState(null),
+            // });
           }}
         />
 
@@ -59,13 +59,14 @@ const IndiaMap = () => {
                 <Polygon
                   key={index}
                   pathOptions={{
-                    fillColor: "000",
+                    fillColor: "#000",
                     fillOpacity: 0.7,
                     weight: 2,
                     opacity: 1,
                     dashArray: 3,
-                    color: "white",
+                    color: "#000",
                   }}
+                  
                   positions={coordinates}
                   eventHandlers={{
                     click: (e) => {

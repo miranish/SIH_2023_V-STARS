@@ -4,6 +4,7 @@ import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
 import Navbar from "../components/Navbar";
 const RajasthanPage = () => {
+  
   const images = [
     "https://c4.wallpaperflare.com/wallpaper/892/692/922/howl-s-moving-castle-studio-ghibli-fantasy-art-clouds-daylight-hd-wallpaper-preview.jpg",
     "https://64.media.tumblr.com/5d6814b4bac11eab83e9e049b8226adb/tumblr_mnjfmwVtzZ1r49apoo1_500.png"

@@ -16,7 +16,7 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
-svg {
+.svg {
       display: block;
       width: 100%;
       height: 100vh;
