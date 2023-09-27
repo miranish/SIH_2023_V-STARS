@@ -5,6 +5,7 @@ import '../styles/trial.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import NavbarTop from "../components/NavbarTop";
 
 // commented mountain #h2-6
 
@@ -230,6 +231,7 @@ const Trial = () => {
       className="trial-grandfatherContainer"
       style={{ backgroundColor: "orange" }}
     >
+      <NavbarTop />
       <svg
       className="svg"
         xmlns="http://www.w3.org/2000/svg"

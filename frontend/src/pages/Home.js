@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Home.css";
+// import "../styles/Home.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import image from "../assets/Parallax/Firefly.png";
 import image2 from "../assets/Parallax/Layer_2-removebg.png";

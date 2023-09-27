@@ -249,14 +249,6 @@ blockquote small {
     margin-bottom: 50px;
 }
 
-/*     General overwrite     */
-body {
-    color: #66615b;
-    font-size: 14px;
-    font-weight: 300;
-    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
-}
-
 a {
     color: #51bcda;
 }
@@ -2557,7 +2549,7 @@ textarea.form-control {
     font-weight: 600;
     margin: 5px 0px;
     padding: 20px 15px;
-    font-size: 14px;
+    font-size: 28px;
     color: #66615B;
     text-transform: uppercase;
 }
@@ -2575,7 +2567,7 @@ textarea.form-control {
 
 .navbar .nav-link p {
     margin: 0px 0px;
-    color: #9A9A9A !important;
+    color: white !important;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
@@ -2585,6 +2577,7 @@ textarea.form-control {
 
 .navbar .nav-link p:hover {
     color: #403D39 !important;
+    cursor: none;
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
@@ -2654,7 +2647,7 @@ textarea.form-control {
 }
 
 .navbar.navbar-transparent {
-    padding-top: 25px;
+    padding-top: 0px;
 }
 
 .navbar .logo-container {

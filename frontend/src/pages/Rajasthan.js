@@ -11,7 +11,7 @@ const RajasthanPage = () => {
   ]
 
   return (
-    <div>
+    <div className="bg-slate-700">
       <Navbar />
       <h2 className="text-center">Rajasthan</h2>
       <div
