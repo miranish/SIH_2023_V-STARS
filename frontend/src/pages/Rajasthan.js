@@ -3,17 +3,28 @@ import React from "react";
 import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
 import Navbar from "../components/Navbar";
+
+import CultureBG from "../assets/Rajasthan/culture_bg.png";
+import CultureFG from "../assets/Rajasthan/culture_fg.png";
+
+import MonumentsBG from "../assets/Rajasthan/Monument_BG.png";
+import MonumentsFG from "../assets/Rajasthan/Monument_FG.png";
+
+import festival_fg from "../assets/Rajasthan/Fest_FG.png";
+import festival_bg from "../assets/Rajasthan/Fest_BG.png";
+
 const RajasthanPage = () => {
   
-  const images = [
-    "https://c4.wallpaperflare.com/wallpaper/892/692/922/howl-s-moving-castle-studio-ghibli-fantasy-art-clouds-daylight-hd-wallpaper-preview.jpg",
-    "https://64.media.tumblr.com/5d6814b4bac11eab83e9e049b8226adb/tumblr_mnjfmwVtzZ1r49apoo1_500.png"
-  ]
+  const Culture_images = [CultureBG, CultureFG];
+
+  const Monuments_images = [MonumentsBG, MonumentsFG];
+
+  const Fest_images = [festival_bg, festival_fg];
 
   return (
     <div 
     style={{
-      backgroundColor: "#2F2A52",
+      background: "linear-gradient(to bottom, #F5C54E 10%, #FFDBA6 10%, #F7BB93 0%, #F2995E 0%, #f07560 0%, #FFAB93 80%)",
       height: "100vh"
     }}
     >
@@ -35,21 +46,21 @@ const RajasthanPage = () => {
 
       }}
       >
-      <ParallaxCard
-        images={images}
-        title="Culture"
-        subheading="Subheading"
-      />
-      <ParallaxCard
-        images={images}
-        title="Monuments"
-        subheading="Subheading"
-      />
-      <ParallaxCard
-        images={images}
-        title="Festivals"
-        subheading="Subheading"
-      />
+              <ParallaxCard
+          images={Culture_images}
+          title="Culture"
+          subheading="Subheading"
+        />
+        <ParallaxCard
+          images={Monuments_images}
+          title="Monuments"
+          subheading="Subheading"
+        />
+        <ParallaxCard
+          images={Fest_images}
+          title="Festivals"
+          subheading="Subheading"
+        />
         </div>
     </div>
   );

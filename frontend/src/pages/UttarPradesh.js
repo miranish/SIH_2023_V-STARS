@@ -22,7 +22,7 @@ const UttarPradeshPage = () => {
   return (
     <div
       style={{
-        backgroundColor: "#2F2A52",
+        background: "linear-gradient(to bottom, #F5C54E 10%, #FFDBA6 10%, #F7BB93 0%, #F2995E 0%, #f07560 0%, #FFAB93 80%)",
         height: "100vh",
       }}
     >
