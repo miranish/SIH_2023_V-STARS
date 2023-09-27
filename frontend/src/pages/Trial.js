@@ -6,10 +6,14 @@ import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import NavbarTop from "../components/NavbarTop";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // commented mountain #h2-6
 
 const Trial = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     let speed = 100;
@@ -230,6 +234,7 @@ const Trial = () => {
     <div
       className="trial-grandfatherContainer"
       style={{ backgroundColor: "orange" }}
+
     >
       <NavbarTop />
       <svg

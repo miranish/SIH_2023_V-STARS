@@ -3,7 +3,14 @@ import { MapContainer, Polygon, GeoJSON, Tooltip } from "react-leaflet";
 import data from "../IndianData/Indian_States.json";
 import "leaflet/dist/leaflet.css";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const IndiaMap = () => {
+  
+  useEffect(() => {
+    AOS.init();
+  }, [])
   // const [jsonData, setJsonData] = useState({});
   const currentStates = ["Rajasthan", "Tamil Nadu", "Uttar Pradesh"];
   // const [hoveredState, setHoveredState] = useState(null);
@@ -17,8 +24,8 @@ const IndiaMap = () => {
   }, []);
 
   return (
-    <div>
-      <MapContainer
+    <div data-aos="zoom-in">
+      <MapContainer 
         center={[22.5, 80]}
         zoom={4.5}
         style={{ height: "100vh", width: "100vw" }}

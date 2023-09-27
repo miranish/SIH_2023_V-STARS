@@ -35,7 +35,6 @@ function NavbarTop() {
                 rel="tooltip"
                 title="Explore India"
                 data-placement="bottom"
-                target="_blank"
               >
                 {/* <i class="fa fa-twitter"></i> */}
                 <p class="">Explore Map</p>

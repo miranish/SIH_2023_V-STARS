@@ -1,13 +1,20 @@
 import React from "react";
-
+import { useEffect } from "react";
 import "../styles/ActionCard.css";
 
 import Atropos from "atropos/react";
 import "atropos/css";
 
-const ParallaxCard = ({ images, title, subheading }) => {
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+const ParallaxCard = ({ images, title, subheading, delay }) => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
-    <div className="parallax-card">
+    <div className="parallax-card" data-aos="fade-up" data-aos-delay={50 * delay}>
       <Atropos
         // highlight={false}
         perspective={100}

@@ -47,16 +47,19 @@ const TamilNaduPage = () => {
           images={imagesCulture}
           title="Culture"
           subheading="Subheading"
+          delay={1}
         />
         <ParallaxCard
           images={imagesMonuments}
           title="Monuments"
           subheading="Subheading"
+          delay={2}
         />
         <ParallaxCard
           images={imagesFest}
           title="Festivals"
           subheading="Subheading"
+          delay={3}
         />
       </div>
     </div>

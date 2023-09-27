@@ -10,7 +10,7 @@ import CultureFG from "../assets/Rajasthan/culture_fg.png";
 import MonumentsBG from "../assets/Rajasthan/Monument_BG.png";
 import MonumentsFG from "../assets/Rajasthan/Monument_FG.png";
 
-import festival_fg from "../assets/Rajasthan/Fest_FG.png";
+import festival_fg from "../assets/Rajasthan/FEST_FG.png";
 import festival_bg from "../assets/Rajasthan/Fest_BG.png";
 
 const RajasthanPage = () => {
@@ -50,16 +50,19 @@ const RajasthanPage = () => {
           images={Culture_images}
           title="Culture"
           subheading="Subheading"
+          delay={1}
         />
         <ParallaxCard
           images={Monuments_images}
           title="Monuments"
           subheading="Subheading"
+          delay={2}
         />
         <ParallaxCard
           images={Fest_images}
           title="Festivals"
           subheading="Subheading"
+          delay={3}
         />
         </div>
     </div>
