@@ -34,12 +34,8 @@ const Home = () => {
       { y: 5 * speed, x: 30 * speed, scale: 1, ease: "power1.in" },
       0
     );
-    scene1.to(
-      "#h1-2",
-      { y: 2.6 * speed, x: 3 * speed, ease: "power1.in" },
-      0
-    );
-    scene1.to("#h1-3", { y: 1.7 * speed, x: 1.2 * speed }, 0.03);
+    scene1.to("#h1-2", { y: 2.6 * speed, x: -30 * speed, ease: "power1.in" }, 0);
+    scene1.to("#h1-3", { y: 1.7 * speed, x: -5 * speed }, 0.03);
     scene1.to("#h1-4", { y: 3 * speed, x: 1 * speed }, 0.03);
     scene1.to("#h1-5", { y: 2 * speed, x: 1 * speed }, 0.03);
     scene1.to("#h1-6", { y: 2.3 * speed, x: -2.5 * speed }, 0);
@@ -225,15 +221,39 @@ const Home = () => {
 
   return (
     <div>
-      <div className="parallax">
-        <img src={layer1} alt="Layer1" id="h1-1" className="layer1"/>
-        <img src={layer2} alt="Layer2" id="h1-2" className="layer2"/>
-        <img src={layer3} alt="Layer3" id="h1-3" className="layer3"/>
+      <div
+        style={{
+          backgroundImage: `url('${bg}')`,
+          height: "130vh",
+        }}
+        className="parallax"
+      >
+        <img src={layer1} alt="Layer1" id="h1-1" className="layer1" />
+        <img src={layer2} alt="Layer2" id="h1-2" className="layer2" />
+        <h2
+          style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "8rem",
+            color: "white",
+            position: "absolute",
+            width: "100%",
+            textAlign: "center",
+            top: "30%",
+            zIndex: 2
+          }}
+          id="info"
+        >
+          INDIAN HERITAGE
+        </h2>
+        <img src={layer3} alt="Layer3" id="h1-3" className="layer3" />
+        <img src={layer4} alt="Layer4" id="h1-4" className="layer4" />
       </div>
-      <div style={{
-        width: "100vw",
-        height: "100vh"
-      }} />
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+        }}
+      />
       <div className="scrollElement"></div>
     </div>
   );

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+
 .parallax-card {
   position: relative;
   width: 30%;
@@ -53,4 +55,97 @@
 .card-content p {
   font-size: 16px;
   margin: 0;
+}
+
+.index .hawa-mahal {
+  height: 278px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 203px;
+  width: 326px;
+}
+
+.index .text-wrapper {
+  color: #ffffff;
+  font-family: "Kelly Slab", Helvetica;
+  font-size: 36px;
+  font-weight: 400;
+  left: 72px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 436px;
+}
+
+.index .overlap-2 {
+  width: 350px;
+  height: 380px;
+  left: 15%;
+  position: relative;
+  /* top: 263px; */
+  justify-content: center;
+}
+
+.index .img {
+  height: 100%;
+  width: 80%;
+  background-color: #7F5539;
+  position: absolute;
+  border-radius: 10% 10% 10% 10% / 10% 10% 10% 10%;
+  -webkit-box-shadow: inset 14px 14px 50px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 14px 14px 50px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 14px 14px 50px -11px rgba(0, 0, 0, 0.75);
+}
+
+.index .img-inside {
+  height: 70%;
+  width: 70%;
+  top: 15%;
+  left: 5%;
+  position: absolute;
+  -webkit-filter: drop-shadow(10px 5px 5px #222);
+  filter: drop-shadow(10px 5px 5px #222);
+}
+.index .img-inside1 {
+  height: 50%;
+  width: 60%;
+  top: 20%;
+  left: 10%;
+  position: absolute;
+  -webkit-filter: drop-shadow(10px 5px 5px #222);
+  filter: drop-shadow(10px 5px 5px #222);
+}
+
+.index .camel {
+  height: 244px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 174px;
+  width: 346px;
+}
+
+.index .text-wrapper{
+  width: 80%;
+  left: 0;
+  color: #ffffff;
+  font-family: "Kelly Slab", Helvetica;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 85%;
+}
+
+.text-wrapper{
+  content: "";
+  position: relative;
+  border: #fff 2px solid;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }
