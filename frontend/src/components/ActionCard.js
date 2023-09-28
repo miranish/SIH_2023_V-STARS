@@ -20,13 +20,11 @@ const ParallaxCard = ({ images, title, subheading, delay }) => {
         perspective={100}
         staticOffset={50}
         activeOffset={50}
-        touchMultiplier={2}
-        gatherInertia={true}
+        touchmultiplier="2"
+        gatherinertia="true"
         shadow={false}
       >
         {images.map((image, index) => {
-          const totalLayer = images.length;
-          console.log(`- ${totalLayer - index}`);
           return (
             <img
               className={index > 0 ? "img1" : "img2"}

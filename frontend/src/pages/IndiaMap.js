@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, Polygon, GeoJSON, Tooltip } from "react-leaflet";
-import data from "../IndianData/Indian_States.json";
+import data from "../IndianData/UpdateIndiaGeo.json";
 import "leaflet/dist/leaflet.css";
 
 import AOS from 'aos';
@@ -32,20 +32,25 @@ const IndiaMap = () => {
       >
         <GeoJSON
           data={data}
-          // onEachFeature={(feature, layer) => {
-          //   layer.on("click", () => {
-          //     const stateName = feature.properties.NAME_1;
-          //     console.log(stateName);
-          //     // window.location.href = `/state-link/${stateName}`;
-          //   });
+          onEachFeature={(feature, layer) => {
+            layer.on("click", () => {
+              const stateName = feature.properties.ST_NM.split(" ")
+              .join("")
+              .toLowerCase();
+              for (const name in currentStates) {
+                if (feature.properties.ST_NM === currentStates[name]) {
+                  window.location.href = `/state-link/${stateName}`;
+                }
+              }
+            });
             // Add mouseover and mouseout event handlers
             // layer.on({
             //   mouseover: () => setHoveredState(feature.properties.NAME_1),
             //   mouseout: () => setHoveredState(null),
             // });
-          // }}
+          }}
         />
-
+{/* 
         {data.features.map((state, index) => {
           for (let i = 0; i < currentStates.length; i++) {
             if (state.properties.NAME_1 === currentStates[i]) {
@@ -77,7 +82,7 @@ const IndiaMap = () => {
                   positions={coordinates}
                   eventHandlers={{
                     click: (e) => {
-                      const stateName = state.properties.NAME_1.split(" ")
+                      const stateName = state.properties.ST_NM.split(" ")
                         .join("")
                         .toLowerCase();
                       console.log("Clicked " + stateName);
@@ -85,15 +90,17 @@ const IndiaMap = () => {
                     },
                   }}
                 >
-                  {/* Add Tooltip for hover effect */}
-                  {/* {hoveredState === state.properties.NAME_1 && (
-                    )} */}
-                    <Tooltip>{state.properties.NAME_1}</Tooltip>
+                  /* Add Tooltip for hover effect */
+                  /* {hoveredState === state.properties.NAME_1 && (
+                    )} 
+                    <Tooltip>{state.properties.ST_NM}</Tooltip>
                 </Polygon>
               );
             }
           }
         })}
+
+                  */}
       </MapContainer>
     </div>
   );

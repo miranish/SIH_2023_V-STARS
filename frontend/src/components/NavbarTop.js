@@ -21,20 +21,21 @@ function NavbarTop() {
             <span class="navbar-toggler-bar"></span>
             <span class="navbar-toggler-bar"></span>
           </button>
-          <a class="navbar-brand" href="https://www.example.com">
+          <a class="navbar-brand" href="/">
             Bharat
           </a>
         </div>
         <div class="collapse navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"
-            onClick={() => window.location.href = "/india"}
+            // onClick={() => window.location.href = "/india"}
             >
               <a
                 class="nav-link"
                 rel="tooltip"
                 title="Explore India"
                 data-placement="bottom"
+                href="/india"
               >
                 {/* <i class="fa fa-twitter"></i> */}
                 <p class="">Explore Map</p>

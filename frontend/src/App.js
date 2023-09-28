@@ -27,9 +27,9 @@ const App = () => {
 
   return (
     <Routes>
-      {/* <Route exact path="/" index element={<Home />} /> */}
+      <Route exact path="/" index element={<Home />} />
       <Route path="/india" element={<IndiaMap />} />
-      <Route  path="/" index element={<Trial />} />
+      {/* <Route  path="/" index element={<Trial />} /> */}
       <Route path="/navbar" element={<Navbar />} />
 
       {/* Mapping states for code clarity */}

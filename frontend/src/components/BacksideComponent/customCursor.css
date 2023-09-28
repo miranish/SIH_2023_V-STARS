@@ -13,7 +13,7 @@
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  border: 1px solid white;
+  border: 1px solid black;
   transition: all 200ms ease-out;
   position: fixed;
   pointer-events: none;
@@ -27,7 +27,7 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: whitesmoke;
+  background-color: black;
   opacity: .8;
   position: fixed;
   transform: translate(-50%, -50%);
