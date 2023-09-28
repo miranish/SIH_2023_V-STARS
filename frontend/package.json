@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
     "atropos": "^2.0.2",
     "fs-extra": "^11.1.1",
     "gsap": "^3.12.2",
@@ -47,7 +48,12 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "aos": "^2.3.4",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^4.2.1",
+    "atropos": "^2.0.2"
+
   },
   "browser": {
     "fs": false,
