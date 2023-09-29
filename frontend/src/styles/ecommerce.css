@@ -34,22 +34,22 @@
     background-color: #dec9e9;
     border-radius: 58.5px;
     box-shadow: inset -12px -3px 10px #00000059;
-    height: 117px;
-    /* left: 116px; */
+    height: 100px;
     position: absolute;
-    /* top: 10px; */
-    width: 117px;
+    width: 100px;
+    top: 10px;
+    left: 1000px;
   }
   
   .desktop .ellipse-2 {
     background-color: #dec9e9;
     border-radius: 68px;
     box-shadow: inset -12px 3px 10px #00000059;
-    height: 136px;
-    /* left: 264px; */
+    height: 120px;
     position: absolute;
-    /* top: 0; */
-    width: 136px;
+    width: 120px;
+    top: 10px;
+    right: -750px;
   }
   
   .desktop .text-wrapper {
@@ -64,8 +64,8 @@
     text-align: center;
     white-space: nowrap;
     width: 350px;
-    /* top: 56px;
-    left: 0; */
+    top: 45px;
+    left: 875px;
   }
   
   .desktop .text-wrapper-2 {
@@ -80,8 +80,8 @@
     text-align: center;
     white-space: nowrap;
     width: 350px;
-    /* left: 157px;
-    top: 56px; */
+    left: 1025px;
+    top: 56px; 
   }
   
   .desktop .overlap-group {

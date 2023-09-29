@@ -1,0 +1,64 @@
+.box {
+    height: 20%;
+    position: relative;
+    width: 20%;
+}
+
+.box .clothes {
+    height: 463px;
+    left: 0;
+    top: 0;
+    width: 267px;
+}
+
+.box .overlap-group {
+    background-color: #b56576;
+    border-radius: 30px;
+    box-shadow: inset 0px 4px 4px #00000040;
+    height: 250px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 160px;
+}
+
+.box .img {
+    height: 315px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 75px;
+    width: 264px;
+}
+
+.box .overlap {
+    height: 64px;
+    left: 13px;
+    position: absolute;
+    top: 398px;
+    width: 240px;
+}
+
+.box .rectangle {
+    background-color: #b56576;
+    border-radius: 20px;
+    height: 44px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 160px;
+}
+
+.box .text-wrapper {
+    color: #ffffff;
+    font-family: "Gilda Display-Regular", Helvetica;
+    font-size: 25px;
+    font-weight: 400;
+    height: 58px;
+    left: 66px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 6px;
+}
