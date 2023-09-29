@@ -24,13 +24,13 @@ const IndiaMap = () => {
     const map = mapRef.current;
     if (map) {
       // Fade out the map
-      
+
       map.getPane("mapPane").style.transition = "opacity 1s ease-in-out";
       map.getPane("mapPane").style.opacity = 0;
       setTimeout(() => {
         // Fly to the new bounds
         map.flyToBounds(centerCoords, { duration: 1 });
-  
+
         // Restore opacity after the fly animation
         setTimeout(() => {
           map.getPane("mapPane").style.opacity = 1;
@@ -40,7 +40,7 @@ const IndiaMap = () => {
     }
     setTimeout(() => {
       window.location.href = `/state-link/${stateName}`;
-    }, 1200); 
+    }, 1200);
   };
 
   return (
@@ -103,6 +103,33 @@ const IndiaMap = () => {
           }
         })}
       </MapContainer>
+      <div
+        style={{
+          position: "absolute",
+          width: "210px",
+          height: "fit-content",
+          top: "20px",
+          right: "20px",
+          background: "#bbcce4",
+          padding: "5px 15px",
+          paddingTop: "-10px",
+          borderRadius: "25px",
+          // opacity: "0.5",
+        }}
+      >
+        <h4
+          style={{
+            paddingBottom: "5px",
+            marginTop: "10px",
+          }}
+        >
+          Working States
+        </h4>
+        {/* <br /> */}
+        <p>Rajasthan</p>
+        <p>Uttar Pradesh</p>
+        <p>Tamil Nadu</p>
+      </div>
     </div>
   );
 };
