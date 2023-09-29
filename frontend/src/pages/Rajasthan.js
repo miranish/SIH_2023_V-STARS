@@ -12,12 +12,16 @@ import CultureFG from "../assets/Rajasthan/puppet-dolls.png";
 import festival_fg from "../assets/Rajasthan/camel.png";
 
 import "../styles/Rajasthan.css";
+import ParallaxCardFirst from "../components/First";
+import ParallaxCardSecond from "../components/Second";
+import ParallaxCardThird from "../components/Third";
+import NavbarTop from "../components/NavbarTop";
 
 const RajasthanPage = () => {
   return (
     <div className="index">
+      <NavbarTop />
       <div className="div">
-
         {/* <Navbar /> */}
         <div
           style={{
@@ -30,19 +34,20 @@ const RajasthanPage = () => {
           }}
           className="card-container"
         >
-          <ParallaxCard
+          {/* <ParallaxCard */}
+          <ParallaxCardFirst
             images={CultureFG}
             title="Culture"
             subheading="Subheading"
             delay={1}
           />
-          <ParallaxCard
+          <ParallaxCardSecond
             images={MonumentsFG}
             title="Monuments"
             subheading="Subheading"
             delay={2}
           />
-          <ParallaxCard
+          <ParallaxCardThird
             images={festival_fg}
             title="Festivals"
             subheading="Subheading"

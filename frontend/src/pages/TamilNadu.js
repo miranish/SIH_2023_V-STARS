@@ -12,10 +12,12 @@ import CultureFG from "../assets/TamilNadu/tnArtculture.png";
 import festival_fg from "../assets/TamilNadu/tnfestival.png";
 
 import "../styles/Rajasthan.css";
+import NavbarTop from "../components/NavbarTop";
 
 const TamilNaduPage = () => {
   return (
     <div className="index">
+      <NavbarTop />
       <div className="div">
         {/* <Navbar /> */}
         <div

@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import "../styles/ActionCard.css";
+import "../styles/first.css";
 
 import Atropos from "atropos/react";
 import "atropos/css";
@@ -8,7 +8,7 @@ import "atropos/css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const ParallaxCard = ({ images, title, subheading, delay }) => {
+const ParallaxCardFourth = ({ images, title, subheading, delay }) => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -31,7 +31,7 @@ const ParallaxCard = ({ images, title, subheading, delay }) => {
           /> */}
           <div className="img" data-atropos-offset={"-2"}></div>
           <img
-            className={"img-inside"}
+            className={"img-inside-fourth"}
             src={images}
             alt={`Layer 2`}
             data-atropos-offset={"0"}
@@ -43,4 +43,4 @@ const ParallaxCard = ({ images, title, subheading, delay }) => {
   );
 };
 
-export default ParallaxCard;
+export default ParallaxCardFourth;

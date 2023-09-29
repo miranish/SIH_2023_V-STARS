@@ -12,10 +12,13 @@ import CultureFG from "../assets/UP/upculture.png";
 import festival_fg from "../assets/UP/upfestival.png";
 
 import "../styles/Rajasthan.css";
+import ParallaxCardFourth from "../components/Fourth";
+import NavbarTop from "../components/NavbarTop";
 
 const UttarPradeshPage = () => {
   return (
     <div className="index">
+      <NavbarTop />
       <div className="div">
         {/* <Navbar /> */}
         <div
@@ -35,7 +38,7 @@ const UttarPradeshPage = () => {
             subheading="Subheading"
             delay={1}
           />
-          <ParallaxCard
+          <ParallaxCardFourth
             images={MonumentsFG}
             title="Monuments"
             subheading="Subheading"
