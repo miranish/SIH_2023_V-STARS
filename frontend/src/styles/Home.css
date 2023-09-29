@@ -1,45 +1,125 @@
-.parallax-div{
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+
+
+* {
     margin: 0;
-    top: 0%;
-    left: 0%;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-.bg{
-    position: absolute;
-    width: 100%;
+
+#heading {
+    width: fit-content;
     height: 100%;
-    /* top: -60%; */
-    left: 0;
 }
 
-.layer1{
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section::before {
+    content: ' ';
     position: absolute;
     bottom: 0;
-    right: -2px;
-    width: 85%;
-    z-index: 3;
-}
-.layer2{
-    position: absolute;
-    bottom: 0;
-    left: -2px;
-    width: 50%;
-    z-index: 2;
-}
-.layer3{
-    position: absolute;
-    top: 125px;
-    left: 215px;
-    width: 45%;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #fff, transparent);
     z-index: 1;
 }
 
-.layer4{
+.section img {
     position: absolute;
-    top: 30px;
-    right: 80px;
-    width: 55%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.section img#man {
+    transform-origin: bottom;
+}
+
+
+#text {
+    position: absolute;
+    color: #fff;
+    font-size: 9vw;
+    left: 12%;
+    /* filter: blur(10px); */
     z-index: 0;
+}
+
+
+#text::after {
+    content: "INDIAN HERITAGE";
+    position: absolute;
+    font-size: 9vw;
+    width: 100%;
+    left: 5px;
+    top: -5px;
+    color: rgb(22, 22, 22);
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.sec {
+    position: relative;
+    padding: 100px;
+}
+
+.sec h2 {
+    font-size: 5em;
+    margin-bottom: 10px;
+    color: cornflowerblue;
+}
+
+.sec p {
+    font-size: 2em;
+    color: cornflowerblue;
+}
+
+#man {
+    width: 35%;
+    left: 33%;
+    top: 20px;
+}
+
+#mountain_left {
+    /* top: ;  */
+    width: 50%;
+}
+
+/* #mountain_right {
+    top: ; 
+    /* width: 80%; 
+} */
+
+#text {
+    top: -2px;
+}
+
+#para {
+    text-align: justify;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    top: 660px;
+    left: 51%;
+    color: black;
+    /* filter: drop-shadow(2px 2px 2px); */
+    z-index: 3 !important;
 }

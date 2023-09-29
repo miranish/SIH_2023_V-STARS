@@ -17,15 +17,7 @@ const RajasthanPage = () => {
   return (
     <div className="index">
       <div className="div">
-        <h2
-          style={{
-            color: "white",
-            padding: "10px",
-          }}
-          className="text-center "
-        >
-          Rajasthan
-        </h2>
+
         {/* <Navbar /> */}
         <div
           style={{
@@ -33,7 +25,7 @@ const RajasthanPage = () => {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
-            margin: "auto",
+            // margin: "auto",
             marginTop: "35px",
           }}
           className="card-container"
@@ -57,6 +49,15 @@ const RajasthanPage = () => {
             delay={3}
           />
         </div>
+        <h2
+          style={{
+            color: "black",
+            padding: "10px",
+          }}
+          className="text-center state-title"
+        >
+          Rajasthan
+        </h2>
       </div>
     </div>
   );
