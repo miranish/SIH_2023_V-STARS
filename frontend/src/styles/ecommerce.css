@@ -30,15 +30,15 @@
     width: 507px;
   }
   
-  .desktop .ellipse {
+  /* .desktop .ellipse {
     background-color: #dec9e9;
     border-radius: 58.5px;
     box-shadow: inset -12px -3px 10px #00000059;
     height: 100px;
     position: absolute;
     width: 100px;
-    top: 10px;
-    left: 1000px;
+    top: 24px;
+    left: 1600px;
   }
   
   .desktop .ellipse-2 {
@@ -49,8 +49,8 @@
     position: absolute;
     width: 120px;
     top: 10px;
-    right: -750px;
-  }
+    right: -1370px;
+  } */
   
   .desktop .text-wrapper {
     color: #000000;
@@ -64,8 +64,8 @@
     text-align: center;
     white-space: nowrap;
     width: 350px;
-    top: 45px;
-    left: 875px;
+    top: 55px;
+    left: 1475px;
   }
   
   .desktop .text-wrapper-2 {
@@ -80,7 +80,7 @@
     text-align: center;
     white-space: nowrap;
     width: 350px;
-    left: 1025px;
+    left: 1645px;
     top: 56px; 
   }
   
@@ -88,11 +88,39 @@
     height: 75px;
     position: absolute;
     width: 350px;
+    top: 30px;
+    left: 30px;
     /* left: -27px;
     top: 45px; */
   }
   
   .desktop .rectangle {
+    background-color: #ffcf70;
+    border-radius: 20px;
+    box-shadow: -10px 12px 20px #00000057;
+    height: 60px;
+    position: absolute;
+    width: 180px;
+    margin: 10px;
+    /* left: 66px;
+    top: 0; */
+  }
+  .desktop .rectangle2 {
+    background-color: #ffcf70;
+    border-radius: 20px;
+    box-shadow: -10px 12px 20px #00000057;
+    height: 60px;
+    position: absolute;
+    width: 180px;
+    margin: 10px;
+    left: 1700px;
+    top:50px;
+
+    /* left: 66px;
+    top: 0; */
+  }
+  
+  .desktop .rectangle3 {
     background-color: #ffcf70;
     border-radius: 20px;
     box-shadow: -10px 12px 20px #00000057;
@@ -123,12 +151,12 @@
   
   .desktop .div-wrapper {
     background-color: #aed9e0;
-    border-radius: 50px;
-    box-shadow: inset 20px -12px 10px #00000040;
+    border-radius: 30px;
+    box-shadow: inset 20px -12px 25px #00000040;
     height: 100px;
     position: absolute;
-    width: 500px;
-    top: 5%;
+    width: 650px;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, 50%);
   }

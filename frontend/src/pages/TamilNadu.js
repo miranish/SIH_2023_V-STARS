@@ -2,8 +2,7 @@
 import React from "react";
 import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
-import "../styles/Navbar.css";
-import Navbar from "../components/Navbar";
+
 
 import MonumentsFG from "../assets/TamilNadu/tamilnadutemple.png";
 

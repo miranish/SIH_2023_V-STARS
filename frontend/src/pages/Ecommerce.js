@@ -7,8 +7,8 @@ export const Ecommerce = () => {
     <div className="desktop">
       <div className="div">
         <div className="overlap">
-          <div className="ellipse" />
-          <div className="ellipse-2" />
+          <div className="rectangle2" />
+          <div className="rectangle3" />
           <div className="text-wrapper">Home</div>
           <div className="text-wrapper-2">About Us</div>
         </div>
