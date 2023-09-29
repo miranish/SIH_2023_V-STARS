@@ -13,7 +13,7 @@
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  border: 1px solid black;
+  border: 2px solid black;
   transition: all 200ms ease-out;
   position: fixed;
   pointer-events: none;
@@ -33,6 +33,7 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: width .3s, height .3s, opacity .3s;
+  
 }
 
 .hover {

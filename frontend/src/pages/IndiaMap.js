@@ -17,27 +17,30 @@ const IndiaMap = () => {
   }, []);
 
   // Define a function to handle zoom and load data
-  const handleStateClick = (state) => {
-    const stateName = state.properties.NAME_1.split(" ").join("").toLowerCase();
+  const handleStateClick = async (state, centerCoords) => {
+    const stateName = state.properties.ST_NM.split(" ").join("").toLowerCase();
     console.log("Clicked " + stateName);
 
-    // Zoom to the clicked state
     const map = mapRef.current;
     if (map) {
-      map.flyToBounds(state.getBounds(), { duration: 1.5 });
+      // Fade out the map
+      
+      map.getPane("mapPane").style.transition = "opacity 1s ease-in-out";
+      map.getPane("mapPane").style.opacity = 0;
+      setTimeout(() => {
+        // Fly to the new bounds
+        map.flyToBounds(centerCoords, { duration: 1 });
+  
+        // Restore opacity after the fly animation
+        setTimeout(() => {
+          map.getPane("mapPane").style.opacity = 1;
+          map.getPane("mapPane").style.transition = "none";
+        }, 1500);
+      }, 200);
     }
-
-    // Load data for the clicked state (replace with your data-loading logic)
-    // Example: Fetch data from an API
-    // fetch(`/api/state-data/${stateName}`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log("Loaded data for state:", stateName, data);
-    //     // Handle data accordingly
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error loading data:", error);
-    //   });
+    setTimeout(() => {
+      window.location.href = `/state-link/${stateName}`;
+    }, 1200); 
   };
 
   return (
@@ -47,12 +50,19 @@ const IndiaMap = () => {
         center={[22.5, 80]}
         zoom={4.5}
         style={{ height: "100vh", width: "100vw" }}
+        scrollWheelZoom={false}
       >
         <GeoJSON
           data={data}
           onEachFeature={(feature, layer) => {
             layer.on("click", () => {
-              handleStateClick(feature);
+              const bounds = layer.getBounds();
+              handleStateClick(feature, bounds);
+            });
+            layer.bindTooltip(feature.properties.ST_NM, {
+              permanent: false,
+              direction: "center",
+              opacity: 0.7,
             });
           }}
         />

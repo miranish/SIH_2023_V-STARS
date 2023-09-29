@@ -1,16 +1,18 @@
 // src/components/LandingPage.js
 import "../styles/Home.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clouds_1 from "../assets/HomePage/clouds_1.png";
 import clouds_2 from "../assets/HomePage/clouds_2.png";
 import bg from "../assets/HomePage/full.png";
 import fg from "../assets/HomePage/man2.png";
+import NavbarTop from "../components/NavbarTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
+  const navRef = useRef(null);
   useEffect(() => {
     gsap.to("#bg", {
       scrollTrigger: {
@@ -62,6 +64,7 @@ const Home = () => {
       }
     );
 
+
     gsap.to(".arrow", {
       // y: 50,
       opacity: 0,
@@ -72,6 +75,24 @@ const Home = () => {
         scrub: true,
       },
     });
+
+    gsap.fromTo(
+      navRef.current, // Use the ref for the navigation bar
+      {
+        opacity: 0,
+        visibility: "hidden"
+      },
+      {
+        opacity: 1, 
+        visibility: "visible",
+        scrollTrigger: {
+          trigger: "#heading",
+          start: "top center",
+          end: "+=200", 
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
 
     // Add other GSAP animations here
   }, []);
@@ -86,6 +107,7 @@ const Home = () => {
         <img src={clouds_2} alt="cloud2" id="cloud2" />
       </section>
       <div class="arrow">↓</div>
+      <NavbarTop id="nav" ref={navRef} />
       <div class="sec">
         <h2 id="heading">About India!</h2>
         <br />
