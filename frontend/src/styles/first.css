@@ -102,8 +102,8 @@
 .index .img-inside-first {
   height: 70%;
   width: 70%;
-  top: -7%;
-  left: 5%;
+  /* top: -7%;
+  left: 5%; */
   position: absolute;
   -webkit-filter: drop-shadow(10px 5px 5px #222);
   filter: drop-shadow(10px 5px 5px #222);
@@ -139,43 +139,4 @@
   position: absolute;
   text-align: center;
   top: 85%;
-}
-
-.text-wrapper-first{
-  content: "";
-  position: relative;
-  border: #fff 2px solid;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-}
-
-.index .img-inside-second {
-  height: 87%;
-  width: 87%;
-  top: 24%;
-  left: -7%;
-  position: absolute;
-  -webkit-filter: drop-shadow(10px 5px 5px #222);
-  filter: drop-shadow(10px 5px 5px #222);
-}
-
-.index .img-inside-third {
-  height: 57%;
-  width: 90%;
-  top: 29%;
-  left: -4%;
-  position: absolute;
-  -webkit-filter: drop-shadow(10px 5px 5px #222);
-  filter: drop-shadow(10px 5px 5px #222);
-}
-
-.index .img-inside-fourth {
-  height: 81%;
-  width: 100%;
-  top: 20%;
-  left: -11%;
-  position: absolute;
-  -webkit-filter: drop-shadow(10px 5px 5px #222);
-  filter: drop-shadow(10px 5px 5px #222);
 }

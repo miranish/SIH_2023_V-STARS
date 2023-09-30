@@ -13,15 +13,18 @@
 }
 
 .index .div {
-    background-color: #ddb892;
     height: 80dvh;
     position: relative;
-    width: 15dvw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .state-title{
     font-family: 'Inknut Antiqua', serif;
-    width: 200%;
+    width: 100%;
+    bottom: -5%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

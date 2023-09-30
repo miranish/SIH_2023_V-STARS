@@ -8,12 +8,27 @@ import "atropos/css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const ParallaxCard = ({ images, title, subheading, delay, url }) => {
+const ParallaxCard = ({
+  images,
+  title,
+  subheading,
+  delay,
+  url,
+  bgColor = "",
+  topPx,
+  leftPx,
+  heightSize,
+  widthSize
+}) => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <div data-aos="fade-up" data-aos-delay={50 * delay} onClick={() =>window.location.href = url}>
+    <div
+      data-aos="fade-up"
+      data-aos-delay={50 * delay}
+      onClick={() => (window.location.href = url)}
+    >
       <Atropos
         // highlight={false}
         perspective={100}
@@ -29,8 +44,20 @@ const ParallaxCard = ({ images, title, subheading, delay, url }) => {
             src={Card_BG}
             alt={`Layer 1`}
           /> */}
-          <div className="img" data-atropos-offset={"-2"}></div>
+          <div
+            className="img"
+            data-atropos-offset={"-2"}
+            style={{
+              backgroundColor: bgColor,
+            }}
+          ></div>
           <img
+            style={{
+              top: topPx,
+              left: leftPx,
+              height: heightSize,
+              width: widthSize
+            }}
             className={"img-inside"}
             src={images}
             alt={`Layer 2`}

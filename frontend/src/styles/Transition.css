@@ -1,0 +1,50 @@
+.mainTransition{
+    transition: all 1s linear;
+}
+
+.flag-1{
+    animation-name: moveRight;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.flag-2{
+    animation-name: moveLeft;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.flag-3{
+    animation-name: moveRightDown;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes moveRight {
+    40%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(100%, -50%);
+    }
+}
+
+@keyframes moveRightDown {
+    40%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(100%, 50%);
+    }
+}
+
+@keyframes moveLeft {
+    40%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(-100%, -50%);
+    }
+}

@@ -10,17 +10,31 @@ import CultureFG from "../assets/UP/upculture.png";
 import festival_fg from "../assets/UP/upfestival.png";
 
 import "../styles/Rajasthan.css";
-import ParallaxCardFourth from "../components/Fourth";
+
 import NavB from "../components/NavB";
 // import NavbarTop from "../components/NavbarTop";
 
+import bg_image from "../assets/UP/Up_bg.png"
+import { OutroTransition } from "../components/Transition";
+
 const UttarPradeshPage = () => {
   return (
-    <div>
+    <div
+
+    >
       <NavB/>
-    <div className="index">
+      <OutroTransition />
+    <div className="index"
+        style={{
+          background: `url('${bg_image}')`,
+          height: "100vh",
+          width: "100%",
+          backgroundRepeat: "repeat",
+          backgroundSize: "cover",
+        }}
+    >
       
-      <div className="div">
+      <div className="div up">
         {/* <Navbar /> */}
         <div
           style={{
@@ -37,18 +51,25 @@ const UttarPradeshPage = () => {
             title="Culture"
             subheading="Subheading"
             delay={1}
-          />
-          <ParallaxCardFourth
+            bgColor="#718355"
+            />
+          <ParallaxCard
             images={MonumentsFG}
             title="Monuments"
             subheading="Subheading"
             delay={2}
-          />
+            bgColor="#718355"
+            topPx={"20%"}
+            leftPx={"-11%"}
+            heightSize={"81%"}
+            widthSize={"100%"}
+            />
           <ParallaxCard
             images={festival_fg}
             title="Festivals"
             subheading="Subheading"
             delay={3}
+            bgColor="#718355"
           />
         </div>
         <h2
