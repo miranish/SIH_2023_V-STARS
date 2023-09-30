@@ -64,7 +64,6 @@ const Home = () => {
       }
     );
 
-
     gsap.to(".arrow", {
       // y: 50,
       opacity: 0,
@@ -80,15 +79,15 @@ const Home = () => {
       navRef.current, // Use the ref for the navigation bar
       {
         opacity: 0,
-        visibility: "hidden"
+        visibility: "hidden",
       },
       {
-        opacity: 1, 
+        opacity: 1,
         visibility: "visible",
         scrollTrigger: {
           trigger: "#heading",
           start: "top center",
-          end: "+=200", 
+          end: "+=200",
           toggleActions: "play none none reverse",
         },
       }
@@ -106,7 +105,39 @@ const Home = () => {
         <img src={clouds_1} alt="cloud1" id="cloud1" />
         <img src={clouds_2} alt="cloud2" id="cloud2" />
       </section>
-      <div class="arrow">↓</div>
+      {/* <div class="arrow">↓</div> */}
+      <svg
+        className="arrow"
+        width="40px"
+        height="80px"
+        viewBox="0 0 247 390"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        style={{
+          fillRule: "evenodd",
+          clipRule: "evenodd",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          strokeMiterlimit: "1.5",
+        }}
+      >
+        <path
+          id="wheel"
+          d="M123.359,79.775l0,72.843"
+          style={{ fill: "none", stroke: "#000000", strokeWidth: "20px" }}
+        />
+        <path
+          id="mouse"
+          d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
+          style={{
+            fill: "none",
+            stroke: "#000000",
+            strokeWidth: "20px",
+          }}
+        />
+      </svg>
+      {/* <p>Scroll down</p> */}
       <NavbarTop id="nav" ref={navRef} />
       <div class="sec">
         <h2 id="heading">About India!</h2>

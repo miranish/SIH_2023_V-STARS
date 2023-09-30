@@ -9,11 +9,23 @@
     position: "fixed";
     top: 31px;
 }
+.frame-card {
+    height: 120%;
+    width: 15%;
+    background-color: "#b56576";
+    border-radius: 30px;
+    box-shadow: inset 0px 4px 4px #00000040;
+    height: 280px;
+    left: 3vw;
+    position: "fixed";
+    top: 31px;
+}
 
 .frame-card .clothes2 {
     height: 463px;
     left: 0;
     top: 0;
+    width: 80%;
     width: 80%;
 }
 
@@ -55,6 +67,7 @@
     color: #ffffff;
     font-family: "Gilda Display-Regular", Helvetica;
     font-size: 18px;
+    font-size: 18px;
     font-weight: 400;
     text-align: center;
     position: relative;
@@ -62,4 +75,3 @@
     height: 100%;
     width: 100%;
 }
-

@@ -117,9 +117,23 @@
     position: absolute;
     font-size: 2rem;
     font-weight: bold;
-    top: 660px;
+    bottom: 10px;
     left: 51%;
     color: black;
     /* filter: drop-shadow(2px 2px 2px); */
     z-index: 3 !important;
+}
+
+
+@keyframes scroll {
+	0% {
+		transform: translateY(0);
+	}
+	30% {
+		transform: translateY(100px);
+	}
+}
+
+svg #wheel {
+	animation: scroll ease 1.5s infinite;
 }

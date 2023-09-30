@@ -8,12 +8,12 @@ import "atropos/css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const ParallaxCard = ({ images, title, subheading, delay }) => {
+const ParallaxCard = ({ images, title, subheading, delay, url }) => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <div data-aos="fade-up" data-aos-delay={50 * delay}>
+    <div data-aos="fade-up" data-aos-delay={50 * delay} onClick={() =>window.location.href = url}>
       <Atropos
         // highlight={false}
         perspective={100}

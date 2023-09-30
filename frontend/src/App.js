@@ -12,6 +12,7 @@ import RajasthanPage from "./pages/Rajasthan";
 import Trial from "./pages/Trial";
 import Navbar from "./components/Navbar";
 import { Ecommerce } from "./pages/Ecommerce";
+import CulturePage from "./pages/Culture";
 
 const App = () => {
   const StatesUrlData = [
@@ -30,8 +31,9 @@ const App = () => {
     <Routes>
       <Route exact path="/" index element={<Home />} />
       <Route path="/india" element={<IndiaMap />} />
-      {/* <Route  path="/" index element={<Trial />} /> */}
       <Route path="/trade" element={<Ecommerce />} />
+      
+      <Route path="/culture" element={<CulturePage />} />
 
       {/* Mapping states for code clarity */}
       {StatesUrlData.map((state, index) => {

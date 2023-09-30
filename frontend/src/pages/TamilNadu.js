@@ -35,6 +35,7 @@ const TamilNaduPage = () => {
             title="Culture"
             subheading="Subheading"
             delay={1}
+            url={"/culture?state=tamilnadu"}
           />
           <ParallaxCard
             images={MonumentsFG}
