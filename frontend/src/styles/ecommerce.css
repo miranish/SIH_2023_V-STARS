@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+
 .desktop {
     background-color: #ffe5d9;
     display: flex;
@@ -7,8 +9,8 @@
   }
   
   .desktop .div {
-    background-color: #ffe5d9;
-    height: 100dvh;
+    background-image:url("../assets/ecom/ecombg.jpg");
+    height: 100vh;
     overflow-x: hidden;
     position: relative;
     width: 100dvw;
@@ -23,11 +25,14 @@
   }
   
   .desktop .overlap {
-    height: 136px;
+    height:100px;
     /* left: 1608px; */
     position: absolute;
     /* top: 7px; */
-    width: 507px;
+    width: 100dvw;
+    margin-top:20px;
+    
+
   }
   
   /* .desktop .ellipse {
@@ -52,10 +57,10 @@
     right: -1370px;
   } */
   
-  .desktop .text-wrapper {
+  .desktop .text-wrap{
     color: #000000;
     font-family: "Gilda Display-Regular", Helvetica;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     height: 23px;
     letter-spacing: 0;
@@ -63,15 +68,16 @@
     position: absolute;
     text-align: center;
     white-space: nowrap;
-    width: 350px;
-    top: 55px;
-    left: 1475px;
+    right: 0;
+    margin-right: 249px;
+    margin-top: 18px;
+
   }
   
   .desktop .text-wrapper-2 {
     color: #000000;
     font-family: "Gilda Display-Regular", Helvetica;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     height: 23px;
     letter-spacing: 0;
@@ -79,9 +85,10 @@
     position: absolute;
     text-align: center;
     white-space: nowrap;
-    width: 350px;
-    left: 1645px;
-    top: 56px; 
+    right: 0;
+    margin-right: 56px;
+    margin-top: 19px;
+
   }
   
   .desktop .overlap-group {
@@ -98,10 +105,12 @@
     background-color: #ffcf70;
     border-radius: 20px;
     box-shadow: -10px 12px 20px #00000057;
-    height: 60px;
+    height: 58px;
     position: absolute;
-    width: 180px;
-    margin: 10px;
+    width: 202px;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 30px;
     /* left: 66px;
     top: 0; */
   }
@@ -109,25 +118,25 @@
     background-color: #ffcf70;
     border-radius: 20px;
     box-shadow: -10px 12px 20px #00000057;
-    height: 60px;
+    height: 41px;
     position: absolute;
-    width: 180px;
+    width: 140px;
     margin: 10px;
-    left: 1700px;
-    top:50px;
-
-    /* left: 66px;
-    top: 0; */
+    right: 0;
+    margin-right: 30px;
   }
   
   .desktop .rectangle3 {
     background-color: #ffcf70;
     border-radius: 20px;
     box-shadow: -10px 12px 20px #00000057;
-    height: 60px;
+    height: 41px;
     position: absolute;
-    width: 180px;
+    width: 130px;
     margin: 10px;
+    right: 0;
+    margin-right: 210px;
+    
     /* left: 66px;
     top: 0; */
   }
@@ -143,39 +152,43 @@
     position: absolute;
     text-align: center;
     white-space: nowrap;
-    width: 350px;
-    left: -70px;
-    top: 25px;
-    
+    left: 0;
+    margin-left: 58px;
+    margin-top: 24px;
   }
   
   .desktop .div-wrapper {
-    background-color: #aed9e0;
-    border-radius: 30px;
-    box-shadow: inset 20px -12px 25px #00000040;
-    height: 100px;
-    position: absolute;
-    width: 650px;
-    top: 10%;
+    background-color: #ffffff;
+    border-radius: 35px;
+    /* box-shadow: inset 20px -12px 25px #00000040; */
+    height: 103px;
+    position: relative;
+    width: 885px;
     left: 50%;
+    top: 14%;
     transform: translate(-50%, 50%);
   }
   
   .desktop .text-wrapper-4 {
     color: #000000;
-    font-family: "Lancelot-Regular", Helvetica;
-    font-size: 38px;
+    font-family: "Lancelot-Regular", Cursive;
+    font-size: 60px;
     font-weight: 400;
-    /* left: 18px;
-    top: 10px; */
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
     text-align: center;
-    height: 100px;
-    width: 600px;
-    top: -20%;
+    height: 81px;
+    width: 704px;
+    top: -35%;
     left: 50%;
     transform: translate(-50%, 50%);
   }
   
+  .main-box {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+  }

@@ -36,7 +36,7 @@ const ParallaxCard = ({ images, title, subheading, delay }) => {
             alt={`Layer 2`}
             data-atropos-offset={"0"}
           />
-          <div className="text-wrapper">{title}</div>
+          <div className="text-wrap">{title}</div>
         </div>
       </Atropos>
     </div>
