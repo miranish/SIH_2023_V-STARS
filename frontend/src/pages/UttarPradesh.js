@@ -11,12 +11,15 @@ import festival_fg from "../assets/UP/upfestival.png";
 
 import "../styles/Rajasthan.css";
 import ParallaxCardFourth from "../components/Fourth";
-import NavbarTop from "../components/NavbarTop";
+import NavB from "../components/NavB";
+// import NavbarTop from "../components/NavbarTop";
 
 const UttarPradeshPage = () => {
   return (
+    <div>
+      <NavB/>
     <div className="index">
-      <NavbarTop />
+      
       <div className="div">
         {/* <Navbar /> */}
         <div
@@ -25,7 +28,6 @@ const UttarPradeshPage = () => {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
-            // margin: "auto",
             marginTop: "35px",
           }}
           className="card-container"
@@ -59,7 +61,7 @@ const UttarPradeshPage = () => {
           Uttar Pradesh
         </h2>
       </div>
-    </div>
+    </div></div>
   );
 };
 

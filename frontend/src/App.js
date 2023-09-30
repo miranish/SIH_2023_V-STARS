@@ -13,6 +13,7 @@ import Trial from "./pages/Trial";
 import Navbar from "./components/Navbar";
 import { Ecommerce } from "./pages/Ecommerce";
 import CulturePage from "./pages/Culture";
+// import NavB from "./components/NavB";
 
 const App = () => {
   const StatesUrlData = [
@@ -34,6 +35,7 @@ const App = () => {
       <Route path="/trade" element={<Ecommerce />} />
       
       <Route path="/culture" element={<CulturePage />} />
+      {/* <Route path="/navb" element={<NavB />} /> */}
 
       {/* Mapping states for code clarity */}
       {StatesUrlData.map((state, index) => {

@@ -46,3 +46,7 @@
   height: 25px;
   opacity: 1;
 }
+
+p:hover .cursor {
+  width: 100px !important;
+}

@@ -14,12 +14,16 @@ import "../styles/Rajasthan.css";
 import ParallaxCardFirst from "../components/First";
 import ParallaxCardSecond from "../components/Second";
 import ParallaxCardThird from "../components/Third";
-import NavbarTop from "../components/NavbarTop";
+import NavB from "../components/NavB";
+// import NavbarTop from "../components/NavbarTop";
 
 const RajasthanPage = () => {
   return (
+    <div>
+      <NavB/>
     <div className="index">
-      <NavbarTop />
+      {/* <NavbarTop /> */}
+      
       <div className="div">
         {/* <Navbar /> */}
         <div
@@ -63,7 +67,8 @@ const RajasthanPage = () => {
           Rajasthan
         </h2>
       </div>
-    </div>
+      </div>
+      </div>
   );
 };
 
