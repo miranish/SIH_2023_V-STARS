@@ -9,7 +9,7 @@
 
 
 .cursor {
-  z-index: 7;
+  z-index: 5;
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -23,7 +23,7 @@
 }
 
 .cursor2 {
-  z-index: 7;
+  z-index: 5;
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -49,4 +49,59 @@
 
 p:hover .cursor {
   width: 100px !important;
+}
+
+
+.tw-hover {
+  background-color: blanchedalmond;
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+}
+
+.tw-hover-inner {
+  background-color: black;
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+}
+
+.pc-hover{
+  background-color: blanchedalmond;
+  opacity: 0.7;
+  width: 100px;
+  height: 100px;
+  mix-blend-mode: color-burn;
+}
+.pc-hover-inner{
+  background-color: black;
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+}
+
+.st-tw-hover {
+  background-color: blanchedalmond;
+  opacity: 0.7;
+  mix-blend-mode: difference;
+  width: 50px;
+  height: 50px;
+}
+
+.st-tw-hover-inner {
+  background-color: black;
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+}
+
+/* Better Nav */
+.nav-hover {
+  background-color: blanchedalmond;
+  opacity: 0.7;
+  mix-blend-mode: difference;
+  width: 50px;
+  height: 50px;
+}
+
+.nav-hover-inner {
+  background-color: white !important;
+  opacity: 0.7;
+  mix-blend-mode: lighten;
 }

@@ -4,9 +4,7 @@ import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
 
 import MonumentsFG from "../assets/TamilNadu/tamilnadutemple.png";
-
 import CultureFG from "../assets/TamilNadu/tnArtculture.png";
-
 import festival_fg from "../assets/TamilNadu/tnfestival.png";
 
 import bgimage from "../assets/TamilNadu/Tamil_bg.png";
@@ -23,6 +21,10 @@ const TamilNaduPage = () => {
       url: "/culture?state=tamilnadu",
       description:
         "The culture of the state is a rich and diverse one with many cultural traditions.",
+      topPx: "15%",
+      leftPx: "5%",
+      heightSize: "",
+      widthSize: "",
     },
     {
       title: "Monuments",
@@ -30,11 +32,19 @@ const TamilNaduPage = () => {
       url: "/monument?state=tamilnadu",
       description:
         "There are several monuments in the city which symbolize various aspects of its history.",
+      topPx: "18%",
+      leftPx: "5%",
+      heightSize: "",
+      widthSize: "",
     },
     {
       title: "Festivals",
       imageSrc: festival_fg,
       url: "/festival?state=tamilnadu",
+      topPx: "10%",
+      leftPx: "5%",
+      heightSize: "",
+      widthSize: "",
     },
   ];
 
@@ -55,6 +65,7 @@ const TamilNaduPage = () => {
           <div
             style={{
               width: "80%",
+              height: "100%",
               display: "flex",
               justifyContent: "space-around",
               alignItems: "center",
@@ -65,12 +76,18 @@ const TamilNaduPage = () => {
           >
             {TN_Card_Data.map((item, index) => (
               <ParallaxCard
+                key={index}
                 images={item.imageSrc}
                 title={item.title}
                 subheading={item.description}
-                delay={1}
+                delay={index + 1}
                 url={item.url}
                 bgColor={bgColor}
+
+                topPx={item.topPx}
+                leftPx={item.leftPx}
+                heightSize={item.heightSize}
+                widthSize={item.widthSize}
               />
             ))}
           </div>

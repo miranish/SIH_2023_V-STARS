@@ -23,9 +23,14 @@
 
 .state-title{
     font-family: 'Inknut Antiqua', serif;
-    width: 100%;
+    width: fit-content;
     bottom: -5%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.card-container{
+    margin-top: 10% !important;
+    margin-left: 5% !important;
 }

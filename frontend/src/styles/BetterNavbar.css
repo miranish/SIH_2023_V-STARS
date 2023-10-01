@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.better-nav-body {
+	font-family: "Montserrat", sans-serif;
+	background: transparent;
+	position: absolute;
+	min-width: 100vw;
+	min-height: 100vh;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+/* h1 {
+	font-size: 40px;
+  text-align: center;
+} */
+
+.better-nav-container{
+	cursor: pointer;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	width: 30px;
+	height: 20px;
+	visibility: visible;
+}
+
+.bars{
+	width: 30px;
+	height: 4px;
+	background: #000;
+}
+
+.bars::before,
+.bars::after{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 4px;
+	background: #000;
+}
+
+.bars::before{
+	margin-top: 9px;
+}
+
+.bars::after{
+	margin-top: 18px;
+}
+
+.better-nav{
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	right: -200vw;
+}
+
+.better-nav ul {
+	list-style: none;
+}
+
+.better-nav ul li{
+	margin: 50px 0;
+}
+
+.better-nav ul li a{
+	color: #fafafa;
+	font-size: 2em;
+	text-decoration: none;
+	font-weight: 500;
+	position: relative;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.better-nav ul li a:after{
+	content: '';
+	width: 100%;
+	position: absolute;
+	height: 3px;
+	border-radius: 5px;
+	background: #fff;
+	bottom: -10px;
+	left: 0;
+	transform-origin: left;
+	transition: transform .5s ease;
+	transform: scaleX(0);
+}
+
+
+.better-nav ul li a:hover:after{
+	transform: scaleX(1);
+}
+
+.better-nav .close {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 6%;
+	right: 5%;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.better-nav h2{
+	position: absolute;
+	top:5%;
+	left: 5%;
+	opacity: 0;
+	pointer-events: none;
+	color: #fff;
+	font-size: 2em;
+}
+
+.better-nav .close div::before,
+.better-nav .close div::after{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 4px;
+	background: #fff;
+	transition: background .5s ease;
+}
+.better-nav .close div::before{
+	transform: rotate(-45deg);
+}
+
+.better-nav .close div::after{
+	transform: rotate(45deg);
+}
+
+.better-nav .close:hover div::before,
+.better-nav .close:hover div::after{
+	background: rgb(209, 3, 3);
+}
+
+@media (max-width: 992px){
+  h1{
+    font-size: 25px;
+  }
+}

@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import IndiaMap from "./pages/IndiaMap";
 
-
 // STATES
 
 import UttarPradeshPage from "./pages/UttarPradesh";
@@ -33,11 +32,10 @@ const App = () => {
     <Routes>
       <Route path="/trans" element={<OutroTransition />} />
 
-
       <Route exact path="/" index element={<Home />} />
       <Route path="/india" element={<IndiaMap />} />
       <Route path="/trade" element={<Ecommerce />} />
-      
+
       <Route path="/culture" element={<CulturePage />} />
       {/* <Route path="/navb" element={<NavB />} /> */}
 
