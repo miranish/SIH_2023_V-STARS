@@ -9,7 +9,7 @@ import UttarPradeshPage from "./pages/UttarPradesh";
 import TamilNaduPage from "./pages/TamilNadu";
 import RajasthanPage from "./pages/Rajasthan";
 import Trial from "./pages/Trial";
-import Navbar from "./components/Navbar";
+
 import { Ecommerce } from "./pages/Ecommerce";
 import CulturePage from "./pages/Culture";
 import { OutroTransition } from "./components/Transition";
