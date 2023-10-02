@@ -4,7 +4,6 @@ import gsap from "gsap";
 import "../styles/BetterNavbar.css";
 
 const BetterNavbar = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
     const cursor = document.querySelector(".cursor");
