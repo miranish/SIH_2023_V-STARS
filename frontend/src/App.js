@@ -13,6 +13,7 @@ import Trial from "./pages/Trial";
 import { Ecommerce } from "./pages/Ecommerce";
 import CulturePage from "./pages/Culture";
 import { OutroTransition } from "./components/Transition";
+import { TradePage } from "./pages/NewEcommerce";
 // import NavB from "./components/NavB";
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
       <Route exact path="/" index element={<Home />} />
       <Route path="/india" element={<IndiaMap />} />
       <Route path="/trade" element={<Ecommerce />} />
+      <Route path="/newtrade" element={<TradePage />} />
 
       <Route path="/culture" element={<CulturePage />} />
       {/* <Route path="/navb" element={<NavB />} /> */}

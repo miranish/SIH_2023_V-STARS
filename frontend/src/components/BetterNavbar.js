@@ -4,7 +4,6 @@ import gsap from "gsap";
 import "../styles/BetterNavbar.css";
 
 const BetterNavbar = () => {
-
   useEffect(() => {
     const cursor = document.querySelector(".cursor");
     const cursorInner = document.querySelector(".cursor2");
@@ -52,17 +51,17 @@ const BetterNavbar = () => {
         </div>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#">About Us</a>
+            <a href="/aboutus">About Us</a>
           </li>
           <li>
-            <a href="#">Explore India</a>
+            <a href="/trade">Trade</a>
           </li>
-          {/* <li>
-            <a href="#">Contact</a>
-          </li> */}
+          <li>
+            <a href="/india">Explore India</a>
+          </li>
         </ul>
       </nav>
     </div>
