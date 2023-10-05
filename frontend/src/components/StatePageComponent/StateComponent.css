@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+
 :root {
   --card-width: 200px;
   --card-height: 300px;
@@ -27,12 +28,13 @@
   background: none;
   cursor: pointer;
 }
+
 .bttn:focus {
   outline: none;
   border: none;
 }
 
-.appa {
+.Raj-App {
   position: relative;
   width: 100%;
   height: 100%;
@@ -40,6 +42,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .app__bg {
   position: absolute;
   width: 100%;
@@ -50,6 +53,7 @@
   user-select: none;
   overflow: hidden;
 }
+
 .app__bg::before {
   content: "";
   position: absolute;
@@ -61,6 +65,7 @@
   z-index: 1;
   opacity: 0.8;
 }
+
 .app__bg__image {
   position: absolute;
   left: 50%;
@@ -71,21 +76,27 @@
   transition: transform 1000ms ease, opacity 1000ms ease;
   overflow: hidden;
 }
+
 .app__bg__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .app__bg__image.current--image {
   opacity: 1;
   --image-translate-offset: 0;
 }
-.app__bg__image.previous--image, .app__bg__image.next--image {
+
+.app__bg__image.previous--image,
+.app__bg__image.next--image {
   opacity: 0;
 }
+
 .app__bg__image.previous--image {
   --image-translate-offset: -25%;
 }
+
 .app__bg__image.next--image {
   --image-translate-offset: 25%;
 }
@@ -95,6 +106,7 @@
   width: calc(3 * var(--card-width));
   height: auto;
 }
+
 .cardList__btn {
   --btn-size: 35px;
   width: var(--btn-size);
@@ -104,20 +116,25 @@
   transform: translateY(-50%);
   z-index: 100;
 }
+
 .cardList__btn.btn--left {
   left: -5%;
 }
+
 .cardList__btn.btn--right {
   right: -5%;
 }
+
 .cardList__btn .icon {
   width: 100%;
   height: 100%;
 }
+
 .cardList__btn .icon svg {
   width: 100%;
   height: 100%;
 }
+
 .cardList .cards__wrapper {
   position: relative;
   width: 100%;
@@ -137,6 +154,7 @@
   transition: transform var(--card-transition-duration) var(--card-transition-easing);
   user-select: none;
 }
+
 .card::before {
   content: "";
   position: absolute;
@@ -149,11 +167,13 @@
   transition: opacity var(--card-transition-duration) var(--card-transition-easing);
   opacity: calc(1 - var(--opacity));
 }
+
 .card__image {
   position: relative;
   width: 100%;
   height: 100%;
 }
+
 .card__image img {
   position: absolute;
   left: 0;
@@ -162,6 +182,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .card.current--card {
   --current-card-rotation-offset: 0;
   --card-translateX-offset: 0;
@@ -169,15 +190,19 @@
   --card-scale-offset: 1.2;
   --opacity: 0.8;
 }
+
 .card.previous--card {
   --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
   --card-rotation-offset: 25deg;
 }
+
 .card.next--card {
   --card-translateX-offset: calc(var(--card-width) * 1.1);
   --card-rotation-offset: -25deg;
 }
-.card.previous--card, .card.next--card {
+
+.card.previous--card,
+.card.next--card {
   --card-scale-offset: 0.9;
   --opacity: 0.4;
 }
@@ -188,6 +213,7 @@
   height: var(--card-height);
   pointer-events: none;
 }
+
 .infoList .info__wrapper {
   position: relative;
   width: 100%;
@@ -205,6 +231,7 @@
   transform: translateZ(2rem);
   transition: transform var(--card-transition-duration) var(--card-transition-easing);
 }
+
 .info .text {
   position: relative;
   font-family: "Montserrat";
@@ -213,13 +240,16 @@
   color: #fff;
   width: fit-content;
 }
+
 .info .name,
 .info .location {
   text-transform: uppercase;
 }
+
 .info .location {
   font-weight: 800;
 }
+
 .info .location {
   --mg-left: 40px;
   --text-size-offset: 0.12;
@@ -228,32 +258,40 @@
   margin-bottom: calc(var(--mg-left) / 2);
   padding-bottom: 0.8rem;
 }
-.info .location::before, .info .location::after {
+
+.info .location::before,
+.info .location::after {
   content: "";
   position: absolute;
   background: #fff;
   left: 0%;
   transform: translate(calc(-1 * var(--mg-left)), -50%);
 }
+
 .info .location::before {
   top: 50%;
   width: 20px;
   height: 5px;
 }
+
 .info .location::after {
   bottom: 0;
   width: 60px;
   height: 2px;
 }
+
 .info .description {
   --text-size-offset: 0.065;
   font-weight: 500;
 }
+
 .info.current--info {
   opacity: 1;
   display: block;
 }
-.info.previous--info, .info.next--info {
+
+.info.previous--info,
+.info.next--info {
   opacity: 0;
   display: none;
 }
@@ -271,18 +309,21 @@
   background: #000;
   z-index: 200;
 }
+
 .loading__wrapper .loader--text {
   color: #fff;
   font-family: "Montserrat";
   font-weight: 500;
   margin-bottom: 1.4rem;
 }
+
 .loading__wrapper .loader {
   position: relative;
   width: 200px;
   height: 2px;
   background: rgba(255, 255, 255, 0.25);
 }
+
 .loading__wrapper .loader span {
   position: absolute;
   left: 0;
@@ -300,6 +341,7 @@
     --card-height: 400px;
   }
 }
+
 .support {
   position: absolute;
   right: 10px;
@@ -307,6 +349,7 @@
   padding: 10px;
   display: flex;
 }
+
 .support a {
   margin: 0 10px;
   color: #fff;
@@ -314,6 +357,7 @@
   backface-visibility: hidden;
   transition: all 150ms ease;
 }
+
 .support a:hover {
   transform: scale(1.1);
 }

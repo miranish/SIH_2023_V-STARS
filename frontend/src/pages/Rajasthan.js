@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
 
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 import imagesLoaded from "imagesloaded";
 
 import MonumentsFG from "../assets/Rajasthan/hawa-mahal.png";
@@ -26,10 +26,9 @@ import bg_image from "../assets/Rajasthan/rg_bg.png";
 import BetterNavbar from "../components/BetterNavbar";
 // import NavbarTop from "../components/NavbarTop";
 
-import "../components/StatePageComponent/StateComponent.css"
+import "../components/StatePageComponent/StateComponent.css";
 
 const RajasthanPage = () => {
-
   useEffect(() => {
     // const { gsap, imagesLoaded } = window;
     const buttons = {
@@ -50,8 +49,10 @@ const RajasthanPage = () => {
       const previousCardEl = cardsContainerEl.querySelector(".previous--card");
       const nextCardEl = cardsContainerEl.querySelector(".next--card");
 
-      const currentBgImageEl = appBgContainerEl.querySelector(".current--image");
-      const previousBgImageEl = appBgContainerEl.querySelector(".previous--image");
+      const currentBgImageEl =
+        appBgContainerEl.querySelector(".current--image");
+      const previousBgImageEl =
+        appBgContainerEl.querySelector(".previous--image");
       const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
 
       changeInfo(direction);
@@ -103,10 +104,12 @@ const RajasthanPage = () => {
 
     function changeInfo(direction) {
       let currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
-      let previousInfoEl = cardInfosContainerEl.querySelector(".previous--info");
+      let previousInfoEl =
+        cardInfosContainerEl.querySelector(".previous--info");
       let nextInfoEl = cardInfosContainerEl.querySelector(".next--info");
 
-      gsap.timeline()
+      gsap
+        .timeline()
         .to([buttons.prev, buttons.next], {
           duration: 0.2,
           opacity: 0.5,
@@ -131,7 +134,7 @@ const RajasthanPage = () => {
             ? nextInfoEl.querySelectorAll(".text")
             : previousInfoEl.querySelectorAll(".text"),
           {
-            opacity: 0,
+            // opacity: 0,
             translateY: "40px",
           },
           {
@@ -175,7 +178,8 @@ const RajasthanPage = () => {
       gsap.set(card, {
         "--current-card-rotation-offset": `${angle}deg`,
       });
-      const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+      const currentInfoEl =
+        cardInfosContainerEl.querySelector(".current--info");
       gsap.set(currentInfoEl, {
         rotateY: `${angle}deg`,
       });
@@ -183,7 +187,8 @@ const RajasthanPage = () => {
 
     function resetCardTransforms(e) {
       const card = e.currentTarget;
-      const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+      const currentInfoEl =
+        cardInfosContainerEl.querySelector(".current--info");
       gsap.set(card, {
         "--current-card-rotation-offset": 0,
       });
@@ -193,11 +198,13 @@ const RajasthanPage = () => {
     }
 
     function initCardEvents() {
-      const currentCardEl = cardsContainerEl.querySelector(".current--card");
-      currentCardEl.addEventListener("pointermove", updateCard);
-      currentCardEl.addEventListener("pointerout", (e) => {
-        resetCardTransforms(e);
-      });
+      const currentCardEl = document.querySelector(".current--card");
+      if (currentCardEl) {
+        currentCardEl.addEventListener("pointermove", updateCard);
+        currentCardEl.addEventListener("pointerout", (e) => {
+          resetCardTransforms(e);
+        });
+      }
     }
 
     initCardEvents();
@@ -207,7 +214,6 @@ const RajasthanPage = () => {
     }
 
     function init() {
-
       let tl = gsap.timeline();
 
       tl.to(cardsContainerEl.children, {
@@ -220,13 +226,18 @@ const RajasthanPage = () => {
         },
         "--card-translateY-offset": "0%",
       })
-        .to(cardInfosContainerEl.querySelector(".current--info").querySelectorAll(".text"), {
-          delay: 0.5,
-          duration: 0.4,
-          stagger: 0.1,
-          opacity: 1,
-          translateY: 0,
-        })
+        .to(
+          cardInfosContainerEl
+            .querySelector(".current--info")
+            .querySelectorAll(".text"),
+          {
+            delay: 0.5,
+            duration: 0.4,
+            stagger: 0.1,
+            opacity: 1,
+            translateY: 0,
+          }
+        )
         .to(
           [buttons.prev, buttons.next],
           {
@@ -247,10 +258,15 @@ const RajasthanPage = () => {
       gsap.set(cardsContainerEl.children, {
         "--card-translateY-offset": "100vh",
       });
-      gsap.set(cardInfosContainerEl.querySelector(".current--info").querySelectorAll(".text"), {
-        translateY: "40px",
-        opacity: 0,
-      });
+      gsap.set(
+        cardInfosContainerEl
+          .querySelector(".current--info")
+          .querySelectorAll(".text"),
+        {
+          translateY: "40px",
+          opacity: 0,
+        }
+      );
       gsap.set([buttons.prev, buttons.next], {
         pointerEvents: "none",
         opacity: "0",
@@ -268,22 +284,23 @@ const RajasthanPage = () => {
               backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%`,
             });
 
-            if (totalImages == loadedImages) {
-              gsap.timeline()
-                .to(".loading__wrapper", {
-                  duration: 0.8,
-                  opacity: 0,
-                  pointerEvents: "none",
-                })
-                .call(() => init());
-            }
+            // if (totalImages == loadedImages) {
+            //   gsap
+            //     .timeline()
+            //     .to(".loading__wrapper", {
+            //       duration: 0.8,
+            //       opacity: 0,
+            //       pointerEvents: "none",
+            //     })
+            //     .call(() => init());
+            // }
           }
         });
       });
     };
 
     waitForImages();
-  }, [])
+  }, []);
 
   const [isLoading, setIsLoading] = useState(true);
   const cardsData = [
@@ -292,24 +309,20 @@ const RajasthanPage = () => {
     { imageSrc: CultureFG },
   ];
   const infoData = [
-    { name: 'Location 1', location: 'City 1', description: 'Description 1' },
-    { name: 'Location 2', location: 'City 2', description: 'Description 2' },
-    { name: 'Location 3', location: 'City 3', description: 'Description 3' },
+    { name: "Location 1", location: "City 1", description: "Description 1" },
+    { name: "Location 2", location: "City 2", description: "Description 2" },
+    { name: "Location 3", location: "City 3", description: "Description 3" },
   ];
 
   return (
-
-    <div className="App">
+    <div className="Raj-App"     >
       <>
         <CardList cards={cardsData} />
         <InfoList infos={infoData} />
-        <AppBg />
+        <AppBg images={[festival_fg, MonumentsFG, CultureFG]} />
       </>
-
     </div>
-
-  )
-}
-
+  );
+};
 
 export default RajasthanPage;

@@ -1,11 +1,16 @@
-import React from 'react';
-import './StateComponent.css';
+import React from "react";
+import "./StateComponent.css";
 const AppBg = ({ images }) => {
+  const states = ["previous--image", "current--image", "next--image"];
   return (
     <div className="app__bg">
-      {/* Include background images here */}
+      {images.map((ele, index) => {
+        <div class={"app__bg__image " + states[index]}>
+          <img src={ele} alt="index" />
+        </div>;
+      })}
     </div>
   );
-}
+};
 
 export default AppBg;
