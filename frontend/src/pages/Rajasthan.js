@@ -1,7 +1,10 @@
 // StatePage.js (for Rajasthan)
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
+
+import { gsap } from 'gsap';
+import imagesLoaded from "imagesloaded";
 
 import MonumentsFG from "../assets/Rajasthan/hawa-mahal.png";
 
@@ -13,107 +16,300 @@ import "../styles/Rajasthan.css";
 
 import NavB from "../components/NavB";
 
+import InfoList from "../components/StatePageComponent/InfoListComponent";
+import Info from "../components/StatePageComponent/InfoComponent";
+import AppBg from "../components/StatePageComponent/AppBgComponent";
+import Card from "../components/StatePageComponent/CardComponent";
+import CardList from "../components/StatePageComponent/CardListComponent";
+
 import bg_image from "../assets/Rajasthan/rg_bg.png";
 import BetterNavbar from "../components/BetterNavbar";
 // import NavbarTop from "../components/NavbarTop";
 
+import "../components/StatePageComponent/StateComponent.css"
+
 const RajasthanPage = () => {
-  const bg_color = "#7F5539"
-  const RJ_Card_Data = [
-    {
-      title: "Culture",
-      imageSrc: CultureFG,
-      url: "/culture?state=tamilnadu",
-      description:
-        "The culture of the state is a rich and diverse one with many cultural traditions.",
-      topPx: "-7%",
-      leftPx: "5%",
-      heightSize: "",
-      widthSize: "",
-    },
-    {
-      title: "Monuments",
-      imageSrc: MonumentsFG,
-      url: "/monuments?state=rajasthan",
-      description: "Hawa Mahal, The Puppet Doll Festival, Camel Festival",
-      topPx: "24%",
-      leftPx: "-7%",
-      heightSize: "87%",
-      widthSize: "87%",
-    },
-    {
-      title: "Festivals",
-      imageSrc: festival_fg,
-      url: "/festivals?state=rajasthan",
-      description: `Camel Festival`,
-      topPx: "29%",
-      leftPx: "-4%",
-      heightSize: "57%",
-      widthSize: "90%",
-    },
+
+  useEffect(() => {
+    // const { gsap, imagesLoaded } = window;
+    const buttons = {
+      prev: document.querySelector(".btn--left"),
+      next: document.querySelector(".btn--right"),
+    };
+    const cardsContainerEl = document.querySelector(".cards__wrapper");
+    const appBgContainerEl = document.querySelector(".app__bg");
+
+    const cardInfosContainerEl = document.querySelector(".info__wrapper");
+
+    buttons.next.addEventListener("click", () => swapCards("right"));
+
+    buttons.prev.addEventListener("click", () => swapCards("left"));
+
+    function swapCards(direction) {
+      const currentCardEl = cardsContainerEl.querySelector(".current--card");
+      const previousCardEl = cardsContainerEl.querySelector(".previous--card");
+      const nextCardEl = cardsContainerEl.querySelector(".next--card");
+
+      const currentBgImageEl = appBgContainerEl.querySelector(".current--image");
+      const previousBgImageEl = appBgContainerEl.querySelector(".previous--image");
+      const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
+
+      changeInfo(direction);
+      swapCardsClass();
+
+      removeCardEvents(currentCardEl);
+
+      function swapCardsClass() {
+        currentCardEl.classList.remove("current--card");
+        previousCardEl.classList.remove("previous--card");
+        nextCardEl.classList.remove("next--card");
+
+        currentBgImageEl.classList.remove("current--image");
+        previousBgImageEl.classList.remove("previous--image");
+        nextBgImageEl.classList.remove("next--image");
+
+        currentCardEl.style.zIndex = "50";
+        currentBgImageEl.style.zIndex = "-2";
+
+        if (direction === "right") {
+          previousCardEl.style.zIndex = "20";
+          nextCardEl.style.zIndex = "30";
+
+          nextBgImageEl.style.zIndex = "-1";
+
+          currentCardEl.classList.add("previous--card");
+          previousCardEl.classList.add("next--card");
+          nextCardEl.classList.add("current--card");
+
+          currentBgImageEl.classList.add("previous--image");
+          previousBgImageEl.classList.add("next--image");
+          nextBgImageEl.classList.add("current--image");
+        } else if (direction === "left") {
+          previousCardEl.style.zIndex = "30";
+          nextCardEl.style.zIndex = "20";
+
+          previousBgImageEl.style.zIndex = "-1";
+
+          currentCardEl.classList.add("next--card");
+          previousCardEl.classList.add("current--card");
+          nextCardEl.classList.add("previous--card");
+
+          currentBgImageEl.classList.add("next--image");
+          previousBgImageEl.classList.add("current--image");
+          nextBgImageEl.classList.add("previous--image");
+        }
+      }
+    }
+
+    function changeInfo(direction) {
+      let currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+      let previousInfoEl = cardInfosContainerEl.querySelector(".previous--info");
+      let nextInfoEl = cardInfosContainerEl.querySelector(".next--info");
+
+      gsap.timeline()
+        .to([buttons.prev, buttons.next], {
+          duration: 0.2,
+          opacity: 0.5,
+          pointerEvents: "none",
+        })
+        .to(
+          currentInfoEl.querySelectorAll(".text"),
+          {
+            duration: 0.4,
+            stagger: 0.1,
+            translateY: "-120px",
+            opacity: 0,
+          },
+          "-="
+        )
+        .call(() => {
+          swapInfosClass(direction);
+        })
+        .call(() => initCardEvents())
+        .fromTo(
+          direction === "right"
+            ? nextInfoEl.querySelectorAll(".text")
+            : previousInfoEl.querySelectorAll(".text"),
+          {
+            opacity: 0,
+            translateY: "40px",
+          },
+          {
+            duration: 0.4,
+            stagger: 0.1,
+            translateY: "0px",
+            opacity: 1,
+          }
+        )
+        .to([buttons.prev, buttons.next], {
+          duration: 0.2,
+          opacity: 1,
+          pointerEvents: "all",
+        });
+
+      function swapInfosClass() {
+        currentInfoEl.classList.remove("current--info");
+        previousInfoEl.classList.remove("previous--info");
+        nextInfoEl.classList.remove("next--info");
+
+        if (direction === "right") {
+          currentInfoEl.classList.add("previous--info");
+          nextInfoEl.classList.add("current--info");
+          previousInfoEl.classList.add("next--info");
+        } else if (direction === "left") {
+          currentInfoEl.classList.add("next--info");
+          nextInfoEl.classList.add("previous--info");
+          previousInfoEl.classList.add("current--info");
+        }
+      }
+    }
+
+    function updateCard(e) {
+      const card = e.currentTarget;
+      const box = card.getBoundingClientRect();
+      const centerPosition = {
+        x: box.left + box.width / 2,
+        y: box.top + box.height / 2,
+      };
+      let angle = Math.atan2(e.pageX - centerPosition.x, 0) * (35 / Math.PI);
+      gsap.set(card, {
+        "--current-card-rotation-offset": `${angle}deg`,
+      });
+      const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+      gsap.set(currentInfoEl, {
+        rotateY: `${angle}deg`,
+      });
+    }
+
+    function resetCardTransforms(e) {
+      const card = e.currentTarget;
+      const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
+      gsap.set(card, {
+        "--current-card-rotation-offset": 0,
+      });
+      gsap.set(currentInfoEl, {
+        rotateY: 0,
+      });
+    }
+
+    function initCardEvents() {
+      const currentCardEl = cardsContainerEl.querySelector(".current--card");
+      currentCardEl.addEventListener("pointermove", updateCard);
+      currentCardEl.addEventListener("pointerout", (e) => {
+        resetCardTransforms(e);
+      });
+    }
+
+    initCardEvents();
+
+    function removeCardEvents(card) {
+      card.removeEventListener("pointermove", updateCard);
+    }
+
+    function init() {
+
+      let tl = gsap.timeline();
+
+      tl.to(cardsContainerEl.children, {
+        delay: 0.15,
+        duration: 0.5,
+        stagger: {
+          ease: "power4.inOut",
+          from: "right",
+          amount: 0.1,
+        },
+        "--card-translateY-offset": "0%",
+      })
+        .to(cardInfosContainerEl.querySelector(".current--info").querySelectorAll(".text"), {
+          delay: 0.5,
+          duration: 0.4,
+          stagger: 0.1,
+          opacity: 1,
+          translateY: 0,
+        })
+        .to(
+          [buttons.prev, buttons.next],
+          {
+            duration: 0.4,
+            opacity: 1,
+            pointerEvents: "all",
+          },
+          "-=0.4"
+        );
+    }
+
+    const waitForImages = () => {
+      const images = [...document.querySelectorAll("img")];
+      const totalImages = images.length;
+      let loadedImages = 0;
+      const loaderEl = document.querySelector(".loader span");
+
+      gsap.set(cardsContainerEl.children, {
+        "--card-translateY-offset": "100vh",
+      });
+      gsap.set(cardInfosContainerEl.querySelector(".current--info").querySelectorAll(".text"), {
+        translateY: "40px",
+        opacity: 0,
+      });
+      gsap.set([buttons.prev, buttons.next], {
+        pointerEvents: "none",
+        opacity: "0",
+      });
+
+      images.forEach((image) => {
+        imagesLoaded(image, (instance) => {
+          if (instance.isComplete) {
+            loadedImages++;
+            let loadProgress = loadedImages / totalImages;
+
+            gsap.to(loaderEl, {
+              duration: 1,
+              scaleX: loadProgress,
+              backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%`,
+            });
+
+            if (totalImages == loadedImages) {
+              gsap.timeline()
+                .to(".loading__wrapper", {
+                  duration: 0.8,
+                  opacity: 0,
+                  pointerEvents: "none",
+                })
+                .call(() => init());
+            }
+          }
+        });
+      });
+    };
+
+    waitForImages();
+  }, [])
+
+  const [isLoading, setIsLoading] = useState(true);
+  const cardsData = [
+    { imageSrc: MonumentsFG },
+    { imageSrc: festival_fg },
+    { imageSrc: CultureFG },
   ];
+  const infoData = [
+    { name: 'Location 1', location: 'City 1', description: 'Description 1' },
+    { name: 'Location 2', location: 'City 2', description: 'Description 2' },
+    { name: 'Location 3', location: 'City 3', description: 'Description 3' },
+  ];
+
   return (
-    <div>
-      {/* <NavB /> */}
-      <BetterNavbar />
 
-      <div
-        className="index"
-        style={{
-          background: `url('${bg_image}')`,
-          height: "100vh",
-          width: "100%",
-          backgroundRepeat: "repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        {/* <NavbarTop /> */}
+    <div className="App">
+      <>
+        <CardList cards={cardsData} />
+        <InfoList infos={infoData} />
+        <AppBg />
+      </>
 
-        <div className="div">
-          {/* <Navbar /> */}
-          <div
-            style={{
-              width: "80%",
-              height: "100%",
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-              marginTop: "35px",
-            }}
-            className="card-container"
-          >
-            {/* Parallax Card Mapping*/}
-            {RJ_Card_Data.map((item, index) => (
-              <ParallaxCard
-                key={index}
-                images={item.imageSrc}
-                title={item.title}
-                subheading={item.description}
-                delay={index + 1}
-                topPx={item.topPx}
-                leftPx={item.leftPx}
-                heightSize={item.heightSize}
-                widthSize={item.widthSize}
-                bgColor={bg_color}
-                url={item.url}
-              />
-            ))}
-
-          </div>
-          <h2
-            style={{
-              color: "black",
-              padding: "10px",
-            }}
-            className="text-center state-title"
-          >
-            Rajasthan
-          </h2>
-        </div>
-      </div>
     </div>
-  );
-};
+
+  )
+}
 
 
 export default RajasthanPage;
