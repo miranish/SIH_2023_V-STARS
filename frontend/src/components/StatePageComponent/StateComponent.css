@@ -23,19 +23,26 @@
   overflow: hidden;
 } */
 
-.bttn {
+.bttttn {
+  opacity: 1 !important;
+  border: none;
+  background: none;
+  /* cursor: pointer; */
+}
+.bttttn:hover {
+  opacity: 1 !important;
   border: none;
   background: none;
   cursor: pointer;
 }
 
-.bttn:focus {
+.bttttn:focus {
   outline: none;
   border: none;
 }
 
 .Raj-App {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -113,8 +120,9 @@
   height: var(--btn-size);
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  z-index: 100;
+  /* transform: translateY(-50%); */
+  z-index: 2;
+  /* background-color: blue; */
 }
 
 .cardList__btn.btn--left {

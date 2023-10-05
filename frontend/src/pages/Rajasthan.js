@@ -29,6 +29,9 @@ import BetterNavbar from "../components/BetterNavbar";
 import "../components/StatePageComponent/StateComponent.css";
 
 const RajasthanPage = () => {
+  function swapCards() {
+    console.log("SwAPPING")
+  }
   useEffect(() => {
     // const { gsap, imagesLoaded } = window;
     const buttons = {
@@ -284,16 +287,16 @@ const RajasthanPage = () => {
               backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%`,
             });
 
-            // if (totalImages == loadedImages) {
-            //   gsap
-            //     .timeline()
-            //     .to(".loading__wrapper", {
-            //       duration: 0.8,
-            //       opacity: 0,
-            //       pointerEvents: "none",
-            //     })
-            //     .call(() => init());
-            // }
+            if (totalImages === loadedImages) {
+              gsap
+                .timeline()
+                .to(".loading__wrapper", {
+                  duration: 0.8,
+                  opacity: 0,
+                  pointerEvents: "none",
+                })
+                .call(() => init());
+            }
           }
         });
       });
@@ -315,11 +318,15 @@ const RajasthanPage = () => {
   ];
 
   return (
-    <div className="Raj-App"     >
+    <div className="Raj-App">
       <>
-        <CardList cards={cardsData} />
+        <CardList
+          cards={cardsData}
+          // onPrevClick={swapCards}
+          // onNextClick={swapCards}
+        />
         <InfoList infos={infoData} />
-        <AppBg images={[festival_fg, MonumentsFG, CultureFG]} />
+        <AppBg images={cardsData} />
       </>
     </div>
   );

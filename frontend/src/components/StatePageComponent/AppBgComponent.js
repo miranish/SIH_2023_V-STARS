@@ -5,9 +5,11 @@ const AppBg = ({ images }) => {
   return (
     <div className="app__bg">
       {images.map((ele, index) => {
-        <div class={"app__bg__image " + states[index]}>
-          <img src={ele} alt="index" />
-        </div>;
+        return (
+          <div class={"app__bg__image " + states[index]}>
+            <img src={ele.imageSrc} alt="index" />
+          </div>
+        );
       })}
     </div>
   );

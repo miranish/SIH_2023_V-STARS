@@ -6,7 +6,7 @@ const CardList = ({ cards, currentIndex, onPrevClick, onNextClick }) => {
   const states = ["previous--card", "current--card", "next--card"];
   return (
     <div className="cardList">
-      <button className="cardList__btn btn btn--left" onClick={onPrevClick}>
+      <button className="cardList__btn bttttn btn--left" >
         <svg>
           <use xlinkHref="#arrow-left"></use>
         </svg>
@@ -22,7 +22,7 @@ const CardList = ({ cards, currentIndex, onPrevClick, onNextClick }) => {
         ))}
       </div>
 
-      <button className="cardList__btn btn btn--right" onClick={onNextClick}>
+      <button className="cardList__btn bttttn btn--right" >
         <svg>
           <use xlinkHref="#arrow-right"></use>
         </svg>
