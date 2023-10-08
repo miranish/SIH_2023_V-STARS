@@ -1,350 +1,224 @@
-// StatePage.js (for Rajasthan)
-import React, { useState, useEffect } from "react";
-import ParallaxCard from "../components/ActionCard";
-import "../styles/cards.css";
-
-import { gsap } from "gsap";
-import imagesLoaded from "imagesloaded";
-
-import MonumentsFG from "../assets/Rajasthan/hawa-mahal.png";
-
-import CultureFG from "../assets/Rajasthan/puppet-dolls.png";
-
-import festival_fg from "../assets/Rajasthan/camel.png";
-
+import React, { useEffect, useState } from "react";
 import "../styles/Rajasthan.css";
 
-import NavB from "../components/NavB";
+const Rajasthan = () => {
+  const [currentStateImage, setCurrentStateImage] = useState([
+    // "https://images.unsplash.com/photo-1593681645570-83083d750183?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
+    "https://images.unsplash.com/photo-1638904998527-a451c1fbd1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "https://images.unsplash.com/photo-1622993005631-163d6f8b4485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+  ]);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
-import InfoList from "../components/StatePageComponent/InfoListComponent";
-import Info from "../components/StatePageComponent/InfoComponent";
-import AppBg from "../components/StatePageComponent/AppBgComponent";
-import Card from "../components/StatePageComponent/CardComponent";
-import CardList from "../components/StatePageComponent/CardListComponent";
-
-import bg_image from "../assets/Rajasthan/rg_bg.png";
-import BetterNavbar from "../components/BetterNavbar";
-// import NavbarTop from "../components/NavbarTop";
-
-import "../components/StatePageComponent/StateComponent.css";
-
-const RajasthanPage = () => {
-  function swapCards() {
-    console.log("SwAPPING");
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
+
   useEffect(() => {
-    // const { gsap, imagesLoaded } = window;
-    const buttons = {
-      prev: document.querySelector(".btn--left"),
-      next: document.querySelector(".btn--right"),
+    let items = document.querySelectorAll(".slider .item");
+    let next = document.getElementById("next");
+    let prev = document.getElementById("prev");
+
+    let bg = document.querySelectorAll("#bgImage");
+
+    let active = 1;
+    function loadShow() {
+      let stt = 0;
+      let bgstt = -1;
+      items[active].style.transform = `none`;
+      items[active].style.zIndex = 2;
+      items[active].style.filter = "none";
+      items[active].style.opacity = 1;
+      
+      bg[active].style.display = "flex";
+      bg[active].style.transform = `none`;
+      bg[active].style.zIndex = 2;
+      bg[active].style.filter = "none";
+      bg[active].style.opacity = 1;
+
+      for (var i = active + 1; i < items.length; i++) {
+        stt++;
+        items[i].style.transform = `translateX(${120 * stt}px) scale(${
+          1 - 0.2 * stt
+        }) perspective(16px) rotateY(-1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = "blur(5px)";
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+
+        bg[i].style.display = "none"
+        bg[i].style.transform = `translateX(${120 * stt}px)`;
+        bg[i].style.zIndex = -bgstt;
+        bg[i].style.filter = "blur(5px)";
+        bg[i].style.opacity = bgstt > 2 ? 0 : 0.6;
+      }
+      stt = 0;
+      for (var i = active - 1; i >= 0; i--) {
+        stt++;
+        items[i].style.transform = `translateX(${-120 * stt}px) scale(${
+          1 - 0.2 * stt
+        }) perspective(16px) rotateY(1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = "blur(5px)";
+        items[i].style.opacity = stt > 2 ? 0 : 0.8;
+
+        bg[i].style.transform = `translateX(${-120 * stt}px)`;
+        bg[i].style.zIndex = -bgstt;
+        bg[i].style.filter = "blur(5px)";
+        bg[i].style.opacity = bgstt > 2 ? 0 : 0.8;
+        bg[i].style.display = "none"
+      }
+    }
+    loadShow();
+    next.onclick = function () {
+      active = active + 1 < items.length ? active + 1 : active;
+      setCurrentIndex(active);
+
+      bg[active].classList.add("swipeLeft");
+      bg[active - 1].classList.add("swipeLeft");
+      loadShow();
+
+      // Remove classes after animation completes
+      setTimeout(() => {
+        bg[active - 1].classList.remove("swipeLeft");
+      }, 600); // Adjust the time to match your CSS animation duration
     };
-    const cardsContainerEl = document.querySelector(".cards__wrapper");
-    const appBgContainerEl = document.querySelector(".app__bg");
+    prev.onclick = function () {
+      active = active - 1 >= 0 ? active - 1 : active;
+      setCurrentIndex(active);
 
-    const cardInfosContainerEl = document.querySelector(".info__wrapper");
+      // Add classes to trigger CSS animations
+      bg[active].classList.add("swipeRight");
+      bg[active + 1].classList.add("swipeRight");
+      loadShow();
 
-    buttons.next.addEventListener("click", () => swapCards("right"));
-
-    buttons.prev.addEventListener("click", () => swapCards("left"));
-
-    function swapCards(direction) {
-      const currentCardEl = cardsContainerEl.querySelector(".current--card");
-      const previousCardEl = cardsContainerEl.querySelector(".previous--card");
-      const nextCardEl = cardsContainerEl.querySelector(".next--card");
-
-      const currentBgImageEl =
-        appBgContainerEl.querySelector(".current--image");
-      const previousBgImageEl =
-        appBgContainerEl.querySelector(".previous--image");
-      const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
-
-      changeInfo(direction);
-      swapCardsClass();
-
-      removeCardEvents(currentCardEl);
-
-      function swapCardsClass() {
-        currentCardEl.classList.remove("current--card");
-        previousCardEl.classList.remove("previous--card");
-        nextCardEl.classList.remove("next--card");
-
-        currentBgImageEl.classList.remove("current--image");
-        previousBgImageEl.classList.remove("previous--image");
-        nextBgImageEl.classList.remove("next--image");
-
-        currentCardEl.style.zIndex = "50";
-        currentBgImageEl.style.zIndex = "-2";
-
-        if (direction === "right") {
-          previousCardEl.style.zIndex = "20";
-          nextCardEl.style.zIndex = "30";
-
-          nextBgImageEl.style.zIndex = "-1";
-
-          currentCardEl.classList.add("previous--card");
-          previousCardEl.classList.add("next--card");
-          nextCardEl.classList.add("current--card");
-
-          currentBgImageEl.classList.add("previous--image");
-          previousBgImageEl.classList.add("next--image");
-          nextBgImageEl.classList.add("current--image");
-        } else if (direction === "left") {
-          previousCardEl.style.zIndex = "30";
-          nextCardEl.style.zIndex = "20";
-
-          previousBgImageEl.style.zIndex = "-1";
-
-          currentCardEl.classList.add("next--card");
-          previousCardEl.classList.add("current--card");
-          nextCardEl.classList.add("previous--card");
-
-          currentBgImageEl.classList.add("next--image");
-          previousBgImageEl.classList.add("current--image");
-          nextBgImageEl.classList.add("previous--image");
-        }
-      }
-    }
-
-    function changeInfo(direction) {
-      let currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
-      let previousInfoEl =
-        cardInfosContainerEl.querySelector(".previous--info");
-      let nextInfoEl = cardInfosContainerEl.querySelector(".next--info");
-
-      gsap
-        .timeline()
-        .to([buttons.prev, buttons.next], {
-          duration: 0.2,
-          opacity: 0.5,
-          pointerEvents: "none",
-        })
-        .to(
-          currentInfoEl.querySelectorAll(".text"),
-          {
-            duration: 0.4,
-            stagger: 0.1,
-            translateY: "-120px",
-            opacity: 0,
-          },
-          "-="
-        )
-        .call(() => {
-          swapInfosClass(direction);
-        })
-        .call(() => initCardEvents())
-        .fromTo(
-          direction === "right"
-            ? nextInfoEl.querySelectorAll(".text")
-            : previousInfoEl.querySelectorAll(".text"),
-          {
-            // opacity: 0,
-            translateY: "40px",
-          },
-          {
-            duration: 0.4,
-            stagger: 0.1,
-            translateY: "0px",
-            opacity: 1,
-          }
-        )
-        .to([buttons.prev, buttons.next], {
-          duration: 0.2,
-          opacity: 1,
-          pointerEvents: "all",
-        });
-
-      function swapInfosClass() {
-        currentInfoEl.classList.remove("current--info");
-        previousInfoEl.classList.remove("previous--info");
-        nextInfoEl.classList.remove("next--info");
-
-        if (direction === "right") {
-          currentInfoEl.classList.add("previous--info");
-          nextInfoEl.classList.add("current--info");
-          previousInfoEl.classList.add("next--info");
-        } else if (direction === "left") {
-          currentInfoEl.classList.add("next--info");
-          nextInfoEl.classList.add("previous--info");
-          previousInfoEl.classList.add("current--info");
-        }
-      }
-    }
-
-    function updateCard(e) {
-      const card = e.currentTarget;
-      const box = card.getBoundingClientRect();
-      const centerPosition = {
-        x: box.left + box.width / 2,
-        y: box.top + box.height / 2,
-      };
-      let angle = Math.atan2(e.pageX - centerPosition.x, 0) * (35 / Math.PI);
-      gsap.set(card, {
-        "--current-card-rotation-offset": `${angle}deg`,
-      });
-      const currentInfoEl =
-        cardInfosContainerEl.querySelector(".current--info");
-      gsap.set(currentInfoEl, {
-        rotateY: `${angle}deg`,
-      });
-    }
-
-    function resetCardTransforms(e) {
-      const card = e.currentTarget;
-      const currentInfoEl =
-        cardInfosContainerEl.querySelector(".current--info");
-      gsap.set(card, {
-        "--current-card-rotation-offset": 0,
-      });
-      gsap.set(currentInfoEl, {
-        rotateY: 0,
-      });
-    }
-
-    function initCardEvents() {
-      const currentCardEl = document.querySelector(".current--card");
-      if (currentCardEl) {
-        currentCardEl.addEventListener("pointermove", updateCard);
-        currentCardEl.addEventListener("pointerout", (e) => {
-          resetCardTransforms(e);
-        });
-      }
-    }
-
-    initCardEvents();
-
-    function removeCardEvents(card) {
-      card.removeEventListener("pointermove", updateCard);
-    }
-
-    function init() {
-      let tl = gsap.timeline();
-
-      tl.to(cardsContainerEl.children, {
-        delay: 0.15,
-        duration: 0.5,
-        stagger: {
-          ease: "power4.inOut",
-          from: "right",
-          amount: 0.1,
-        },
-        "--card-translateY-offset": "0%",
-      })
-        .to(
-          cardInfosContainerEl
-            .querySelector(".current--info")
-            .querySelectorAll(".text"),
-          {
-            delay: 0.5,
-            duration: 0.4,
-            stagger: 0.1,
-            opacity: 1,
-            translateY: 0,
-          }
-        )
-        .to(
-          [buttons.prev, buttons.next],
-          {
-            duration: 0.4,
-            opacity: 1,
-            pointerEvents: "all",
-          },
-          "-=0.4"
-        );
-    }
-
-    const waitForImages = () => {
-      const images = [...document.querySelectorAll("img")];
-      const totalImages = images.length;
-      let loadedImages = 0;
-      const loaderEl = document.querySelector(".loader span");
-
-      gsap.set(cardsContainerEl.children, {
-        "--card-translateY-offset": "100vh",
-      });
-      gsap.set(
-        cardInfosContainerEl
-          .querySelector(".current--info")
-          .querySelectorAll(".text"),
-        {
-          translateY: "40px",
-          opacity: 0,
-        }
-      );
-      gsap.set([buttons.prev, buttons.next], {
-        pointerEvents: "none",
-        opacity: "0",
-      });
-
-      images.forEach((image) => {
-        imagesLoaded(image, (instance) => {
-          if (instance.isComplete) {
-            loadedImages++;
-            let loadProgress = loadedImages / totalImages;
-
-            gsap.to(loaderEl, {
-              duration: 1,
-              scaleX: loadProgress,
-              backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%`,
-            });
-
-            if (totalImages === loadedImages) {
-              gsap
-                .timeline()
-                .to(".loading__wrapper", {
-                  duration: 0.8,
-                  opacity: 0,
-                  pointerEvents: "none",
-                })
-                .call(() => init());
-            }
-          }
-        });
-      });
+      // Remove classes after animation completes
+      setTimeout(() => {
+        bg[active + 1].classList.remove("swipeRight");
+      }, 600); // Adjust the time to match your CSS animation duration
     };
-
-    waitForImages();
   }, []);
 
-  const [isLoading, setIsLoading] = useState(true);
-  const cardsData = [
-    { imageSrc: MonumentsFG },
-    { imageSrc: festival_fg },
-    { imageSrc: CultureFG },
-  ];
-  const infoData = [
-    {
-      name: "Location 1",
-      location: "City 1",
-      description: "Description 1",
-      imageSrc: MonumentsFG,
-    },
-    {
-      name: "Location 2",
-      location: "City 2",
-      description: "Description 2",
-      imageSrc: festival_fg,
-    },
-    {
-      name: "Location 3",
-      location: "City 3",
-      description: "Description 3",
-      imageSrc: CultureFG,
-    },
-  ];
-
   return (
-    <div className="Raj-App">
-      <>
-        <CardList
-          cards={cardsData}
-          // onPrevClick={swapCards}
-          // onNextClick={swapCards}
-        />
-        <InfoList infos={infoData} />
-        <AppBg images={cardsData} />
-      </>
+    <div>
+      <div
+        className="rajasthan-carousel-first-screen"
+        id="bgImage"
+        style={{
+          backgroundImage: `url('${currentStateImage[0]}')`,
+          height: "100vh",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          width: "100vw",
+          transition: "all 600ms ease-in-out",
+          position: "absolute",
+          zIndex: 0,
+        }}
+      ></div>
+      <div
+        className="rajasthan-carousel-first-screen"
+        id="bgImage"
+        style={{
+          backgroundImage: `url('${currentStateImage[1]}')`,
+          height: "100vh",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          width: "100vw",
+          transition: "all 600ms ease-in-out",
+          position: "absolute",
+          zIndex: 0,
+        }}
+      ></div>
+      <div
+        className="rajasthan-carousel-first-screen"
+        id="bgImage"
+        style={{
+          backgroundImage: `url('${currentStateImage[2]}')`,
+          height: "100vh",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          width: "100vw",
+          transition: "all 600ms ease-in-out",
+          position: "absolute",
+          zIndex: 0,
+        }}
+      ></div>
+      <div className="row">
+        <div className="col-2"></div>
+        <div
+          className="col-4 second-row-text"
+          style={{
+            height: "100vh",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <h1>Rajasthan</h1>
+          <p className="text-justify" style={{ paddingRight: "4vw" }}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere
+            magni magnam unde ipsam repudiandae explicabo expedita labore,
+          </p>
+        </div>
+        <div className="col-6 d-flex justify-content-center align-items-center">
+          <div className="slider">
+            <div
+              className="item"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1587295656906-b06dca8f2340?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></div>
+            <div
+              className="item"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1616693139578-f1c17deb0d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></div>
+
+            <div
+              className="item"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1586612438666-ffd0ae97ad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></div>
+
+            <button id="prev"> &#60; </button>
+            <button id="next"> &#62; </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`rajasthan-second-screen ${
+          currentIndex === 0 ? "d-block" : "d-none"
+        } part-1`}
+        style={{ height: "100vh" }}
+      >
+        first
+      </div>
+      <div
+        className={`rajasthan-second-screen ${
+          currentIndex === 1 ? "d-block" : "d-none"
+        } part-2`}
+        style={{ height: "100vh" }}
+      >
+        second
+      </div>
+      <div
+        className={`rajasthan-second-screen ${
+          currentIndex === 2 ? "d-block" : "d-none"
+        } part-3`}
+        style={{ height: "100vh" }}
+      >
+        mklnfklm
+      </div>
     </div>
   );
 };
 
-export default RajasthanPage;
+export default Rajasthan;

@@ -1711,9 +1711,9 @@ textarea.form-control {
     cursor: not-allowed;
 }
 
-.slider {
-    background: #c8c8c8;
-}
+/* .slider { */
+    /* background: #c8c8c8; */
+/* } */
 
 .c-1-color {
     background-color: blue;

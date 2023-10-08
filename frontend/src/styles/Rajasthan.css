@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap');
 
-.index {
-    width: 100dvw;
-    height: 100dvh;
-    background-color: #ddb892;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin: 0;
-    align-items: center;
-}
-
-.index .div {
-    height: 80dvh;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .state-title{
     font-family: 'Inknut Antiqua', serif;
     width: fit-content;
@@ -30,7 +9,85 @@
     transform: translateX(-50%);
 }
 
-.card-container{
-    margin-top: 10% !important;
-    margin-left: 5% !important;
+.slider {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
 }
+
+.item {
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    text-align: justify;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    top: 15%;
+}
+
+#next,
+#prev {
+    position: absolute;
+    top: 50%;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+}
+
+#next {
+    right: 7vw;
+}
+
+#prev{
+    left: 10dvw;
+}
+
+.swipeLeft{
+    animation-name: swipeLeft;
+    animation-duration: 500ms;
+
+}
+
+@keyframes swipeLeft {
+    0% {
+        transform: translateX(50%)
+    }
+    100% {
+        transform: translateX(0%)
+    }
+}
+
+.swipeRight{
+    animation-name: swipeRight;
+    animation-duration: 500ms;
+
+}
+
+@keyframes swipeRight {
+    0% {
+        transform: translateX(-50%)
+    }
+    100% {
+        transform: translateX(0%)
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #next {
+        right: 20px;
+    }
+    
+    #prev{
+        left: 20px;
+    }
+}
+

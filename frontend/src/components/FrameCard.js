@@ -20,19 +20,19 @@ const StyledFrame = styled.div`
   }
 
   & .vector {
-    height: 29px;
-    left: 4px;
-    position: relative;
-    top: 0;
-    width: 83px;
+    height: 12%;
+    left: 7%;
+    position: absolute;
+    top: -1%;
+    width: 45%;
   }
 
   & .icon-container {
     height: 28px;
-    left: 14px;
-    position: relative;
+    left: 6%;
+    position: absolute;
     top: 0;
-    width: 61px;
+    width: 45%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -72,7 +72,11 @@ export const FrameCard = () => {
           <img className="icon-heart" alt="Icon heart" src={heart} />
         </div>
         <img className="overlap-group-card" alt="Vector" src={CardContainer} />
-        <div>
+        <div
+          style={{
+            marginLeft: "15px",
+          }}
+        >
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </div>
