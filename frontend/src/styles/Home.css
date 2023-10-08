@@ -25,6 +25,36 @@
     justify-content: center;
 }
 
+.section1 {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#rmynBG, #krsnaBG {
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#rmynFG {
+    position: absolute;
+    top: 138px;
+    left: 196px;
+    border: none;
+    height: 197px;
+}
+
+#krsnaFG {
+    position: absolute;
+    top: 1862px;
+    left: 278px;
+    border: none;
+    height: 85vh;
+    width: 64vw;
+}
+
 .section::before {
     content: ' ';
     position: absolute;
@@ -118,7 +148,7 @@
     font-size: 2rem;
     font-weight: bold;
     bottom: 10px;
-    left: 51%;
+    left: 50%;
     color: black;
     /* filter: drop-shadow(2px 2px 2px); */
     z-index: 3 !important;

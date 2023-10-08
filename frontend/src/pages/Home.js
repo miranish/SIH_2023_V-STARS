@@ -7,6 +7,10 @@ import clouds_1 from "../assets/HomePage/clouds_1.png";
 import clouds_2 from "../assets/HomePage/clouds_2.png";
 import bg from "../assets/HomePage/full.png";
 import fg from "../assets/HomePage/man2.png";
+import ramayanBG from "../assets/HomePage/ramayanBG.png";
+import ramayanFG from "../assets/HomePage/ramayanFG.png";
+import krishnaBG from "../assets/HomePage/krishnaBG.png";
+import krishnaFG from "../assets/HomePage/krishnaFG.png";
 import NavbarTop from "../components/NavbarTop";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,6 +44,34 @@ const Home = () => {
         scrub: 1,
       },
       x: -750,
+    });
+
+    gsap.to("#ramayan", {
+      scrollTrigger: {
+        scrub: 1,
+      },
+      scale: 0.5,
+    });
+
+    gsap.to("#layer", {
+      scrollTrigger: {
+        scrub: 1,
+      },
+      scale: 0.5,
+    });
+
+    gsap.to("#krishnaBG", {
+      scrollTrigger: {
+        scrub: 1,
+      },
+      scale: 0.5,
+    });
+
+    gsap.to("#krishnaFG", {
+      scrollTrigger: {
+        scrub: 1,
+      },
+      scale: 0.5,
     });
 
     gsap.to("#text", {
@@ -105,7 +137,16 @@ const Home = () => {
         <img src={clouds_1} alt="cloud1" id="cloud1" />
         <img src={clouds_2} alt="cloud2" id="cloud2" />
       </section>
-      {/* <div class="arrow">↓</div> */}
+
+      <setion className="section1">
+        <img src={ramayanBG} id="rmynBG" alt="rmynBG" />
+        <img src={ramayanFG} id="rmynFG" alt="rmynFG" />
+      </setion>
+
+      <setion className="section2">
+        <img src={krishnaBG} id="krsnaBG" alt="krsnaBG" />
+        <img src={krishnaFG} id="krsnaFG" alt="krsnaFG" />
+      </setion>
       <svg
         className="arrow"
         width="40px"

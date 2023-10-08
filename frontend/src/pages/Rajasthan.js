@@ -30,7 +30,7 @@ import "../components/StatePageComponent/StateComponent.css";
 
 const RajasthanPage = () => {
   function swapCards() {
-    console.log("SwAPPING")
+    console.log("SwAPPING");
   }
   useEffect(() => {
     // const { gsap, imagesLoaded } = window;
