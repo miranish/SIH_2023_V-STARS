@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { MapContainer, Polygon, GeoJSON, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import data from "../IndianData/UpdateIndiaGeo.json";
+import "../styles/IndiaMap.css"
 
 const IndiaMap = () => {
   const [jsonData, setJsonData] = useState({});
@@ -39,7 +40,7 @@ const IndiaMap = () => {
       }, 200);
     }
     setTimeout(() => {
-      window.location.href = `/state-link/${stateName}`;
+      window.location.href = `/state-link?state=${stateName}`;
     }, 1200);
   };
 
@@ -55,53 +56,46 @@ const IndiaMap = () => {
         <GeoJSON
           data={data}
           onEachFeature={(feature, layer) => {
+            const stateName = feature.properties.ST_NM;
+
+            // Define custom styles for the default and hovered states
+            const defaultStyle = {
+              fillColor: currentStates.includes(stateName) ? "green" : "red",
+              color: "white",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.7,
+            };
+
+            const hoverStyle = {
+              color: "white",
+              weight: 2,
+              opacity: 1,
+              fillOpacity: 0.9,
+            };
+
+            layer.setStyle(defaultStyle);
+
             layer.on("click", () => {
               const bounds = layer.getBounds();
               handleStateClick(feature, bounds);
             });
-            layer.bindTooltip(feature.properties.ST_NM, {
+
+            layer.bindTooltip(stateName, {
               permanent: false,
               direction: "center",
               opacity: 0.7,
             });
+
+            layer.on("mouseover", () => {
+              layer.setStyle(hoverStyle);
+            });
+
+            layer.on("mouseout", () => {
+              layer.setStyle(defaultStyle);
+            });
           }}
         />
-
-        {data.features.map((state, index) => {
-          for (let i = 0; i < currentStates.length; i++) {
-            if (state.properties.NAME_1 === currentStates[i]) {
-              // Inside the map function
-              const coordinates =
-                state.geometry.type === "MultiPolygon"
-                  ? state.geometry.coordinates.map((polygon) =>
-                      polygon[0].map((item) => [item[1], item[0]])
-                    )
-                  : [
-                      state.geometry.coordinates[0].map((item) => [
-                        item[1],
-                        item[0],
-                      ]),
-                    ];
-
-              return (
-                <Polygon
-                  key={index}
-                  pathOptions={{
-                    fillColor: "000",
-                    fillOpacity: 0.7,
-                    weight: 2,
-                    opacity: 1,
-                    dashArray: 3,
-                    color: "white",
-                  }}
-                  positions={coordinates}
-                >
-                  <Tooltip>{state.properties.NAME_1}</Tooltip>
-                </Polygon>
-              );
-            }
-          }
-        })}
       </MapContainer>
       <div
         style={{

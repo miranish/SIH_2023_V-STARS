@@ -30,7 +30,7 @@ import "../components/StatePageComponent/StateComponent.css";
 
 const RajasthanPage = () => {
   function swapCards() {
-    console.log("SwAPPING")
+    console.log("SwAPPING");
   }
   useEffect(() => {
     // const { gsap, imagesLoaded } = window;
@@ -312,9 +312,24 @@ const RajasthanPage = () => {
     { imageSrc: CultureFG },
   ];
   const infoData = [
-    { name: "Location 1", location: "City 1", description: "Description 1" },
-    { name: "Location 2", location: "City 2", description: "Description 2" },
-    { name: "Location 3", location: "City 3", description: "Description 3" },
+    {
+      name: "Location 1",
+      location: "City 1",
+      description: "Description 1",
+      imageSrc: MonumentsFG,
+    },
+    {
+      name: "Location 2",
+      location: "City 2",
+      description: "Description 2",
+      imageSrc: festival_fg,
+    },
+    {
+      name: "Location 3",
+      location: "City 3",
+      description: "Description 3",
+      imageSrc: CultureFG,
+    },
   ];
 
   return (

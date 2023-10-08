@@ -32,30 +32,7 @@ export const Ecommerce = () => {
             title={"Clothes"}
             />
 
-            <FrameCard 
-            title={"Jewerally"} 
-            src={""}
-            />
-
-            <FrameCard 
-            title={"Instruments"} 
-            src={""}
-            />
-
-            <FrameCard 
-            title={"Art and Culture"} 
-            src={""}
-            />
-
-            <FrameCard 
-            title={"HandiCrafts"} 
-            src={""}
-            />
-
-            <FrameCard 
-            title={"Spices & Herbs"} 
-            src={""}
-            />
+            
           </div>
       </div>
     </div>
