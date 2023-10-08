@@ -23,6 +23,7 @@
     "react-scripts": "5.0.1",
     "react-scroll-parallax": "^3.4.2",
     "scrolltrigger": "^1.0.1",
+    "styled-components": "^6.0.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

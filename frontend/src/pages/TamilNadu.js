@@ -1,5 +1,5 @@
 // StatePage.js (for Rajasthan)
-import React from "react";
+import React, {useEffect} from "react";
 import ParallaxCard from "../components/ActionCard";
 import "../styles/cards.css";
 
@@ -47,6 +47,18 @@ const TamilNaduPage = () => {
       widthSize: "",
     },
   ];
+
+  async function fetchStateData(stateName) {
+    const response = await fetch("API_ENDPOINT " + stateName);
+    const data = response.json();
+  }
+
+  useEffect(() => {
+    const state = window.location.pathname.split("/")[2];
+    console.log(state)
+
+  }, [])
+  
 
   return (
     <div>
