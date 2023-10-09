@@ -1,0 +1,71 @@
+const express = require("express");
+const router = express.Router();
+
+// Import the State model (assuming you have defined it)
+const State = require("../models/state")
+// Route to get data for all states
+
+router.use(express.json());
+
+router.get("/states", async (req, res) => {
+  try {
+    const states = await State.find();
+    res.json(states);
+  } catch (error) {
+    console.error("Error fetching states data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.delete("/states", async (req, res) => {
+  try {
+    const states = await State.deleteMany();
+    res.json(states);
+  } catch (error) {
+    console.error("Error fetching states data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// Route to add a new state
+router.post("/states", async (req, res) => {
+  try {
+    console.log("I am hit");
+
+    const { stateID, stateName, stateDesc, ImagesData } = req.body;
+
+    const newState = await State.create({
+        stateID,
+      stateName,
+      stateDesc,
+      ImagesData
+    });
+
+    res.json({ success: true, state: newState });
+  } catch (error) {
+    console.error("Error adding a new state:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// Route to get specific state data by name (in lowercase)
+router.get("/states/:stateName", async (req, res) => {
+  const { stateName } = req.params;
+  console.log(stateName)
+
+  try {
+    const state = await State.findOne({ stateID: stateName});
+    console.log(state)
+    if (!state) {
+      return res.status(404).json({ error: "State not found" });
+    }
+    res.json(state);
+  } catch (error) {
+    console.error("Error fetching state data by name:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// Add more routes as needed
+
+module.exports = router;

@@ -3,10 +3,19 @@
 .state-title{
     font-family: 'Inknut Antiqua', serif;
     width: fit-content;
-    bottom: -5%;
+    position: relative;
+    mix-blend-mode: color-burn;
+}
+
+.state-desc{
+    font-weight: 550;
+    color: #fff;
+    mix-blend-mode: hard-light;
+}
+
+.bgImage-container{
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: -2;
 }
 
 .slider {

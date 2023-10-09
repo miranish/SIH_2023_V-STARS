@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { MapContainer, Polygon, GeoJSON, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import data from "../IndianData/UpdateIndiaGeo.json";
-import "../styles/IndiaMap.css"
+import "../styles/IndiaMap.css";
 
 const IndiaMap = () => {
   const [jsonData, setJsonData] = useState({});
@@ -40,7 +40,7 @@ const IndiaMap = () => {
       }, 200);
     }
     setTimeout(() => {
-      window.location.href = `/state-link?state=${stateName}`;
+      window.location.href = `/state-page/${stateName}`;
     }, 1200);
   };
 

@@ -130,6 +130,7 @@ const Home = () => {
 
   return (
     <div>
+      <div id="canvas3d"></div>
       <section className="section">
         <img src={bg} id="bg" alt="bg" />
         <h2 id="text">INDIAN HERITAGE</h2>

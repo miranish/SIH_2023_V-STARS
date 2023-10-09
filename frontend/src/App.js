@@ -46,7 +46,7 @@ const App = () => {
         return (
           <Route
             key={index}
-            path={"/state-link/" + state.stateName}
+            path={"/state-page/" + state.stateName}
             element={state.element}
           />
         );
