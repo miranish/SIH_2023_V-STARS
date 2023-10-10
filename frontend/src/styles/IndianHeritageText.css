@@ -1,0 +1,11 @@
+.text3d{
+    background: transparent !important;
+    position: absolute;
+}
+
+.text3d canvas{
+    top: -35% !important;
+    position: relative !important;
+    z-index: 1 !important;
+    scale: 1.2 !important;
+}

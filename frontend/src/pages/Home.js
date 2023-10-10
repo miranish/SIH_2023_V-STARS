@@ -12,6 +12,7 @@ import ramayanFG from "../assets/HomePage/ramayanFG.png";
 import krishnaBG from "../assets/HomePage/krishnaBG.png";
 import krishnaFG from "../assets/HomePage/krishnaFG.png";
 import NavbarTop from "../components/NavbarTop";
+import IndianHeritageText from "../components/3dText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,9 +131,9 @@ const Home = () => {
 
   return (
     <div>
-      <div id="canvas3d"></div>
       <section className="section">
         <img src={bg} id="bg" alt="bg" />
+        {/* <IndianHeritageText /> */}
         <h2 id="text">INDIAN HERITAGE</h2>
         <img src={fg} alt="man2" id="man" />
         <img src={clouds_1} alt="cloud1" id="cloud1" />

@@ -14,6 +14,7 @@ import { Ecommerce } from "./pages/Ecommerce";
 import CulturePage from "./pages/Culture";
 import { OutroTransition } from "./components/Transition";
 import { TradePage } from "./pages/NewEcommerce";
+import AddDataComponent from "./pages/AddData";
 // import NavB from "./components/NavB";
 
 const App = () => {
@@ -38,7 +39,9 @@ const App = () => {
       <Route path="/trade" element={<Ecommerce />} />
       <Route path="/newtrade" element={<TradePage />} />
 
-      <Route path="/culture" element={<CulturePage />} />
+      {/* <Route path="/culture" element={<CulturePage />} /> */}
+      
+      <Route path="/addData" element={<AddDataComponent />} />
       {/* <Route path="/navb" element={<NavB />} /> */}
 
       {/* Mapping states for code clarity */}
