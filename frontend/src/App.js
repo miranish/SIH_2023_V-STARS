@@ -15,19 +15,20 @@ import CulturePage from "./pages/Culture";
 import { OutroTransition } from "./components/Transition";
 import { TradePage } from "./pages/NewEcommerce";
 import AddDataComponent from "./pages/AddData";
+import Rajasthan from "./pages/Rajasthan";
 // import NavB from "./components/NavB";
 
 const App = () => {
   const StatesUrlData = [
-    {
-      stateName: "tamilnadu",
-      element: <TamilNaduPage />,
-    },
+    // {
+    //   stateName: "tamilnadu",
+    //   element: <TamilNaduPage />,
+    // },
     { stateName: "rajasthan", element: <RajasthanPage /> },
-    {
-      stateName: "uttarpradesh",
-      element: <UttarPradeshPage />,
-    },
+    // {
+    //   stateName: "uttarpradesh",
+    //   element: <UttarPradeshPage />,
+    // },
   ];
 
   return (
@@ -44,16 +45,11 @@ const App = () => {
       <Route path="/addData" element={<AddDataComponent />} />
       {/* <Route path="/navb" element={<NavB />} /> */}
 
+      <Route
+        path={"/state-page/:stateName"}
+        element={<Rajasthan />}
+      />
       {/* Mapping states for code clarity */}
-      {StatesUrlData.map((state, index) => {
-        return (
-          <Route
-            key={index}
-            path={"/state-page/" + state.stateName}
-            element={state.element}
-          />
-        );
-      })}
     </Routes>
   );
 };

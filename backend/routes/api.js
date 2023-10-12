@@ -65,6 +65,28 @@ router.get("/states/:stateName", async (req, res) => {
   }
 });
 
+
+router.delete('/states/:stateName', async (req, res) => {
+  const { stateName } = req.params;
+  console.log(stateName);
+
+  try {
+  
+    const deletedItem = await State.findOneAndDelete({ stateID: stateName });
+
+    if (!deletedItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    return res.json({ message: 'Item deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 // Add more routes as needed
+
+
 
 module.exports = router;
