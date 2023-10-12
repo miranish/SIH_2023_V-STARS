@@ -13,6 +13,7 @@
     "gsap": "^3.12.2",
     "imagesloaded": "^5.0.0",
     "jquery": "^3.7.1",
+    "material-icons": "^1.13.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
