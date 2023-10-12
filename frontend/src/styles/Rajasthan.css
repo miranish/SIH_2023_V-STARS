@@ -102,10 +102,10 @@
 
 
 .navv {
-    width: 5%;
+    
     padding: 10px;
     top: 115%;
-    right: 3%;
+    right: 6%;
     position: absolute;
     box-sizing: border-box;
     border-radius: 30px;
@@ -135,11 +135,13 @@
 .nav1 ul {
     display: flex;
     list-style-type: none;
+    
   }
 
 .nav1 ul li a{
     display: inline-block;
-    list-style-type: unset;
+    position: relative;
+    
     padding: 15px;
     color: #EF626C;
     transition: transform 0.3s cubic-bezier(0.925, 0.150, 0.505, 1.030);
