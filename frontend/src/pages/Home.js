@@ -20,6 +20,7 @@ import arrowRotate from "../assets/HomePage/arrowRotate.png";
 import rathBG from "../assets/HomePage/rathBG.png";
 import rathFG from "../assets/HomePage/rathFG.png";
 import NavbarTop from "../components/NavbarTop";
+import IndianHeritageText from "../components/3dText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,6 +119,7 @@ const Home = () => {
     <div>
       <section className="section">
         <img src={bg} id="bg" alt="bg" />
+        {/* <IndianHeritageText /> */}
         <h2 id="text">INDIAN HERITAGE</h2>
         <img src={fg} alt="man2" id="man" />
         <img

@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 // Import the State model (assuming you have defined it)
-const State = require("../models/state")
+const State = require("../models/state");
 // Route to get data for all states
 
-router.use(express.json());
+router.use(express.json({ limit: "10MB" }));
 
 router.get("/states", async (req, res) => {
   try {
@@ -35,10 +35,10 @@ router.post("/states", async (req, res) => {
     const { stateID, stateName, stateDesc, ImagesData } = req.body;
 
     const newState = await State.create({
-        stateID,
+      stateID,
       stateName,
       stateDesc,
-      ImagesData
+      ImagesData,
     });
 
     res.json({ success: true, state: newState });
@@ -51,11 +51,10 @@ router.post("/states", async (req, res) => {
 // Route to get specific state data by name (in lowercase)
 router.get("/states/:stateName", async (req, res) => {
   const { stateName } = req.params;
-  console.log(stateName)
+  console.log(stateName);
 
   try {
-    const state = await State.findOne({ stateID: stateName});
-    console.log(state)
+    const state = await State.findOne({ stateID: stateName });
     if (!state) {
       return res.status(404).json({ error: "State not found" });
     }
@@ -66,6 +65,28 @@ router.get("/states/:stateName", async (req, res) => {
   }
 });
 
+
+router.delete('/states/:stateName', async (req, res) => {
+  const { stateName } = req.params;
+  console.log(stateName);
+
+  try {
+  
+    const deletedItem = await State.findOneAndDelete({ stateID: stateName });
+
+    if (!deletedItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    return res.json({ message: 'Item deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 // Add more routes as needed
+
+
 
 module.exports = router;

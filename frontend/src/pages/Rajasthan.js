@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Rajasthan.css";
+import 'material-icons/iconfont/material-icons.css';
 
 const Rajasthan = () => {
   const [currentStateImage, setCurrentStateImage] = useState([
@@ -24,6 +25,9 @@ const Rajasthan = () => {
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
+  
+ 
+  
 
   async function fetchData(stateName) {
     const response = await fetch(apiEndpoint + stateName);
@@ -102,6 +106,33 @@ const Rajasthan = () => {
 
   return (
     <div>
+      <div className="navv">
+        <nav className="nav1 vertical">
+        <ul>
+        <li>
+          <a href="#" >
+            <i className="material-icons">home</i>
+          </a>
+        </li>
+        <li >
+          <a href="#">
+            <i className="material-icons">person</i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i className="material-icons">search</i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i className="material-icons">face</i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+        </div>
       <div
         id="carouselExampleSlidesOnly"
         className="carousel slide bgImage-container"
@@ -248,11 +279,12 @@ const Rajasthan = () => {
         second
       </div>
       <div
-        className={`rajasthan-second-screen ${
+        className={`rajasthan-third-screen ${
           currentIndex === 2 ? "d-block" : "d-none"
         } part-3`}
         style={{ height: "100vh" }}
       >
+        <navbara/>
         mklnfklm
       </div>
     </div>
