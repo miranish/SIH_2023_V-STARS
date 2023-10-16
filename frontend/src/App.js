@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import IndiaMap from "./pages/IndiaMap";
@@ -16,7 +16,12 @@ import { OutroTransition } from "./components/Transition";
 import { TradePage } from "./pages/NewEcommerce";
 // import NavB from "./components/NavB";
 
+import Aos from "aos";
+
 const App = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const StatesUrlData = [
     {
       stateName: "tamilnadu",

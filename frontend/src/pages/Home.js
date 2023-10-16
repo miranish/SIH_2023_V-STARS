@@ -11,6 +11,14 @@ import ramayanBG from "../assets/HomePage/ramayanBG.png";
 import ramayanFG from "../assets/HomePage/ramayanFG.png";
 import krishnaBG from "../assets/HomePage/krishnaBG.png";
 import krishnaFG from "../assets/HomePage/krishnaFG.png";
+import arrowBG from "../assets/HomePage/arrowBG.png";
+import arrowFG from "../assets/HomePage/arrowFG.png";
+import arrowBorders from "../assets/HomePage/arrowBorders.png";
+import arrowDots from "../assets/HomePage/arrowDots.png";
+import arrowFull from "../assets/HomePage/arrowFull.png";
+import arrowRotate from "../assets/HomePage/arrowRotate.png";
+import rathBG from "../assets/HomePage/rathBG.png";
+import rathFG from "../assets/HomePage/rathFG.png";
 import NavbarTop from "../components/NavbarTop";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -46,32 +54,17 @@ const Home = () => {
       x: -750,
     });
 
-    gsap.to("#ramayan", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      scale: 0.5,
-    });
-
-    gsap.to("#layer", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      scale: 0.5,
-    });
-
     gsap.to("#krishnaBG", {
       scrollTrigger: {
-        scrub: 1,
+        scrub: 2,
       },
-      scale: 0.5,
+      scale: 5,
     });
 
     gsap.to("#krishnaFG", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      scale: 0.5,
+      y: 1000,
+      duration: 5,
+      scrollTrigger: "#krishnaFG",
     });
 
     gsap.to("#text", {
@@ -81,20 +74,13 @@ const Home = () => {
       y: 800,
     });
 
-    gsap.fromTo(
-      "#heading",
-      {
-        x: -50,
+    gsap.to("#heading-h2", {
+      scrollTrigger: {
+        trigger: "#heading",
+        scrub: 1,
       },
-      {
-        x: "420px",
-        scrollTrigger: {
-          start: "100px",
-          end: "600px",
-          scrub: 4,
-        },
-      }
-    );
+      x: "100%",
+    });
 
     gsap.to(".arrow", {
       // y: 50,
@@ -130,13 +116,26 @@ const Home = () => {
 
   return (
     <div>
-      <div id="canvas3d"></div>
       <section className="section">
         <img src={bg} id="bg" alt="bg" />
         <h2 id="text">INDIAN HERITAGE</h2>
         <img src={fg} alt="man2" id="man" />
-        <img src={clouds_1} alt="cloud1" id="cloud1" />
-        <img src={clouds_2} alt="cloud2" id="cloud2" />
+        <img
+          src={clouds_1}
+          style={{
+            position: "absolute",
+          }}
+          alt="cloud1"
+          id="cloud1"
+        />
+        <img
+          src={clouds_2}
+          style={{
+            position: "absolute",
+          }}
+          alt="cloud2"
+          id="cloud2"
+        />
       </section>
 
       <setion className="section1">
@@ -144,10 +143,24 @@ const Home = () => {
         <img src={ramayanFG} id="rmynFG" alt="rmynFG" />
       </setion>
 
-      <setion className="section2">
+      <section className="section2">
+        {/* <img src={arrowBG} id="arrowBG" alt="arrowBG" />
+        <img src={arrowBorders} id="arrowBorders" alt="arrowBorders" />
+        <img src={arrowDots} id="arrowDots" alt="arrowDots" /> */}
+        <img src={arrowRotate} id="arrowRotate" alt="arrowRotate" />
+        <img src={arrowFG} id="arrowFG" alt="arrowFG" />
+      </section>
+
+      <section className="section3">
+        <img src={rathBG} id="rathBG" alt="rathBG" />
+        <img src={rathFG} id="rathFG" alt="rathFG" />
+      </section>
+
+      <setion className="section4">
         <img src={krishnaBG} id="krsnaBG" alt="krsnaBG" />
         <img src={krishnaFG} id="krsnaFG" alt="krsnaFG" />
       </setion>
+
       <svg
         className="arrow"
         width="40px"
@@ -182,7 +195,9 @@ const Home = () => {
       {/* <p>Scroll down</p> */}
       <NavbarTop id="nav" ref={navRef} />
       <div class="sec">
-        <h2 id="heading">About India!</h2>
+        <div id="heading">
+          <h2 id="heading-h2">About India!</h2>
+        </div>
         <br />
         <p id="para">
           India, officially the Republic of India (ISO: Bhārat Gaṇarājya), is a
