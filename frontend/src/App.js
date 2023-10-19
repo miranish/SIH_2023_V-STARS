@@ -5,36 +5,21 @@ import IndiaMap from "./pages/IndiaMap";
 
 // STATES
 
-import UttarPradeshPage from "./pages/UttarPradesh";
-import TamilNaduPage from "./pages/TamilNadu";
-import RajasthanPage from "./pages/Rajasthan";
-import Trial from "./pages/Trial";
-
 import { Ecommerce } from "./pages/Ecommerce";
 import CulturePage from "./pages/Culture";
 import { OutroTransition } from "./components/Transition";
 import { TradePage } from "./pages/NewEcommerce";
 import AddDataComponent from "./pages/AddData";
-import Rajasthan from "./pages/Rajasthan";
 // import NavB from "./components/NavB";
 
 import Aos from "aos";
+import StatePage from "./pages/StatePage";
 
 const App = () => {
   useEffect(() => {
     Aos.init();
   }, []);
-  const StatesUrlData = [
-    // {
-    //   stateName: "tamilnadu",
-    //   element: <TamilNaduPage />,
-    // },
-    { stateName: "rajasthan", element: <RajasthanPage /> },
-    // {
-    //   stateName: "uttarpradesh",
-    //   element: <UttarPradeshPage />,
-    // },
-  ];
+
 
   return (
     <Routes>
@@ -46,14 +31,11 @@ const App = () => {
       <Route path="/newtrade" element={<TradePage />} />
 
       {/* <Route path="/culture" element={<CulturePage />} /> */}
-      
+
       <Route path="/addData" element={<AddDataComponent />} />
       {/* <Route path="/navb" element={<NavB />} /> */}
 
-      <Route
-        path={"/state-page/:stateName"}
-        element={<Rajasthan />}
-      />
+      <Route path={"/state/:stateName"} element={<StatePage />} />
       {/* Mapping states for code clarity */}
     </Routes>
   );

@@ -10,6 +10,7 @@ import festival_fg from "../assets/TamilNadu/tnfestival.png";
 import bgimage from "../assets/TamilNadu/Tamil_bg.png";
 import "../styles/Rajasthan.css";
 import NavB from "../components/NavB";
+import BetterNavbar from "../components/BetterNavbar";
 // import NavbarTop from "../components/NavbarTop";
 
 const TamilNaduPage = () => {
@@ -62,7 +63,6 @@ const TamilNaduPage = () => {
 
   return (
     <div>
-      <NavB />
       <div
         className="index"
         style={{

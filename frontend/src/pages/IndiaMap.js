@@ -40,7 +40,7 @@ const IndiaMap = () => {
       }, 200);
     }
     setTimeout(() => {
-      window.location.href = `/state-page/${stateName}`;
+      window.location.href = `/state/${stateName}`;
     }, 1200);
   };
 

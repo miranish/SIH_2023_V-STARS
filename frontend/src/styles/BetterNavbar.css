@@ -10,7 +10,7 @@
 	position: absolute;
 	min-width: 100vw;
 	min-height: 100vh;
-	z-index: 2;
+	z-index: 5;
 	display: flex;
 	justify-content: center;
 	align-items: center;
