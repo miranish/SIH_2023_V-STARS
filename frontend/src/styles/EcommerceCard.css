@@ -1,28 +1,49 @@
-.eco-card {
-    width: 20%;
-    height: 50%;
-    /* background: #000; */
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
+.overlap-eco-card {
     position: relative;
-    /* clip-path: url(#customClipPath);  */
+    width: 15%;
 }
 
-.side-icons {
-    width: 100%;
-    height: 15%;
-    background-color: aqua;
-    padding: 5px;
+.flower-up {
     position: absolute;
-    top: 0;
-    left: 0;
-    
+    top: -7%;
+    left: -15%;
+    z-index: 0;
 }
 
-.main-card {
-    flex-grow: 1;
-    clip-path: url(#customClipPath); 
-    background-color: black;
-    border-radius: 5%;
+.flower-down {
+    position: absolute;
+    bottom: -7%;
+    right: -15%;
+    z-index: 0;
+}
+
+.eco-card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+.eco-card-title {
+    font-family: "Inknut Antiqua", Helvetica;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    border-radius: 40px;
+    transition: all 500ms linear;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.eco-card-title:hover {
+    opacity: 1;
 }
