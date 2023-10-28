@@ -26,7 +26,11 @@ import birdy from "../assets/HomePage/birdy.gif"
 
 import NavbarTop from "../components/NavbarTop";
 import IndianHeritageText from "../components/3dText";
+<<<<<<< HEAD
 import { easeInOut } from "framer-motion";
+=======
+import Navbarjs from "../components/Navbarr";
+>>>>>>> 3e832cdabece44dff95b82106f30930b36f59394
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -159,6 +163,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbarjs/>
       <section className="section">
         <img src={bg} id="bg" alt="bg" />
         {/* <IndianHeritageText /> */}

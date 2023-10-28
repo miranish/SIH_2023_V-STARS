@@ -5,6 +5,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@react-spring/parallax": "^9.7.3",
+    "@splidejs/react-splide": "^0.7.12",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
