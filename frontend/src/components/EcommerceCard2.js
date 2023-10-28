@@ -30,7 +30,7 @@ export const EcommerceCard2 = ({ ImgSrc, imgIndex, title, desc }) => {
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          width: "100%",
+          width: "80%",
           height: "100%",
         }}
       
@@ -50,6 +50,9 @@ export const EcommerceCard2 = ({ ImgSrc, imgIndex, title, desc }) => {
       </div>
 
       <img className="eco-card-image2" alt="Rectangle" src={mainCard} />
+      <div className="eco-card-desc2">
+          Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+      </div>
     </div>
   );
 };

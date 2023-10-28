@@ -13,17 +13,22 @@
 .flower-mid {
     position: absolute;
     width: 50%;
-    top: 40%;
+    top: 30%;
     right: -25%;
 }
 
 .eco-card2-buttons {
     position: absolute;
-    top: 0px;
+    top: -6px;
     left: 3px;
     width: 50%;
     height: 12%;
 
     display: flex;
     justify-content: space-evenly;
+}
+
+.eco-card-desc2{
+    font-size: 14px;
+
 }

@@ -169,3 +169,28 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.Hottest-card-containers{
+  width: 98%;
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  top: 15%;
+  left: 5px;
+}
+
+.weHaveMoreSection{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  /* &::-webkit-scrollbar {
+    display: none;
+  } */
+}
+

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Josefin+Slab&family=Mukta:wght@300&family=Oswald:wght@300&family=Playpen+Sans:wght@300&family=Poppins:wght@300&family=Yuji+Hentaigana+Akari&display=swap');
+
+.WeKnow li{
+    font-family: 'Kelly Slab', sans-serif;
+    font-size: 16px;
+}
+
+.Footer-Title{
+    font-family: 'Inknut Antiqua', serif;
+    color: black;
+}
+
+
+.footer-subtitle{
+    font-family: 'Inknut Antiqua', serif;
+    color: black;
+    font-size: 20px;
+}
+
+.footer-subtitle-content{
+    font-family: 'Inknut Antiqua', serif;
+    color: black;
+    font-size: 16px;
+    text-align: left;
+}
+
+.content{
+    font-family: 'Kelly Slab', sans-serif;
+    font-size: 16px;
+    color: black;
+    padding: 10%;
+    text-decoration: underline;
+    line-height: 135%;
+    
+}
+
+.content a{
+    color: #2b2b2b;
+}
+
+.content :not(li:nth-child(1)){
+    margin-top: 10px;
+}
+
+.company-name{
+    text-align: left;
+    padding: 10%;
+    font-size: 32px;
+    color: black;
+    font-family: 'Josefin Slab', serif;
+}
