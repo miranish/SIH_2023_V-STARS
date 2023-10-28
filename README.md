@@ -1,7 +1,7 @@
 # SIH_2023_V-STARS
 
 ## Meet The Team
-- Vishvara Gandharv - **(Team Leader)**
+- (Vishvara Gandharv)[https://github.com/vishvara-sharda] - **(Team Leader)**
 - Swayam Sharma
 - Tushar Gupta
 - Mir Anish
