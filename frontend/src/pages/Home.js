@@ -21,6 +21,7 @@ import rathBG from "../assets/HomePage/rathBG.png";
 import rathFG from "../assets/HomePage/rathFG.png";
 import NavbarTop from "../components/NavbarTop";
 import IndianHeritageText from "../components/3dText";
+import Navbarjs from "../components/Navbarr";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -117,6 +118,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbarjs/>
       <section className="section">
         <img src={bg} id="bg" alt="bg" />
         {/* <IndianHeritageText /> */}
