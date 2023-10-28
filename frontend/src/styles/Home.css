@@ -9,9 +9,9 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    /* overflow: hidden; */
-}
+body::-webkit-scrollbar {
+    display: none;
+}   
 
 
 #heading {
@@ -82,8 +82,54 @@ body {
     top: 68%;
     left: 28%;
     height: 30%;
-    filter: drop-shadow(-20px 150px 10px #000);
-    animation: moveAlongPath 8s linear infinite;
+}
+
+#bird1 {
+    position: absolute;
+    width: 10vw;
+    height: 20vh;
+    top: 11%;
+    right: 65%;
+    z-index: 1;
+    scale: 1.2;
+    transform: scaleX(-1);
+}
+
+#bird2 {
+    position: absolute;
+    width: 10vw;
+    height: 20vh;
+    top: 16%;
+    right: 27%;
+    z-index: 2;
+    scale: 1.3;
+    transform: scaleX(-1);
+}
+
+#bird3 {
+    position: absolute;
+    width: 10vw;
+    height: 20vh;
+    top: 3%;
+    right: 55%;
+    z-index: 1;
+}
+
+#bird4 {
+    position: absolute;
+    width: 10vw;
+    height: 20vh;
+    top: 8%;
+    right: 38%;
+    z-index: 1;
+}
+
+#bird5 {
+    width: 10%;
+    position: absolute;
+    right: 8%;
+    top: 13%;
+    z-index: 1;
 }
 
 .section2 {
@@ -94,7 +140,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to right bottom, #0a2340, #563568, #a8406e, #e46154, #f3a026);
+    /* background-image: linear-gradient(to right bottom, #0a2340, #563568, #a8406e, #e46154, #f3a026); */
 }
 
 .section3 {
@@ -133,13 +179,13 @@ body {
 
 #arrowBG{
     position: absolute;
-    width: 99vw;
+    width: 100vw;
     height: 100vh;
 }
 
 #arrowBorders {
     position: absolute;
-    width: 99vw;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -147,7 +193,7 @@ body {
     position: absolute;
     width: 99vw;
     height: 100vh;
-    animation: blink 0.7s linear infinite alternate;
+    /* animation: blink 0.7s linear infinite alternate; */
 }
 
 #arrowRotate {
@@ -155,7 +201,7 @@ body {
     width: 45%;
     top: 2.5vh;
     left: 27.5%;
-    animation: rotate 15s linear infinite;
+    /* animation: rotate 15s linear infinite; */
 }
 
 #arrowFG {
@@ -165,14 +211,14 @@ body {
     left: 37%;
     top: 3%;
     z-index: 1;
-    animation: shoot 5s ease-in-out 1s infinite;
+    /* animation: shoot 5s ease-in-out 1s infinite; */
 }
 
 #krsnaBG {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    animation: bgAura 5s linear infinite alternate;
+    /* animation: bgAura 5s linear infinite alternate; */
 }
 
 #krsnaFG {
@@ -180,7 +226,7 @@ body {
     border: none;
     height: 100vh;
     width: 100vw;
-    animation: fadeIn 10s linear infinite alternate;
+    /* animation: fadeIn 10s linear infinite alternate; */
 }
 
 .section img {
@@ -275,99 +321,12 @@ svg #wheel {
     animation: scroll ease 1.5s infinite;
 }
 
-@keyframes scroll {
+/* @keyframes scroll {
     0% {
         transform: translateY(0);
     }
     30% {
         transform: translateY(100px);
-    }
-}
-
-@keyframes moveAlongPath {
-    0% {
-        transform: translate(0);
-        scale: 1;
-        opacity: 1;
-        rotate: 0deg;
-    }
-    10% {
-        transform: translate(-20px, -10px);
-        scale: 0.97;
-        opacity: 1;
-        rotate: -2deg;
-    }
-    20% {
-        transform: translate(-60px, -20px);
-        scale: 0.94;
-        opacity: 1;
-        rotate: 0deg;
-    }
-    30% {
-        transform: translate(-100px, -30px);
-        scale: 0.91;
-        opacity: 1;
-        rotate: 2deg;
-    }
-    40% {
-        transform: translate(-140px, -40px);
-        scale: 0.88;
-        opacity: 1;
-        rotate: 0deg;
-    }
-    50% {
-        transform: translate(-180px, -50px);
-        scale: 0.85;
-        opacity: 1;
-        rotate: -2deg;
-    }
-    60% {
-        transform: translate(-240px, -60px);
-        scale: 0.82;
-        opacity: 1;
-        rotate: 0deg;
-    }
-    70% {
-        transform: translate(-260px, -70px);
-        scale: 0.79;
-        opacity: 1;
-        rotate: 2deg;
-    }
-    75% {
-        transform: translate(-280px, -80px);
-        scale: 0.76;
-        opacity: 1;
-        rotate: 0deg;
-    }
-    80% {
-        transform: translate(-240px, -90px);
-        scale: 0.73;
-        opacity: 1;
-        rotate: -2deg;
-    }
-    85% {
-        transform: translate(-200px, -100px);
-        scale: 0.70;
-        opacity: 1;
-        rotate: 0deg;
-    }
-    90% {
-        transform: translate(-160px, -120px);
-        scale: 0.67;
-        opacity: o.8;
-        rotate: 2deg;
-    }
-    95% {
-        transform: translate(-120px, -130px);
-        scale: 0.64;
-        opacity: 0.5;
-        rotate: 0deg;
-    }  
-    100% {
-        transform: translate(-90px, -140px);
-        scale: 0.61;
-        opacity: 0;
-        rotate: -2deg;
     }
 }
 
@@ -412,4 +371,4 @@ svg #wheel {
     100% {
         transform: rotate(-18deg);
     }
-}
+} */

@@ -3,6 +3,8 @@ import "../styles/Home.css";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+//images
 import clouds_1 from "../assets/HomePage/clouds_1.png";
 import clouds_2 from "../assets/HomePage/clouds_2.png";
 import bg from "../assets/HomePage/full.png";
@@ -19,8 +21,12 @@ import arrowFull from "../assets/HomePage/arrowFull.png";
 import arrowRotate from "../assets/HomePage/arrowRotate.png";
 import rathBG from "../assets/HomePage/rathBG.png";
 import rathFG from "../assets/HomePage/rathFG.png";
+import flybird from "../assets/HomePage/flybird.gif";
+import birdy from "../assets/HomePage/birdy.gif"
+
 import NavbarTop from "../components/NavbarTop";
 import IndianHeritageText from "../components/3dText";
+import { easeInOut } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,17 +48,17 @@ const Home = () => {
     });
 
     gsap.to("#cloud1", {
+      x: 750,
       scrollTrigger: {
         scrub: 1,
       },
-      x: 750,
     });
 
     gsap.to("#cloud2", {
+      x: -750,
       scrollTrigger: {
         scrub: 1,
       },
-      x: -750,
     });
 
     gsap.to("#krishnaBG", {
@@ -83,6 +89,31 @@ const Home = () => {
       x: "100%",
     });
 
+    gsap.from(".section2 #arrowRotate", {
+      scale: 0,
+      duration: 1,
+      rotate: 360,
+      scrollTrigger: {
+        trigger: ".section2 #arrowRotate",
+        scroller: "body",
+        markers: true,
+        // start: "top 20%",
+        // end: "bottom 80%",
+        scrub: true, 
+      },
+    
+    });
+
+    // gsap.from("#rathFG", {
+    //   x: 100,
+    //   duration: 3,
+    //   scrollTrigger: {
+    //     trigger: ".section3",
+    //     scrub: 2,
+    //     start: "top -5%",
+    //   },
+    // });
+
     gsap.to(".arrow", {
       // y: 50,
       opacity: 0,
@@ -93,6 +124,19 @@ const Home = () => {
         scrub: true,
       },
     });
+
+    gsap.to("#bird5", {
+      x: -1400,
+      duration: 10,
+      repeat: -1,
+      repeatDelay: 0.5,
+      scrollTrigger: {
+        trigger: "#section2",
+        // scrub: 1,
+        start: "top -35%",
+        end: "bottom 100%",
+      }
+    })
 
     gsap.fromTo(
       navRef.current, // Use the ref for the navigation bar
@@ -111,8 +155,6 @@ const Home = () => {
         },
       }
     );
-
-    // Add other GSAP animations here
   }, []);
 
   return (
@@ -143,12 +185,34 @@ const Home = () => {
       <setion className="section1">
         <img src={ramayanBG} id="rmynBG" alt="rmynBG" />
         <img src={ramayanFG} id="rmynFG" alt="rmynFG" />
+        <img
+          src={require("../assets/HomePage/flybird.gif")}
+          id="bird1"
+          alt="bird"
+        />
+        <img
+          src={require("../assets/HomePage/flybird.gif")}
+          id="bird2"
+          alt="bird"
+        />
+        <img
+          src={require("../assets/HomePage/flybird.gif")}
+          id="bird3"
+          alt="bird"
+        />
+        <img
+          src={require("../assets/HomePage/flybird.gif")}
+          id="bird4"
+          alt="bird"
+        />
+         <img
+          src={require("../assets/HomePage/birdy.gif")}
+          id="bird5"
+          alt="bird"
+        />
       </setion>
 
       <section className="section2">
-        {/* <img src={arrowBG} id="arrowBG" alt="arrowBG" />
-        <img src={arrowBorders} id="arrowBorders" alt="arrowBorders" />
-        <img src={arrowDots} id="arrowDots" alt="arrowDots" /> */}
         <img src={arrowRotate} id="arrowRotate" alt="arrowRotate" />
         <img src={arrowFG} id="arrowFG" alt="arrowFG" />
       </section>
@@ -158,10 +222,12 @@ const Home = () => {
         <img src={rathFG} id="rathFG" alt="rathFG" />
       </section>
 
+
+      {/* 
       <setion className="section4">
         <img src={krishnaBG} id="krsnaBG" alt="krsnaBG" />
         <img src={krishnaFG} id="krsnaFG" alt="krsnaFG" />
-      </setion>
+      </setion> */}
 
       <svg
         className="arrow"
