@@ -8,6 +8,7 @@
     top: -7%;
     left: -15%;
     z-index: 0;
+    transition: all 500ms linear;
 }
 
 .flower-down {
@@ -39,11 +40,27 @@
     color: white;
     font-size: 28px;
     border-radius: 40px;
-    transition: all 500ms linear;
+    transition: all 500ms ease-in-out;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 
-.eco-card-title:hover {
+.overlap-eco-card:hover .eco-card-title{
     opacity: 1;
+}
+
+.overlap-eco-card:hover .flower-up{
+   animation: rotate360 infinite 2s linear;
+}
+
+.overlap-eco-card:hover .flower-down{
+   animation: rotate360 infinite 2s linear;
+}
+
+@keyframes rotate360 {
+    
+    100%{
+        rotate: 360deg;
+    }
+
 }
