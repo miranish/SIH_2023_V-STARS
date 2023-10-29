@@ -67,7 +67,19 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 10%;
-    background: linear-gradient(to bottom, #f5f5f5 -20%, transparent);
+    background: linear-gradient(to bottom, #f5f5f5 -15%, transparent);
+    z-index: 10;
+}
+
+.section1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to top, #f5f5f5 -15%, transparent);
+    z-index: 10;
 }
 
 #rmynBG {
@@ -142,7 +154,27 @@ body::-webkit-scrollbar {
     justify-content: center;
     /* background-image: linear-gradient(to right bottom, #0a2340, #563568, #a8406e, #e46154, #f3a026); */
 }
+.section2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to bottom, #f5f5f5 -15%, transparent);
+    z-index: 10;
+}
 
+.section2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to top, #f5f5f5 -15%, transparent);
+    z-index: 10;
+}
 .section3 {
     position: relative;
     width: 100%;
@@ -151,6 +183,28 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.section3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to bottom, #f5f5f5 -15%, transparent);
+    z-index: 10;
+}
+
+.section3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to top, #f5f5f5 -15%, transparent);
+    z-index: 10;
 }
 
 #rathBG {

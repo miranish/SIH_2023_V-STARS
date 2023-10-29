@@ -1,7 +1,7 @@
 import "./styles.css"
 function Navbarjs() {
     return(
-        <nav class="menu">
+        <nav class="menu" id="menu">
         <input class="menu-toggler" type="checkbox"/>
         <label for="menu-toggler"></label>
         

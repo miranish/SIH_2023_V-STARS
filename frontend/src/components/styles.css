@@ -2,10 +2,18 @@
     z-index: 99;
     display: flex;
     position: absolute;
-    top: 73%;
-    left: 86%;
-    transition: all 300ms linear    ;
+    top: 80%;
+    left: 88%;
+    transition: all 300ms linear;
+    position: fixed;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3909/3909444.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
 }
+
 
 .menu-toggler {
     position: absolute;
@@ -15,13 +23,19 @@
     right: 0;
     left: 0;
     margin: auto;
-    width: 10px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     z-index: 2;
     opacity: 0;
     cursor: pointer;
 
 }
+
+.menu-toggler:checked .menu{
+    width: 40px !important;
+    height: 40px !important;
+}
+
  .menu-toggler:hover + label,
  .menu-toggler:hover + label:before,
  .menu-toggler:hover + label:after{
@@ -77,21 +91,6 @@
     pointer-events: auto;
 }
 
-.menu-toggler + label:before,
-.menu-toggler + label:after{
-    width: 40px;
-    height: 5px;
-    display: block;
-    z-index: 1;
-    border-radius: 2.5px;
-    background: #e63946;
-    transition: transform 0.5s top 0.5s;
-    content: "";
-    position: relative;
-    display: block;
-    left: 50%;
-      
-}
 
 .menu-toggler + label::before{
     top: 15px;

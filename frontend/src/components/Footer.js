@@ -49,6 +49,7 @@ export const Footer = () => {
   return (
     <footer
       className="text-white mt-5 p-4 text-center "
+      id="my-footer"
       style={{
         fontFamily: "Inknut Antiqua",
         height: "80vh",
@@ -268,11 +269,9 @@ export const Footer = () => {
           >
             <li>Privacy Policy</li>
             <li>Term of use</li>
-            <li style={{textDecoration: "solid"}} >Don’t sell our Info</li>
+            <li style={{ textDecoration: "solid" }}>Don’t sell our Info</li>
           </ul>
-          <div className="company-name">
-          ⓒ V-STARS
-          </div>
+          <div className="company-name">ⓒ V-STARS</div>
         </div>
       </div>
     </footer>

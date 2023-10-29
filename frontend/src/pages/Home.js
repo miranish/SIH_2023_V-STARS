@@ -2,6 +2,7 @@
 import "../styles/Home.css";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 //images
@@ -22,21 +23,37 @@ import arrowRotate from "../assets/HomePage/arrowRotate.png";
 import rathBG from "../assets/HomePage/rathBG.png";
 import rathFG from "../assets/HomePage/rathFG.png";
 import flybird from "../assets/HomePage/flybird.gif";
-import birdy from "../assets/HomePage/birdy.gif"
+import birdy from "../assets/HomePage/birdy.gif";
 
 import NavbarTop from "../components/NavbarTop";
 import IndianHeritageText from "../components/3dText";
 
-import { easeInOut } from "framer-motion";
-
 import Navbarjs from "../components/Navbarr";
-
+import { Footer } from "../components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const navRef = useRef(null);
   useEffect(() => {
+    gsap.to("#menu", {
+      scrollTrigger: {
+        trigger: "#my-footer",
+        scrub: true,
+      },
+      start: "top 100%",
+      y: "-790",
+    });
+
+    gsap.to("#menu", {
+      x: 0,
+      scrollTrigger: {
+        trigger: ".section3",
+        scrub: true,
+        x: -500,
+      },
+    });
+
     gsap.to("#bg", {
       scrollTrigger: {
         scrub: 1,
@@ -49,6 +66,19 @@ const Home = () => {
         scrub: 1,
       },
       scale: 0.5,
+    });
+
+    gsap.to("#rmynFG", {
+      scrollTrigger: {
+        marker: true,
+        trigger: "#bird3",
+        scrub: 1,
+      },
+      duration: 10,
+      scrub: 1,
+      x: -250,
+      y: -50,
+      scale: 0.7,
     });
 
     gsap.to("#cloud1", {
@@ -93,30 +123,34 @@ const Home = () => {
       x: "100%",
     });
 
-    gsap.from(".section2 #arrowRotate", {
-      scale: 0,
-      duration: 1,
+    gsap.to(".section2 #arrowRotate", {
+      scale: 1,
+      duration: 2.5,
       rotate: 360,
       scrollTrigger: {
-        trigger: ".section2 #arrowRotate",
+        ease: "power2.inOut",
+        trigger: ".section2",
         scroller: "body",
-        markers: true,
+        // markers: true,
         // start: "top 20%",
         // end: "bottom 80%",
-        scrub: true, 
+        scrub: true,
       },
-    
     });
 
-    // gsap.from("#rathFG", {
-    //   x: 100,
-    //   duration: 3,
-    //   scrollTrigger: {
-    //     trigger: ".section3",
-    //     scrub: 2,
-    //     start: "top -5%",
-    //   },
-    // });
+    gsap.fromTo(
+      "#rathFG",
+      { x: 200 },
+      {
+        duration: 3,
+        x: 0,
+        scrollTrigger: {
+          ease: "power2.inOut",
+          trigger: ".section3",
+          scrub: 2,
+        },
+      }
+    );
 
     gsap.to(".arrow", {
       // y: 50,
@@ -139,31 +173,13 @@ const Home = () => {
         // scrub: 1,
         start: "top -35%",
         end: "bottom 100%",
-      }
-    })
-
-    gsap.fromTo(
-      navRef.current, // Use the ref for the navigation bar
-      {
-        opacity: 0,
-        visibility: "hidden",
       },
-      {
-        opacity: 1,
-        visibility: "visible",
-        scrollTrigger: {
-          trigger: "#heading",
-          start: "top center",
-          end: "+=200",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
+    });
   }, []);
 
   return (
     <div>
-      <Navbarjs/>
+      <Navbarjs />
       <section className="section">
         <img src={bg} id="bg" alt="bg" />
         {/* <IndianHeritageText /> */}
@@ -210,11 +226,11 @@ const Home = () => {
           id="bird4"
           alt="bird"
         />
-         <img
+        {/* <img
           src={require("../assets/HomePage/birdy.gif")}
           id="bird5"
           alt="bird"
-        />
+        /> */}
       </setion>
 
       <section className="section2">
@@ -226,7 +242,6 @@ const Home = () => {
         <img src={rathBG} id="rathBG" alt="rathBG" />
         <img src={rathFG} id="rathFG" alt="rathFG" />
       </section>
-
 
       {/* 
       <setion className="section4">
@@ -298,6 +313,7 @@ const Home = () => {
           the Rigveda records the dawning of Hinduism in India.
         </p>
       </div>
+      <Footer />
     </div>
   );
 };

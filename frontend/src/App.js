@@ -14,6 +14,7 @@ import AddDataComponent from "./pages/AddData";
 
 import Aos from "aos";
 import StatePage from "./pages/StatePage";
+import { TradePage2 } from "./pages/EcommercePage2";
 
 const App = () => {
   useEffect(() => {
@@ -27,8 +28,9 @@ const App = () => {
 
       <Route exact path="/" index element={<Home />} />
       <Route path="/india" element={<IndiaMap />} />
-      <Route path="/trade" element={<Ecommerce />} />
-      <Route path="/newtrade" element={<TradePage />} />
+      {/* <Route path="/trade" element={<Ecommerce />} /> */}
+      <Route path="/trade" element={<TradePage />} />
+      <Route path="/trade/more" element={<TradePage2 />} />
 
       {/* <Route path="/culture" element={<CulturePage />} /> */}
 
