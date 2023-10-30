@@ -12,13 +12,15 @@ import { TradePage } from "./pages/NewEcommerce";
 import AddDataComponent from "./pages/AddData";
 // import NavB from "./components/NavB";
 
-import Aos from "aos";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import StatePage from "./pages/StatePage";
 import { TradePage2 } from "./pages/EcommercePage2";
 
 const App = () => {
   useEffect(() => {
-    Aos.init();
+    AOS.init();
   }, []);
 
   return (
