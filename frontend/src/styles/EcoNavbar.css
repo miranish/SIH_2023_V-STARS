@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200');
+
+.eco-navbar-main{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    position: sticky;
+}
+
+.eco-navbar{
+    width: 100vw;
+    height: 50%;
+    background-color: #FB6F92;
+}
+
+.eco-navbar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.eco-nav-list li{
+    margin: 0px 2em;
+    font-family: 'Inter', sans-serif;
+    color: black;
+}
+.eco-nav-list li a{
+    /* font-family: 'Inter', sans-serif; */
+    color: black;
+    font-size: 16px;
+}

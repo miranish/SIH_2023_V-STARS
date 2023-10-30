@@ -4,12 +4,12 @@
     font-family: 'Inknut Antiqua', serif;
     width: fit-content;
     position: relative;
-    mix-blend-mode: color-burn;
+    color: #FFF;
 }
 
 .state-desc{
     font-weight: 550;
-    color: #fff;
+    color: #fff !important;
     mix-blend-mode: hard-light;
 }
 
@@ -35,6 +35,7 @@
     transition: 0.5s;
     left: calc(50% - 110px);
     top: 15%;
+    border-radius: 45px;
 }
 
 #next,

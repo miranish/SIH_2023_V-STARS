@@ -1,6 +1,6 @@
 // src/components/LandingPage.js
 import "../styles/Home.css";
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,6 +16,8 @@ import krishnaBG from "../assets/HomePage/krishnaBG.png";
 import krishnaFG from "../assets/HomePage/krishnaFG.png";
 import arrowBG from "../assets/HomePage/arrowBG.png";
 import arrowFG from "../assets/HomePage/arrowFG.png";
+import arrowBGNew from "../assets/HomePage/RamHoverBG_Large.png";
+
 import arrowBorders from "../assets/HomePage/arrowBorders.png";
 import arrowDots from "../assets/HomePage/arrowDots.png";
 import arrowFull from "../assets/HomePage/arrowFull.png";
@@ -34,8 +36,15 @@ import { Footer } from "../components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const navRef = useRef(null);
+  const [arrowBGNew1, setRathBgSrc] = useState(`${arrowBGNew}`);
+
   useEffect(() => {
+    const RathBGImg = new Image();
+    RathBGImg.src = "../assets/HomePage/RamHoverBG.png";
+    RathBGImg.onload = () => {
+      setRathBgSrc(RathBGImg.src);
+    };
+
     gsap.to("#menu", {
       scrollTrigger: {
         trigger: "#my-footer",
@@ -123,6 +132,14 @@ const Home = () => {
       x: "100%",
     });
 
+    gsap.to(".arrowBGNew", {
+      scrollTrigger: {
+        trigger: ".section2",
+        scrub: 1,
+      },
+      scale: 1.2,
+    });
+
     gsap.to(".section2 #arrowRotate", {
       scale: 1,
       duration: 2.5,
@@ -180,7 +197,7 @@ const Home = () => {
   return (
     <div>
       <Navbarjs />
-      <section className="section">
+      <section className="section" id="top-section">
         <img src={bg} id="bg" alt="bg" />
         {/* <IndianHeritageText /> */}
         <h2 id="text">INDIAN HERITAGE</h2>
@@ -234,6 +251,12 @@ const Home = () => {
       </setion>
 
       <section className="section2">
+        <img
+          src={arrowBGNew1}
+          id="arrowBG123"
+          className="arrowBGNew"
+          alt="Arrow BG Sky"
+        />
         <img src={arrowRotate} id="arrowRotate" alt="arrowRotate" />
         <img src={arrowFG} id="arrowFG" alt="arrowFG" />
       </section>
@@ -281,36 +304,95 @@ const Home = () => {
         />
       </svg>
       {/* <p>Scroll down</p> */}
-      <NavbarTop id="nav" ref={navRef} />
       <div class="sec">
         <div id="heading">
-          <h2 id="heading-h2">About India!</h2>
+          <h2
+            style={{
+              textAlign: "center",
+            }}
+            //  id="heading-h2"
+          >
+            Explore the Heritage!
+          </h2>
         </div>
         <br />
         <p id="para">
-          India, officially the Republic of India (ISO: Bhārat Gaṇarājya), is a
-          country in South Asia. It is the seventh-largest country by area; the
-          most populous country as of June 2023; and from the time of its
-          independence in 1947, the world's most populous democracy. Bounded by
-          the Indian Ocean on the south, the Arabian Sea on the southwest, and
-          the Bay of Bengal on the southeast, it shares land borders with
-          Pakistan to the west; China, Nepal, and Bhutan to the north; and
-          Bangladesh and Myanmar to the east. In the Indian Ocean, India is in
-          the vicinity of Sri Lanka and the Maldives; its Andaman and Nicobar
-          Islands share a maritime border with Thailand, Myanmar, and Indonesia.
+          India's Geographical Diversity: India is a vast subcontinent with
+          diverse landscapes, from the snowy peaks of the Himalayas to the
+          tropical beaches of Kerala. We'll take you on a virtual tour,
+          showcasing the natural beauty and geographical features that have
+          influenced India's heritage.
           <br />
           <br />
-          Modern humans arrived on the Indian subcontinent from Africa no later
-          than 55,000 years ago. Their long occupation, initially in varying
-          forms of isolation as hunter-gatherers, has made the region highly
-          diverse, second only to Africa in human genetic diversity. Settled
-          life emerged on the subcontinent in the western margins of the Indus
-          river basin 9,000 years ago, evolving gradually into the Indus Valley
-          Civilisation of the third millennium BCE. By 1200 BCE, an archaic form
-          of Sanskrit, an Indo-European language, had diffused into India from
-          the northwest. Its evidence today is found in the hymns of the
-          Rigveda. Preserved by an oral tradition that was resolutely vigilant,
-          the Rigveda records the dawning of Hinduism in India.
+          Regional Diversity: India's heritage is a tapestry woven with threads
+          of various regions. Explore the distinct cultures, languages, and
+          traditions of North India, South India, East India, West India, and
+          the central heartland. Learn about the uniqueness of each region, from
+          the robust Rajput heritage of Rajasthan to the lush backwaters of
+          Kerala.
+          <br />
+          <br />
+          Time Travel through Dynasties: Discover the dynasties that have left
+          an indelible mark on India's history. From the Mauryas and Guptas to
+          the Mughals and Marathas, we'll provide insights into their reigns,
+          architectural marvels, and cultural contributions.
+        </p>
+      </div>
+
+      <div class="sec">
+        <div id="heading">
+          <h2
+            style={{
+              textAlign: "center",
+            }}
+          >
+            A Glimpse of India's History!
+          </h2>
+        </div>
+        <br />
+        <p id="para">
+          Indus Valley Civilization: Step back over 4,000 years to explore one
+          of the world's oldest urban civilizations. Learn about the planned
+          cities, script, and trade networks that characterized the Indus
+          Valley.
+          <br />
+          <br />
+          The Mughal Era: Immerse yourself in the opulence of the Mughal
+          dynasty. Discover the iconic Taj Mahal, the grandeur of Red Fort, and
+          the synthesis of Indian and Persian cultures during this period.
+          <br />
+          <br />
+          Independence Struggle: Learn about India's arduous journey to
+          independence from British colonial rule. Explore the life and
+          teachings of Mahatma Gandhi and other prominent freedom fighters.
+        </p>
+      </div>
+
+      <div class="sec">
+        <div id="heading">
+          <h2
+            style={{
+              textAlign: "center",
+            }}
+          >
+            Art and Architecture!
+          </h2>
+        </div>
+        <br />
+        <p id="para">
+          Temples of Khajuraho: Marvel at the intricate erotic carvings of
+          Khajuraho, a UNESCO World Heritage site. Discover the symbolism behind
+          these stunning sculptures.
+          <br />
+          <br />
+          Ellora and Ajanta Caves: Explore the ancient rock-cut caves of Ellora
+          and Ajanta, adorned with exquisite paintings and sculptures that
+          depict the evolution of Indian art over centuries.
+          <br />
+          <br />
+          Forts and Palaces: India boasts an array of magnificent forts and
+          palaces, from the Amber Fort in Jaipur to the Mysore Palace. Learn
+          about their architecture, history, and the stories they hold.
         </p>
       </div>
       <Footer />

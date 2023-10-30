@@ -17,10 +17,12 @@ import Hottest from "../assets/ecom/Hottest.png";
 
 import SoDidYouLike from "../assets/ecom/SoWhatDidYouLikeBG.png";
 import { Footer } from "../components/Footer";
+import EcoNavbar from "../components/Navbar";
 
 export const TradePage = () => {
   return (
     <div className="index">
+    <EcoNavbar />
       <div class="Categories-Intro">
         <img
           class="vector-3"

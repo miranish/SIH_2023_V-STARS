@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Linden+Hill');
 
-.eco-page2-card{
+.eco-page2-card {
     background-color: #FFE5EC;
     width: 40vw;
     height: 45vh;
@@ -9,13 +9,13 @@
     position: relative;
 }
 
-.eco-page2-card-title{
+.eco-page2-card-title {
     text-align: center;
     margin: 25px;
     font-family: 'Linden Hill', serif;
 }
 
-.eco-page2-card-body{
+.eco-page2-card-body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -25,15 +25,53 @@
     height: 65%;
 }
 
-.eco-page2-card-inside{
+.eco-page2-card-inside {
+    position: relative;
     background-color: #B81365;
     width: 30%;
     height: 100%;
     border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.eco-page2-popularity{
+.eco-page2-card-inside-img {
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease-in-out;
+}
+
+.eco-page2-card-inside-img:hover {
+    transform: scale(1.1);
+}
+
+.eco-page2-popularity {
     position: absolute;
     bottom: 0%;
     right: 10%;
+}
+
+.eco-page2-card-inside h4 {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 2px;
+    color: #000;
+    z-index: 20;
+    height: 15%;
+
+}
+
+.eco-page2-card-inside .eco-page2-men {
+    content: "";
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    background-color: #FFB3C6;
+    opacity: 0.7;
+    z-index: 0;
 }

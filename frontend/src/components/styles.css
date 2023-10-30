@@ -1,4 +1,4 @@
-.menu{
+.menu {
     z-index: 99;
     display: flex;
     position: absolute;
@@ -31,92 +31,100 @@
 
 }
 
-.menu-toggler:checked .menu{
+.menu-toggler:checked .menu {
     width: 40px !important;
     height: 40px !important;
 }
 
- .menu-toggler:hover + label,
- .menu-toggler:hover + label:before,
- .menu-toggler:hover + label:after{
+.menu-toggler:hover+label,
+.menu-toggler:hover+label:before,
+.menu-toggler:hover+label:after {
     /* background: #503f76; */
     opacity: 0.75;
 }
 
-.menu-toggler:checked + label{
+.menu-toggler:checked+label {
     background: transparent;
 }
 
-.menu-toggler:checked + label:before,
-.menu-toggler:checked + label::after{
+.menu-toggler:checked+label:before,
+.menu-toggler:checked+label::after {
     top: 0;
-        width: 50px;
-        transform-origin: 50% 50%;
+    width: 50px;
+    transform-origin: 50% 50%;
 
 }
 
 
 
-.menu-toggler:checked + label:before{
+.menu-toggler:checked+label:before {
     transform: rotate(45deg) translateY(15px) translateX(-13px);
 }
-.menu-toggler:checked + label:after{
-    transform:  rotate(-45deg) translateY(-15px) translateX(-13px);
-} 
-.menu-toggler:checked ~ ul .menu-item{
+
+.menu-toggler:checked+label:after {
+    transform: rotate(-45deg) translateY(-15px) translateX(-13px);
+}
+
+.menu-toggler:checked~ul .menu-item {
     opacity: 1;
 }
 
-.menu-toggler:checked ~ ul .menu-item:nth-child(1) {
+.menu-toggler:checked~ul .menu-item:nth-child(1) {
     transform: rotate(15deg) translateX(-100px);
 }
 
-.menu-toggler:checked ~ ul .menu-item:nth-child(2) {
+.menu-toggler:checked~ul .menu-item:nth-child(2) {
     transform: rotate(90deg) translateX(-90px);
 }
 
-.menu-toggler:checked ~ ul .menu-item:nth-child(3) {
+.menu-toggler:checked~ul .menu-item:nth-child(3) {
     transform: rotate(162deg) translateX(-90px);
 }
 
-.menu-toggler:checked ~ ul .menu-item:nth-child(4) {
+.menu-toggler:checked~ul .menu-item:nth-child(4) {
     transform: rotate(234deg) translateX(-100px);
 }
 
-.menu-toggler:checked ~ ul .menu-item:nth-child(5) {
+.menu-toggler:checked~ul .menu-item:nth-child(5) {
     transform: rotate(306deg) translateX(-100px);
 }
 
-.menu-toggler:checked ~ ul .menu-item a{
+.menu-toggler:checked~ul .menu-item a {
     pointer-events: auto;
 }
 
 
-.menu-toggler + label::before{
+.menu-toggler+label::before {
     top: 15px;
 }
 
-.menu-toggler + label:after{
+.menu-toggler+label:after {
     top: -15px;
 }
 
 .menu-item:nth-child(1) a {
     transform: rotate(-15deg);
 }
+
 .menu-item:nth-child(2) a {
     transform: rotate(-90deg);
 }
+
 .menu-item:nth-child(3) a {
-    transform: rotate(-162deg) ;
+    transform: rotate(-162deg);
+    opacity: 0;
 }
+
 .menu-item:nth-child(4) a {
     transform: rotate(-234deg);
+    /* opacity: 0; */
 }
+
 .menu-item:nth-child(5) a {
     transform: rotate(-306deg);
 }
 
-.menu-item{
+.menu-item {
     position: absolute;
     display: block;
     top: -15px;
@@ -131,7 +139,7 @@
     transition: 0.3s;
 }
 
-.menu-item a{
+.menu-item a {
     display: block;
     width: inherit;
     height: inherit;
@@ -147,7 +155,7 @@
     box-shadow: 6px 6px 27px -8px rgba(0, 0, 0, 0.61);
 }
 
-.menu-item a:hover{
+.menu-item a:hover {
     box-shadow: 0 0 0 2px rgba(255, 255, 255);
     color: #e7e7f7;
     background: #ea0e54;

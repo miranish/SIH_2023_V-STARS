@@ -21,7 +21,6 @@ const App = () => {
     Aos.init();
   }, []);
 
-
   return (
     <Routes>
       <Route path="/trans" element={<OutroTransition />} />

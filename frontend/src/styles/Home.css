@@ -7,11 +7,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
+
 
 body::-webkit-scrollbar {
     display: none;
 }   
+
+body{
+    background-color: #fff !important;
+}
 
 
 #heading {
@@ -152,8 +158,21 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* background-image: url("../assets/HomePage/RamHoverBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+
     /* background-image: linear-gradient(to right bottom, #0a2340, #563568, #a8406e, #e46154, #f3a026); */
 }
+
+.arrowBGNew{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .section2::before {
     content: '';
     position: absolute;

@@ -122,6 +122,7 @@ const StatePage = () => {
         <Splide
           options={{
             lazyLoad: "nearby",
+            paginationKeyboard: false,
           }}
           ref={SlideRef}
           id="mycustomsplide"
@@ -132,8 +133,8 @@ const StatePage = () => {
               <img
                 style={{
                   borderRadius: "0px",
-                  // height: "100%",
-                  width: "100%",
+                  height: "100vh",
+                  width: "100vw",
                   objectFit: "cover",
                 }}
                 src={imageUrl}
@@ -181,7 +182,7 @@ const StatePage = () => {
               style={{
                 backgroundImage: `url('${currentCardStateImage[0]}`,
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundPosition: "70%",
               }}
             ></div>
             <div
