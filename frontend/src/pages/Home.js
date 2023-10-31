@@ -36,6 +36,9 @@ import { LoadingPage } from "./LoadingPage";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
   const [arrowBGNew1, setRathBgSrc] = useState(`${arrowBGNew}`);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [totalImages, setTotalImages] = useState(0);
@@ -71,6 +74,7 @@ const Home = () => {
         setTotalImages(imageUrls.length);
 
         if (loadedImages.length === imageUrls.length) {
+          sleep(1500)
           setImagesLoaded(true);
         }
       };
