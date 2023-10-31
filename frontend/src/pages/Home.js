@@ -76,160 +76,159 @@ const Home = () => {
       };
     });
 
-    gsap.to("#menu", {
-      scrollTrigger: {
-        trigger: "#my-footer",
-        scrub: true,
-      },
-      start: "top 100%",
-      y: "-790",
-    });
+      gsap.to("#menu", {
+        scrollTrigger: {
+          trigger: "#my-footer",
+          scrub: true,
+        },
+        start: "top 100%",
+        y: "-790",
+      });
 
-    gsap.to("#menu", {
-      x: 0,
-      scrollTrigger: {
-        trigger: ".section3",
-        scrub: true,
-        x: -500,
-      },
-    });
-
-    gsap.to("#bg", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      scale: 1.5,
-    });
-
-    gsap.to("#man", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      scale: 0.5,
-    });
-
-    gsap.to("#rmynFG", {
-      scrollTrigger: {
-        marker: true,
-        trigger: "#bird3",
-        scrub: 1,
-      },
-      duration: 10,
-      scrub: 1,
-      x: -250,
-      y: -50,
-      scale: 0.7,
-    });
-
-    gsap.to("#cloud1", {
-      x: 750,
-      scrollTrigger: {
-        scrub: 1,
-      },
-    });
-
-    gsap.to("#cloud2", {
-      x: -750,
-      scrollTrigger: {
-        scrub: 1,
-      },
-    });
-
-    gsap.to("#krishnaBG", {
-      scrollTrigger: {
-        scrub: 2,
-      },
-      scale: 5,
-    });
-
-    gsap.to("#krishnaFG", {
-      y: 1000,
-      duration: 5,
-      scrollTrigger: "#krishnaFG",
-    });
-
-    gsap.to("#text", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      y: 800,
-    });
-
-    gsap.to("#heading-h2", {
-      scrollTrigger: {
-        trigger: "#heading",
-        scrub: 1,
-      },
-      x: "100%",
-    });
-
-    gsap.to(".arrowBGNew", {
-      scrollTrigger: {
-        trigger: ".section2",
-        scrub: 1,
-      },
-      scale: 1.2,
-    });
-
-    gsap.to(".section2 #arrowRotate", {
-      scale: 1,
-      duration: 2.5,
-      rotate: 360,
-      scrollTrigger: {
-        ease: "power2.inOut",
-        trigger: ".section2",
-        scroller: "body",
-        // markers: true,
-        // start: "top 20%",
-        // end: "bottom 80%",
-        scrub: true,
-      },
-    });
-
-    gsap.fromTo(
-      "#rathFG",
-      { x: 200 },
-      {
-        duration: 3,
+      gsap.to("#menu", {
         x: 0,
         scrollTrigger: {
-          ease: "power2.inOut",
           trigger: ".section3",
+          scrub: true,
+          x: -500,
+        },
+      });
+
+      gsap.to("#bg", {
+        scrollTrigger: {
+          scrub: 1,
+        },
+        scale: 1.5,
+      });
+
+      gsap.to("#man", {
+        scrollTrigger: {
+          scrub: 1,
+        },
+        scale: 0.5,
+      });
+
+      gsap.to("#rmynFG", {
+        scrollTrigger: {
+          marker: true,
+          trigger: "#bird3",
+          scrub: 1,
+        },
+        duration: 10,
+        scrub: 1,
+        x: -250,
+        y: -50,
+        scale: 0.7,
+      });
+
+      gsap.to("#cloud1", {
+        x: 750,
+        scrollTrigger: {
+          scrub: 1,
+        },
+      });
+
+      gsap.to("#cloud2", {
+        x: -750,
+        scrollTrigger: {
+          scrub: 1,
+        },
+      });
+
+      gsap.to("#krishnaBG", {
+        scrollTrigger: {
           scrub: 2,
         },
-      }
-    );
+        scale: 5,
+      });
 
-    gsap.to(".arrow", {
-      // y: 50,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".arrow",
-        start: "top center",
-        end: "50% center",
-        scrub: true,
-      },
-    });
+      gsap.to("#krishnaFG", {
+        y: 1000,
+        duration: 5,
+        scrollTrigger: "#krishnaFG",
+      });
 
-    gsap.to("#bird5", {
-      x: -1400,
-      duration: 10,
-      repeat: -1,
-      repeatDelay: 0.5,
-      scrollTrigger: {
-        trigger: "#section2",
-        // scrub: 1,
-        start: "top -35%",
-        end: "bottom 100%",
-      },
-    });
+      gsap.to("#text", {
+        scrollTrigger: {
+          scrub: 1,
+        },
+        y: 800,
+      });
+
+      gsap.to("#heading-h2", {
+        scrollTrigger: {
+          trigger: "#heading",
+          scrub: 1,
+        },
+        x: "100%",
+      });
+
+      gsap.to(".arrowBGNew", {
+        scrollTrigger: {
+          trigger: ".section2",
+          scrub: 1,
+        },
+        scale: 1.2,
+      });
+
+      gsap.to(".section2 #arrowRotate", {
+        scale: 1,
+        duration: 2.5,
+        rotate: 360,
+        scrollTrigger: {
+          ease: "power2.inOut",
+          trigger: ".section2",
+          scroller: "body",
+          // markers: true,
+          // start: "top 20%",
+          // end: "bottom 80%",
+          scrub: true,
+        },
+      });
+
+      gsap.fromTo(
+        "#rathFG",
+        { x: 200 },
+        {
+          duration: 3,
+          x: 0,
+          scrollTrigger: {
+            ease: "power2.inOut",
+            trigger: ".section3",
+            scrub: 2,
+          },
+        }
+      );
+
+      gsap.to(".arrow", {
+        // y: 50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".arrow",
+          start: "top center",
+          end: "50% center",
+          scrub: true,
+        },
+      });
+
+      gsap.to("#bird5", {
+        x: -1400,
+        duration: 10,
+        repeat: -1,
+        repeatDelay: 0.5,
+        scrollTrigger: {
+          trigger: "#section2",
+          // scrub: 1,
+          start: "top -35%",
+          end: "bottom 100%",
+        },
+      });
+
   }, []);
 
-  if (!imagesLoaded) {
-    return <LoadingPage percentage={""} />;
-  } else {
     return (
       <div>
+       {!imagesLoaded ? <LoadingPage percentage={""} /> : ""}
         <Navbarjs />
         <section className="section" id="top-section">
           <img src={bg} id="bg" alt="bg" />
@@ -565,7 +564,6 @@ const Home = () => {
         <Footer />
       </div>
     );
-  }
 };
 
 export default Home;
