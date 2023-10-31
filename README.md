@@ -21,7 +21,7 @@ Node.js: You'll need Node.js to run the project.
 First, clone the project repository to your local machine. You can do this using Git by running the following command in your terminal:
 
 ```bash
-git clone 
+git clone https://github.com/miranish/SIH_2023_V-STARS.git
 ```
 
 ### Step 2: Frontend Setup
