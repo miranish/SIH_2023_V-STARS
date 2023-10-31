@@ -228,7 +228,7 @@ const Home = () => {
 
     return (
       <div>
-       {!imagesLoaded ? <LoadingPage percentage={""} /> : ""}
+       {imagesLoaded ? ""  : <LoadingPage percentage={""} /> }
         <Navbarjs />
         <section className="section" id="top-section">
           <img src={bg} id="bg" alt="bg" />
