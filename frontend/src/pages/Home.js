@@ -41,9 +41,7 @@ const Home = () => {
   }
   const [arrowBGNew1, setRathBgSrc] = useState(`${arrowBGNew}`);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [totalImages, setTotalImages] = useState(0);
-  const [percentageLoaded, setPercentageLoaded] = useState(0);
-  const loadedImages = [];
+
   const imageUrls = [
     clouds_1,
     clouds_2,
@@ -65,19 +63,15 @@ const Home = () => {
       setRathBgSrc(RathBGImg.src);
     };
 
-    imageUrls.forEach((url) => {
+    const images = imageUrls.map((url) => {
       const img = new Image();
       img.src = url;
       img.onload = () => {
-        loadedImages.push(url);
-        setImagesLoaded(loadedImages.length);
-        setTotalImages(imageUrls.length);
-
-        if (loadedImages.length === imageUrls.length) {
-          sleep(1500)
+        if (images.every((image) => image.complete)) {
           setImagesLoaded(true);
         }
       };
+      return img;
     });
 
       gsap.to("#menu", {
