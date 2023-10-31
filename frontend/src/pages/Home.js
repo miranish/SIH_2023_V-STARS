@@ -38,7 +38,22 @@ gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const [arrowBGNew1, setRathBgSrc] = useState(`${arrowBGNew}`);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [imagesLoadedPerc, setImagesLoadedPerc] = useState(0);
+  const [totalImages, setTotalImages] = useState(0);
+  const [percentageLoaded, setPercentageLoaded] = useState(0);
+  const loadedImages = [];
+  const imageUrls = [
+    clouds_1,
+    clouds_2,
+    bg,
+    fg,
+    ramayanBG,
+    ramayanFG,
+    arrowFG,
+    arrowBGNew,
+    arrowRotate,
+    rathBG,
+    rathFG,
+  ];
 
   useEffect(() => {
     const RathBGImg = new Image();
@@ -47,31 +62,18 @@ const Home = () => {
       setRathBgSrc(RathBGImg.src);
     };
 
-    const imageUrls = [
-      clouds_1,
-      clouds_2,
-      bg,
-      fg,
-      ramayanBG,
-      ramayanFG,
-      arrowFG,
-      arrowBGNew,
-      arrowRotate,
-      rathBG,
-      rathFG,
-    ];
-    const perPerc = 100 / imageUrls.length;
-
-    const images = imageUrls.map((url) => {
+    imageUrls.forEach((url) => {
       const img = new Image();
       img.src = url;
       img.onload = () => {
-        setImagesLoadedPerc(imagesLoadedPerc + parseInt(perPerc));
-        if (images.every((image) => image.complete)) {
+        loadedImages.push(url);
+        setImagesLoaded(loadedImages.length);
+        setTotalImages(imageUrls.length);
+
+        if (loadedImages.length === imageUrls.length) {
           setImagesLoaded(true);
         }
       };
-      return img;
     });
 
     gsap.to("#menu", {
@@ -224,7 +226,7 @@ const Home = () => {
   }, []);
 
   if (!imagesLoaded) {
-    return <LoadingPage percentage={imagesLoadedPerc} />;
+    return <LoadingPage percentage={""} />;
   } else {
     return (
       <div>
