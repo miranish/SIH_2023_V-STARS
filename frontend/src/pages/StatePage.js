@@ -30,8 +30,7 @@ const StatePage = () => {
   const [currentBgImageIndex, setCurrentBgImageIndex] = useState(0);
 
   const SlideRef = useRef(null);
-
-  const apiEndpoint = "http://localhost:3001/api/states/";
+  let apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
 
   const forMoreInfo = "https://knowindia.india.gov.in/states-uts/";
 
