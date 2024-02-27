@@ -85,7 +85,29 @@ router.delete('/states/:stateName', async (req, res) => {
   }
 });
 
-// Add more routes as needed
+// Route to update detail and detailImages for a specific state
+router.patch("/states/:stateID", async (req, res) => {
+  const { stateID } = req.params;
+
+  try {
+    const { detail, detailImages } = req.body;
+
+    const updatedState = await State.findOneAndUpdate(
+      { stateID },
+      { $set: { detail, detailImages } },
+      { new: true }
+    );
+
+    if (!updatedState) {
+      return res.status(404).json({ error: "State not found" });
+    }
+
+    res.json({ success: true, state: updatedState });
+  } catch (error) {
+    console.error("Error updating state details:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 
 

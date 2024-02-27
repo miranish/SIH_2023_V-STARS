@@ -452,17 +452,32 @@ svg #wheel {
     place-items: center;
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: 1fr; 
-    gap: 20px 020px; 
+    gap: 20px 20px; 
     grid-template-areas: 
       "image content"; 
+
+    transition: all 200ms ease-in-out;
 }
 
 .grid-image-showcase p{
     font-size: 32px;
 }
 
+.grid-image-showcase .new-p{
+    font-size: 18px !important;
+}
+
 .grid-image-showcase img{
-    border-radius: 16px;
+    /* border-radius: 16px;
+    margin: 5px; */
+    --s: 10px; /* control the size */
+    padding: var(--s);
+    border: calc(2*var(--s)) solid #0000;
+    outline: 1px solid #000;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px,#0000 25%,#000 0);
+    
+    
 }
 
 .para-italic{

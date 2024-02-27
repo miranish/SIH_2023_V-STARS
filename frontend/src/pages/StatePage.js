@@ -6,6 +6,8 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css";
 
+import { Footer } from "../components/Footer";
+
 const StatePage = () => {
   const [currentStateImage, setCurrentStateImage] = useState([
     "https://images.unsplash.com/photo-1638904998527-a451c1fbd1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -22,12 +24,16 @@ const StatePage = () => {
   const [stateTitle, setStateTitle] = useState("");
   const [stateDesc, setStateDesc] = useState("");
 
+  const [stateDetailed, setStateDetailed] = useState([]);
+
   const [currentIndex, setCurrentIndex] = useState(1);
   const [currentBgImageIndex, setCurrentBgImageIndex] = useState(0);
 
   const SlideRef = useRef(null);
 
   const apiEndpoint = "http://localhost:3001/api/states/";
+
+  const forMoreInfo = "https://knowindia.india.gov.in/states-uts/";
 
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -41,11 +47,8 @@ const StatePage = () => {
     setCurrentCardStateImage(data.ImagesData.map((item) => item.cardImage));
     setStateTitle(data.stateName);
     setStateDesc(data.stateDesc);
-
-    console.log(stateTitle);
-    console.log(stateDesc);
-    console.log("BG IMAGE:", currentStateImage);
-    console.log("CARD IMAGE:", currentCardStateImage);
+    const stateDetailed = data.detail;
+    setStateDetailed(stateDetailed);
   }
 
   useEffect(() => {
@@ -112,17 +115,31 @@ const StatePage = () => {
     };
   }, []);
 
+  function removeColon(inputString) {
+    // Check if the colon exists in the string
+    if (inputString.includes(":")) {
+      // Use replace to remove the colon
+      return inputString.replace(":", "");
+    } else {
+      // Return the original string if no colon is found
+      return inputString;
+    }
+  }
+
   return (
-    <div>
+    <div style={{ width: "100%", overflowX: "clip" }}>
       <div
         style={{
           position: "absolute",
+          width: "100vw",
         }}
       >
         <Splide
           options={{
             lazyLoad: "nearby",
             paginationKeyboard: false,
+            arrows: false,
+            autoplay: false,
           }}
           ref={SlideRef}
           id="mycustomsplide"
@@ -224,30 +241,123 @@ const StatePage = () => {
           </div>
         </div>
       </div>
+
+      {stateDetailed.map((detail, index) => (
+        <div
+          key={index}
+          className={`rajasthan-second-screen ${
+            currentIndex === index ? "d-block" : "d-none"
+          } part-${index + 1}`}
+          // style={{ height: "100vh" }}
+        >
+          <div id="">
+            <h2
+              style={{
+                textAlign: "center",
+                marginTop: "5%",
+              }}
+            >
+              {detail && removeColon(detail.detailTitle)}
+            </h2>
+
+            <div
+              style={{
+                margin: "5%",
+              }}
+            >
+              {/* Map detailDescription to paragraphs */}
+              {detail.detailDescription.map((paragraph, i) => (
+                <div
+                  className={
+                    detail.detailImages[i] ? "grid-image-showcase" : ""
+                  }
+                  key={i}
+                  style={{
+                    // Add any common styles here
+                    margin: "3%",
+                    // Add specific styles based on the condition
+                    textAlign: i % 2 == 0 ? "left" : "right",
+                  }}
+                >
+                  {i % 2 === 0 ? (
+                    // If even index, render paragraph first, then image
+                    <>
+                      <p className="new-p " data-aos="fade-right">
+                        {paragraph.includes(":") ? (
+                          <span className="state-sub-title">
+                            {paragraph.split(":")[0] + ":"}
+                          </span>
+                        ) : (
+                          paragraph
+                        )}
+                        {paragraph.includes(":") ? paragraph.split(":")[1] : ""}
+                      </p>
+                      {detail.detailImages[i] && (
+                        <img
+                          key={i}
+                          src={detail.detailImages[i].detailImage}
+                          alt={detail.detailImages[i].detailImageDescription}
+                          data-aos="fade-left"
+                        />
+                      )}
+                    </>
+                  ) : (
+                    // If odd index, render image first, then paragraph
+                    <>
+                      {detail.detailImages[i] && (
+                        <img
+                          key={i}
+                          src={detail.detailImages[i].detailImage}
+                          alt={detail.detailImages[i].detailImageDescription}
+                          // style={{ margin: "20px" }}
+                          data-aos="fade-right"
+                        />
+                      )}
+                      <p className="new-p " data-aos="fade-left">
+                        {paragraph.includes(":") ? (
+                          <span className="state-sub-title">
+                            {paragraph.split(":")[0] + ":"}
+                          </span>
+                        ) : (
+                          paragraph
+                        )}
+                        {paragraph.includes(":") ? paragraph.split(":")[1] : ""}
+                      </p>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
       <div
-        className={`rajasthan-second-screen ${
-          currentIndex === 0 ? "d-block" : "d-none"
-        } part-1`}
-        style={{ height: "100vh" }}
+        style={{
+          height: "20%",
+        }}
       >
-        first
+        <h6
+          style={{
+            paddingLeft: "15px",
+          }}
+        >
+          For More Info on {stateTitle}. Visit Official{" "}
+          <a
+            href={
+              forMoreInfo +
+              stateTitle.split(" ").join("-").toLowerCase() +
+              ".php"
+            }
+            target="_blank"
+          >
+            KnowIndia.gov.in
+          </a>
+          Website
+        </h6>
       </div>
-      <div
-        className={`rajasthan-second-screen ${
-          currentIndex === 1 ? "d-block" : "d-none"
-        } part-2`}
-        style={{ height: "100vh" }}
-      >
-        second
-      </div>
-      <div
-        className={`rajasthan-third-screen ${
-          currentIndex === 2 ? "d-block" : "d-none"
-        } part-3`}
-        style={{ height: "100vh" }}
-      >
-        <navbara />
-        mklnfklm
+
+      <div>
+        <Footer />
       </div>
     </div>
   );

@@ -5,6 +5,9 @@
     font-size: 16px;
 }
 
+#my-footer *{
+    backdrop-filter: blur(2px);
+}
 .Footer-Title{
     font-family: 'Inknut Antiqua', serif;
     color: black;
@@ -31,6 +34,7 @@
     padding: 10%;
     text-decoration: underline;
     line-height: 135%;
+    
     
 }
 

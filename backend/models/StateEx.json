@@ -1,0 +1,70 @@
+{
+  "detail": [
+    {
+      "detailTitle": "A Cultural Kaleidoscope:",
+      "detailDescription": [
+        "Uttar Pradesh's culture vibrates with diversity, reflecting its long and rich history. Hinduism forms the base, evident in countless temples, festivals, and traditions. Yet, influences from Jainism, Buddhism, Islam, and Sikhism weave a tapestry of religious expressions. Languages like Hindi, Urdu, and Bhojpuri paint a linguistic landscape as diverse as the people. The region's folk heritage comes alive in songs like \"rasiya,\" celebrating Radha-Krishna's love, accompanied by energetic \"bumb\" drums. Other art forms like \"Ramlila\" (enacting the Ramayana), \"Nautanki\" (folk theatre), and \"Qawwali\" (devotional music) keep traditions alive."
+      ],
+      "detailAdditionalInfo": "",
+      "detailImages": [
+        {
+          "detailImage": "",
+          "detailImageDescription": ""
+        }
+      ]
+    },
+    {
+      "detailTitle": "Monuments Whispering History:",
+      "detailDescription": [
+            "Uttar Pradesh is a treasure trove of architectural marvels, each standing as a testament to its glorious past. The majestic Taj Mahal, a UNESCO World Heritage Site, needs no introduction. Its white marble beauty, built by Mughal emperor Shah Jahan in memory of his wife Mumtaz Mahal, remains a symbol of love and architectural finesse.",
+            "In Agra, the imposing Agra Fort, another Mughal marvel, showcases the power and grandeur of the empire.",
+            "Further, the ancient Buddhist pilgrimage site of Sarnath, where Buddha delivered his first sermon, attracts devotees worldwide.",
+            "Mathura, the birthplace of Lord Krishna, boasts numerous temples like Keshava Dev Temple and Govind Deo Temple, while Varanasi, the holy city on the Ganges, resonates with ancient rituals and spiritual energy."
+    ],
+      "detailAdditionalInfo": "",
+      "detailImages": [
+        {
+          "detailImage": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQeEkeF_P2fcTPDXT6Gt8dwTJTGqgPM72HV-d2LRaMP2QAy-uHFreu9YFn1p_Rs",
+          "detailImageDescription": "Taj Mahal"
+        },
+        {
+          "detailImage": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQqmaoK2IAtDaQxzYjDdwKLZa9NvuXikbW6rL5VVHIMZCIqseVSMmYJcDK1684J",
+          "detailImageDescription": "Agra Fort"
+        },
+        {
+          "detailImage": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSZV5W2oHfETsQqjG09ZKJd1fTUqY00XzvotlMYEbFnYaCGBpdaveo0auWKAoWE",
+          "detailImageDescription": "Sarnath"
+        },
+        {
+          "detailImage": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVFlahSgejFFZre7mYNuuEY_IlLy5DczN9ryWONjeu0KFigV7di27JuUfod-c8",
+          "detailImageDescription": "Mathura"
+        }
+
+      ]
+    },
+    {
+      "detailTitle": "Festivities Throughout the Year:",
+      "detailDescription": [
+        "Uttar Pradesh is a land where every season brings a celebration. Holi, the festival of colors, explodes with vibrant hues and joyous revelry, marking the triumph of good over evil.",
+        "Dussehra commemorates the victory of Lord Rama over Ravana, culminating in the burning of effigies. Kumbh Mela, held every three years in Allahabad (Prayagraj), is the world's largest religious gathering, a spectacle of faith and devotion.",
+        "Diwali, the festival of lights, illuminates homes and streets, symbolizing the victory of light over darkness.",
+        "Chhath Puja, dedicated to the Sun god, sees devotees offering prayers and conducting rituals by the banks of rivers and ponds."
+      ],
+      "detailAdditionalInfo": "",
+      "detailImages": [
+        {
+          "detailImage": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQyVspVLrwyRsIvx8E2mSTrHRzmFU-dFiggEwpkCGl3rZSrR-HrC-HN4YHvwv5",
+          "detailImageDescription": "Chhath Puja"
+        },
+        {
+          "detailImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Dqonq1rlfqcD35HDabQ1IInxyMiNbwenw119dpuZEaeoqqq7afuPrN6-9jTY",
+          "detailImageDescription": "Diwali"
+        },
+        {
+          "detailImage": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQPAaXA1NuoHx_L2CrvCSq0MYnGzTIZRduacA1C2BHCIpvslkQatRCvezrsXBTj",
+          "detailImageDescription": "Kumbh Mela"
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,10 @@
     position: relative;
     color: #FFF;
 }
-
+.state-sub-title{
+    font-weight: 900;
+    text-decoration: underline ;
+}
 .state-desc{
     font-weight: 550;
     color: #fff !important;

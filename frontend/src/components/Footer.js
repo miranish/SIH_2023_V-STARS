@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Footer.css";
-export const Footer = () => {
+export  const Footer = () => {
   const SocialUrls = [
     {
       id: "1",
@@ -54,6 +54,9 @@ export const Footer = () => {
         fontFamily: "Inknut Antiqua",
         height: "80vh",
         borderTop: "2px solid black",
+        backgroundImage: "url('https://www.hdwallpapers.in/download/tricolor_indian_flag_independence_day_4k_hd_indian_flag-3840x2160.jpg')",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <h1
