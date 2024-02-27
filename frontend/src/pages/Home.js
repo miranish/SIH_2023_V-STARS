@@ -5,6 +5,7 @@ import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 //images
 import clouds_1 from "../assets/HomePage/clouds_1.png";
 import clouds_2 from "../assets/HomePage/clouds_2.png";
